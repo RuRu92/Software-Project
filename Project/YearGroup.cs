@@ -56,5 +56,24 @@ namespace Project
         {
 
         }
+
+        private void groupIDTB_TextChanged(object sender, EventArgs e)
+        {
+            YearGroupCL yearGClass = new YearGroupCL();
+
+            int num;
+            bool flag = int.TryParse(groupIDTB.Text, out num);
+            if (flag)
+                yearGClass.YearGroupID = num;
+
+        }
+
+        private void groupName_TextChanged(object sender, EventArgs e)
+        {
+            YearGroupCL yearGClass = new YearGroupCL();
+            yearGClass.YearGropName = groupName.Text;
+        }
+
+       
     }
 }

@@ -38,11 +38,11 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpGroup = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupIDTB = new System.Windows.Forms.TextBox();
             this.lblYGroup = new System.Windows.Forms.Label();
             this.lblCode = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupSizeTB = new System.Windows.Forms.TextBox();
+            this.groupName = new System.Windows.Forms.TextBox();
             this.lblSize = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,11 +147,11 @@
             // 
             // grpGroup
             // 
-            this.grpGroup.Controls.Add(this.textBox1);
+            this.grpGroup.Controls.Add(this.groupIDTB);
             this.grpGroup.Controls.Add(this.lblYGroup);
             this.grpGroup.Controls.Add(this.lblCode);
-            this.grpGroup.Controls.Add(this.textBox3);
-            this.grpGroup.Controls.Add(this.textBox2);
+            this.grpGroup.Controls.Add(this.groupSizeTB);
+            this.grpGroup.Controls.Add(this.groupName);
             this.grpGroup.Controls.Add(this.lblSize);
             this.grpGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpGroup.Location = new System.Drawing.Point(23, 232);
@@ -162,12 +162,13 @@
             this.grpGroup.Text = "Module Input";
             this.grpGroup.Enter += new System.EventHandler(this.grpGroup_Enter);
             // 
-            // textBox1
+            // groupIDTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 26);
-            this.textBox1.TabIndex = 3;
+            this.groupIDTB.Location = new System.Drawing.Point(275, 39);
+            this.groupIDTB.Name = "groupIDTB";
+            this.groupIDTB.Size = new System.Drawing.Size(182, 26);
+            this.groupIDTB.TabIndex = 3;
+            this.groupIDTB.TextChanged += new System.EventHandler(this.groupIDTB_TextChanged);
             // 
             // lblYGroup
             // 
@@ -175,9 +176,9 @@
             this.lblYGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblYGroup.Location = new System.Drawing.Point(31, 42);
             this.lblYGroup.Name = "lblYGroup";
-            this.lblYGroup.Size = new System.Drawing.Size(75, 18);
+            this.lblYGroup.Size = new System.Drawing.Size(91, 18);
             this.lblYGroup.TabIndex = 0;
-            this.lblYGroup.Text = "Year Group";
+            this.lblYGroup.Text = "Year Group ID";
             // 
             // lblCode
             // 
@@ -185,23 +186,24 @@
             this.lblCode.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCode.Location = new System.Drawing.Point(28, 193);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(78, 18);
+            this.lblCode.Size = new System.Drawing.Size(74, 18);
             this.lblCode.TabIndex = 2;
-            this.lblCode.Text = "Cours Code";
+            this.lblCode.Text = "Group Size";
             // 
-            // textBox3
+            // groupSizeTB
             // 
-            this.textBox3.Location = new System.Drawing.Point(275, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 26);
-            this.textBox3.TabIndex = 5;
+            this.groupSizeTB.Location = new System.Drawing.Point(275, 190);
+            this.groupSizeTB.Name = "groupSizeTB";
+            this.groupSizeTB.Size = new System.Drawing.Size(182, 26);
+            this.groupSizeTB.TabIndex = 5;
             // 
-            // textBox2
+            // groupName
             // 
-            this.textBox2.Location = new System.Drawing.Point(275, 112);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 26);
-            this.textBox2.TabIndex = 4;
+            this.groupName.Location = new System.Drawing.Point(275, 112);
+            this.groupName.Name = "groupName";
+            this.groupName.Size = new System.Drawing.Size(182, 26);
+            this.groupName.TabIndex = 4;
+            this.groupName.TextChanged += new System.EventHandler(this.groupName_TextChanged);
             // 
             // lblSize
             // 
@@ -209,9 +211,9 @@
             this.lblSize.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSize.Location = new System.Drawing.Point(28, 115);
             this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(74, 18);
+            this.lblSize.Size = new System.Drawing.Size(86, 18);
             this.lblSize.TabIndex = 1;
-            this.lblSize.Text = "Group Size";
+            this.lblSize.Text = "Group Name";
             // 
             // menuStrip1
             // 
@@ -463,11 +465,11 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpGroup;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox groupIDTB;
         private System.Windows.Forms.Label lblYGroup;
         private System.Windows.Forms.Label lblCode;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox groupSizeTB;
+        private System.Windows.Forms.TextBox groupName;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

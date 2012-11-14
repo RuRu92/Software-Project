@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lecturer));
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Hours = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -69,38 +67,20 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timetableseDataSet = new Project.timetableseDataSet();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lecturerTableAdapter = new Project.timetableseDataSetTableAdapters.lecturerTableAdapter();
+            this.LectuerTableDis = new System.Windows.Forms.DataGridView();
+            this.idLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LectuerTableDis)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
-            this.ID,
-            this.Hours});
-            this.listView1.Location = new System.Drawing.Point(23, 39);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(491, 176);
-            this.listView1.TabIndex = 21;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // Name
-            // 
-            this.Name.Text = "Name";
-            this.Name.Width = 141;
-            // 
-            // ID
-            // 
-            this.ID.Text = "Staff ID";
-            this.ID.Width = 163;
-            // 
-            // Hours
-            // 
-            this.Hours.Text = "Teaching hours";
-            this.Hours.Width = 182;
             // 
             // btnDelete
             // 
@@ -138,6 +118,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // grpGroup
             // 
@@ -150,7 +131,7 @@
             this.grpGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpGroup.Location = new System.Drawing.Point(23, 232);
             this.grpGroup.Name = "grpGroup";
-            this.grpGroup.Size = new System.Drawing.Size(491, 251);
+            this.grpGroup.Size = new System.Drawing.Size(549, 251);
             this.grpGroup.TabIndex = 20;
             this.grpGroup.TabStop = false;
             this.grpGroup.Text = "Lecturer Input";
@@ -219,7 +200,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(537, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(605, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -402,13 +383,77 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // timetableseDataSet
+            // 
+            this.timetableseDataSet.DataSetName = "timetableseDataSet";
+            this.timetableseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "lecturer";
+            this.lecturerBindingSource.DataSource = this.timetableseDataSet;
+            // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // LectuerTableDis
+            // 
+            this.LectuerTableDis.AllowUserToOrderColumns = true;
+            this.LectuerTableDis.AutoGenerateColumns = false;
+            this.LectuerTableDis.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.LectuerTableDis.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idLecturerDataGridViewTextBoxColumn,
+            this.lecturerNameDataGridViewTextBoxColumn,
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn,
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn});
+            this.LectuerTableDis.DataSource = this.lecturerBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LectuerTableDis.DefaultCellStyle = dataGridViewCellStyle1;
+            this.LectuerTableDis.Location = new System.Drawing.Point(23, 39);
+            this.LectuerTableDis.MaximumSize = new System.Drawing.Size(549, 187);
+            this.LectuerTableDis.MinimumSize = new System.Drawing.Size(549, 187);
+            this.LectuerTableDis.Name = "LectuerTableDis";
+            this.LectuerTableDis.Size = new System.Drawing.Size(549, 187);
+            this.LectuerTableDis.TabIndex = 23;
+            // 
+            // idLecturerDataGridViewTextBoxColumn
+            // 
+            this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
+            this.idLecturerDataGridViewTextBoxColumn.HeaderText = "idLecturer";
+            this.idLecturerDataGridViewTextBoxColumn.Name = "idLecturerDataGridViewTextBoxColumn";
+            // 
+            // lecturerNameDataGridViewTextBoxColumn
+            // 
+            this.lecturerNameDataGridViewTextBoxColumn.DataPropertyName = "lecturerName";
+            this.lecturerNameDataGridViewTextBoxColumn.HeaderText = "lecturerName";
+            this.lecturerNameDataGridViewTextBoxColumn.Name = "lecturerNameDataGridViewTextBoxColumn";
+            // 
+            // lecturerRequiredHoursDataGridViewTextBoxColumn
+            // 
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerRequiredHours";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.HeaderText = "lecturerRequiredHours";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Name = "lecturerRequiredHoursDataGridViewTextBoxColumn";
+            // 
+            // lecturerTaughtHoursDataGridViewTextBoxColumn
+            // 
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerTaughtHours";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.HeaderText = "lecturerTaughtHours";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
+            // 
             // Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(537, 569);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(605, 569);
+            this.Controls.Add(this.LectuerTableDis);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
@@ -417,12 +462,16 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Name = "Lecturer";
             this.Text = "Lecturer";
             this.Load += new System.EventHandler(this.Lecturer_Load);
             this.grpGroup.ResumeLayout(false);
             this.grpGroup.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LectuerTableDis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,10 +479,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Name;
-        private System.Windows.Forms.ColumnHeader ID;
-        private System.Windows.Forms.ColumnHeader Hours;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBack;
@@ -470,6 +515,14 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private timetableseDataSet timetableseDataSet;
+        private System.Windows.Forms.BindingSource lecturerBindingSource;
+        private timetableseDataSetTableAdapters.lecturerTableAdapter lecturerTableAdapter;
+        private System.Windows.Forms.DataGridView LectuerTableDis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLecturerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lecturerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lecturerRequiredHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lecturerTaughtHoursDataGridViewTextBoxColumn;
 
     }
 }

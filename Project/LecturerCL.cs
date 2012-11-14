@@ -32,5 +32,7 @@ namespace Project
         public int ReqTeachingHrs { get {return m_requiedTeachingHrs ;} set {m_requiedTeachingHrs = value ;} }
 
         public int TeachingHrs { get { return m_teachingHrs ;} set {m_teachingHrs = value ;} }
+
+        
     }
 }

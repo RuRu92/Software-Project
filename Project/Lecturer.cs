@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Project
 {
@@ -15,20 +17,19 @@ namespace Project
         public Lecturer()
         {
             InitializeComponent();
-            
-            
+
+
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Lecturer_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'timetableseDataSet.lecturer' table. You can move, or remove it, as needed.
+            this.lecturerTableAdapter.Fill(this.timetableseDataSet.lecturer);
 
-            
+
         }
 
         private void lectName_TextChanged(object sender, EventArgs e)
@@ -58,9 +59,9 @@ namespace Project
             // in this case it is the teaching hours that are  passed  in.
             int num;
             bool flag = int.TryParse(teachingHrs.Text, out num);
-            if(flag)
+            if (flag)
                 lectClass.TeachingHrs = num;
-            
+
 
         }
 
@@ -68,7 +69,32 @@ namespace Project
         {
             Lecturer lectfrom = new Lecturer();
             this.Close();
-           
+
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+              
+           
+            DBconnector dbc = new DBconnector();
+            dbc.Insert();
+            //List<string>[] stuff = dbc.Select();
+            //List<string> record;
+            //String line = "";
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    record = stuff[i];
+            //    string[] x = record.ToArray();
+            //    line += x[3];
+            //}
+
+            //MessageBox.Show(line);
+            
+
+        }
+
+       
+
+       
     }
 }
