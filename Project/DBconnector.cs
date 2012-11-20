@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 namespace Project
 {
     class DBconnector
@@ -25,17 +26,15 @@ namespace Project
     private void Initialize()
     {
         //connects to the localy hosted data base 
-        server = "172.30.17.100";
+        server = "127.0.0.1";
         database = "timetablese";
         uid = "root";
-        password = "root";
+        password = "mysql";
         string connectionString;
         connectionString = "SERVER=" + server + ";" + "DATABASE=" + 
 		database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
         // cerates a new connection to the database
         connection = new MySqlConnection(connectionString);
-       
-
     }
 
     //Select statement for the lectuer
