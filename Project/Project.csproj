@@ -48,6 +48,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBconnector.cs" />
+    <Compile Include="TimeTableDBLect.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeTableDBLect.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TimetableDBModule.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimetableDBModule.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TimetableDBYearGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimetableDBYearGroup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TimetableDTYearGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimetableDTYearGroup.xsd</DependentUpon>
+    </Compile>
     <Compile Include="timetableseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,6 +141,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TimeTableDBLect.xsc">
+      <DependentUpon>TimeTableDBLect.xsd</DependentUpon>
+    </None>
+    <None Include="TimeTableDBLect.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimeTableDBLect.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimeTableDBLect.xss">
+      <DependentUpon>TimeTableDBLect.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDBModule.xsc">
+      <DependentUpon>TimetableDBModule.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDBModule.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimetableDBModule.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimetableDBModule.xss">
+      <DependentUpon>TimetableDBModule.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDBYearGroup.xsc">
+      <DependentUpon>TimetableDBYearGroup.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDBYearGroup.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimetableDBYearGroup.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimetableDBYearGroup.xss">
+      <DependentUpon>TimetableDBYearGroup.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDTYearGroup.xsc">
+      <DependentUpon>TimetableDTYearGroup.xsd</DependentUpon>
+    </None>
+    <None Include="TimetableDTYearGroup.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TimetableDTYearGroup.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TimetableDTYearGroup.xss">
+      <DependentUpon>TimetableDTYearGroup.xsd</DependentUpon>
+    </None>
     <None Include="timetableseDataSet.xsc">
       <DependentUpon>timetableseDataSet.xsd</DependentUpon>
     </None>

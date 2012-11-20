@@ -12,8 +12,8 @@ namespace Project
         String  m_lectuerName;
         Int32   m_requiedTeachingHrs;
         Int32   m_teachingHrs;
-
-        public LecturerCL()
+        
+        public LecturerCL(int lectID, string lectName, int TeachingHrs,int ReqTeachingHrs)
         {
             m_lectuerID = LectID;
             m_lectuerName = lectName;
@@ -33,6 +33,6 @@ namespace Project
 
         public int TeachingHrs { get { return m_teachingHrs ;} set {m_teachingHrs = value ;} }
 
-        
+      
     }
 }

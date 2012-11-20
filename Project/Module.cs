@@ -19,7 +19,10 @@ namespace Project
 
         private void Module_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'timetableDBModule.module' table. You can move, or remove it, as needed.
+            this.moduleTableAdapter.Fill(this.timetableDBModule.module);
+           
+           
         }
 
        
@@ -31,36 +34,40 @@ namespace Project
 
         private void modName_TextChanged(object sender, EventArgs e)
         {
-            ModuleCL modClass = new ModuleCL();
-            modClass.ModuleName = modName.Text;
+            
         }
 
         private void modcode_TextChanged(object sender, EventArgs e)
         {
-            ModuleCL modClass = new ModuleCL();
-          
-            // this small bool that allows an int to be passed into a text box 
-            // in this case it is the module code that are  passed  in.
-            int num;
-            bool flag = int.TryParse(modcode.Text, out num);
-            if (flag)
-                modClass.ModuleCode = num;
+            
         }
 
         private void modTeachingHrs_TextChanged(object sender, EventArgs e)
         {
-            ModuleCL modClass = new ModuleCL();
-            // this bool  allows the text box to pass in interges  
-            int num;
-            bool flag = int.TryParse(modTeachingHrs.Text, out num);
-            if (flag)
-                modClass.ModHrs = num;
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             Module modfrom = new Module();
             this.Close();
+           
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            //TODO: Validate Data
+           // adds the lectuer information form the text boxes to the  databases and up dates it 
+            DBconnector dbc = new DBconnector();
+
+            dbc.insertMOD(new ModuleCL(0, txtModName.Text, int.Parse(txtModTeachingHrs.Text), int.Parse(txtReqTeachHrs.Text)));
+            this.moduleTableAdapter.Fill(this.timetableDBModule.module);
+            MessageBox.Show("module information added");
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
            
         }
 

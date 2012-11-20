@@ -17,56 +17,32 @@ namespace Project
         public Lecturer()
         {
             InitializeComponent();
-
-
-
         }
-
-        
 
         private void Lecturer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timetableseDataSet.lecturer' table. You can move, or remove it, as needed.
-            this.lecturerTableAdapter.Fill(this.timetableseDataSet.lecturer);
+            // TODO: This line of code loads data into the 'timeTableDBLect.lecturer' table. You can move, or remove it, as needed.
+            this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
+            
 
 
         }
 
         private void lectName_TextChanged(object sender, EventArgs e)
         {
-            LecturerCL lectClass = new LecturerCL();
-            lectClass.lectName = lectName.Text;
+            //LecturerCL lectClass = new LecturerCL();
+            //lectClass.lectName = lectName.Text;
 
         }
-
-        private void staffID_TextChanged(object sender, EventArgs e)
-        {
-
-            LecturerCL lectClass = new LecturerCL();
-            // this small bool that allows an int to be passed into a text box 
-            // in this case it is the Staff ID that are  passed  in.
-            int num;
-            bool flag = int.TryParse(staffID.Text, out num);
-            if (flag)
-                lectClass.LectID = num;
-
-        }
-
+       
         private void teachingHrs_TextChanged(object sender, EventArgs e)
         {
-            LecturerCL lectClass = new LecturerCL();
-            // this small bool that allows an int to be passed into a text box 
-            // in this case it is the teaching hours that are  passed  in.
-            int num;
-            bool flag = int.TryParse(teachingHrs.Text, out num);
-            if (flag)
-                lectClass.TeachingHrs = num;
-
-
+            // this text box is were the teaching hours are enterd on the form
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            // close the from after crateing it 
             Lecturer lectfrom = new Lecturer();
             this.Close();
 
@@ -74,27 +50,19 @@ namespace Project
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-              
-           
             DBconnector dbc = new DBconnector();
-            dbc.Insert();
-            //List<string>[] stuff = dbc.Select();
-            //List<string> record;
-            //String line = "";
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    record = stuff[i];
-            //    string[] x = record.ToArray();
-            //    line += x[3];
-            //}
 
-            //MessageBox.Show(line);
-            
+            //TODO: Validate Data
+            // adds the lectuer information form the text boxes to the  databases and up dates it 
+            dbc.InsertLect(new LecturerCL(0, txtLectName.Text, int.Parse(txtTeachingHrs.Text), int.Parse(txtReqHrs.Text)));
+            this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
+            MessageBox.Show("lectuer information added");
 
         }
 
-       
-
-       
+        private void txtReqHrs_TextChanged(object sender, EventArgs e)
+        {
+            // this text box is where the requied teaching hours are inputed on the form
+        }
     }
 }

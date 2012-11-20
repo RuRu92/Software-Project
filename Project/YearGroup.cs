@@ -19,6 +19,10 @@ namespace Project
 
         private void YearGroup_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'timetableDTYearGroup.yeargroup' table. You can move, or remove it, as needed.
+            this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
+            
+           
 
         }
 
@@ -44,7 +48,11 @@ namespace Project
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            DBconnector dbc = new DBconnector();
+            dbc.insertYG(new YearGroupCL(0, txtGroupName.Text, int.Parse(txtGroupSizeTB.Text)));
+            this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
+            MessageBox.Show(" year group information added");
+            
         }
 
         private void grpGroup_Enter(object sender, EventArgs e)
@@ -52,26 +60,21 @@ namespace Project
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void txtgroupIDTB_TextChanged(object sender, EventArgs e)
         {
+            
 
         }
 
-        private void groupIDTB_TextChanged(object sender, EventArgs e)
+        private void txtGroupName_TextChanged(object sender, EventArgs e)
         {
-            YearGroupCL yearGClass = new YearGroupCL();
-
-            int num;
-            bool flag = int.TryParse(groupIDTB.Text, out num);
-            if (flag)
-                yearGClass.YearGroupID = num;
-
+            
         }
 
-        private void groupName_TextChanged(object sender, EventArgs e)
+        private void txtGroupSizeTB_TextChanged(object sender, EventArgs e)
         {
-            YearGroupCL yearGClass = new YearGroupCL();
-            yearGClass.YearGropName = groupName.Text;
+
         }
 
        

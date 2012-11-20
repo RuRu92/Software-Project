@@ -11,12 +11,14 @@ namespace Project
         Int32 m_moduleID;
         String m_moduleName;
         Int32 m_moduleHours;
+        Int32 m_reqModuleHours;
 
-        public ModuleCL()
+        public ModuleCL(int IDModule, string ModuleName, int ModHrs, int RepModHRS )
         {
-            m_moduleID = ModuleCode;
+            m_moduleID = ModuleID;
             m_moduleName = ModuleName;
             m_moduleHours = ModHrs;
+            m_reqModuleHours = ReqModHRS;
         }
 
 
@@ -24,6 +26,8 @@ namespace Project
 
         public string ModuleName { get {return m_moduleName ;} set {m_moduleName = value ;} }
 
-        public int ModuleCode { get {return m_moduleID ;} set { m_moduleID = value ;} }
+        public int ModuleID{ get {return m_moduleID ;} set { m_moduleID = value ;} }
+
+        public int ReqModHRS { get { return m_reqModuleHours; } set {m_reqModuleHours = value ;} }
     }
 }

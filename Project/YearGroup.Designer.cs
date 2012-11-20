@@ -28,21 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YearGroup));
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.YGroup = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.grpGroup = new System.Windows.Forms.GroupBox();
-            this.groupIDTB = new System.Windows.Forms.TextBox();
-            this.lblYGroup = new System.Windows.Forms.Label();
             this.lblCode = new System.Windows.Forms.Label();
-            this.groupSizeTB = new System.Windows.Forms.TextBox();
-            this.groupName = new System.Windows.Forms.TextBox();
+            this.txtGroupSizeTB = new System.Windows.Forms.TextBox();
+            this.txtGroupName = new System.Windows.Forms.TextBox();
             this.lblSize = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,38 +67,25 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.yeargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableDBYearGroup = new Project.TimetableDBYearGroup();
+            this.timetableDBYearGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableDTYearGroup = new Project.TimetableDTYearGroup();
+            this.yeargroupBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.yeargroupTableAdapter = new Project.TimetableDTYearGroupTableAdapters.yeargroupTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.YGroup,
-            this.Size,
-            this.CCode});
-            this.listView1.Location = new System.Drawing.Point(23, 39);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(491, 176);
-            this.listView1.TabIndex = 21;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
-            // YGroup
-            // 
-            this.YGroup.Text = "Year Group";
-            this.YGroup.Width = 141;
-            // 
-            // Size
-            // 
-            this.Size.Text = "Group Size";
-            this.Size.Width = 163;
-            // 
-            // CCode
-            // 
-            this.CCode.Text = "Course Code";
-            this.CCode.Width = 182;
             // 
             // btnDelete
             // 
@@ -147,11 +129,9 @@
             // 
             // grpGroup
             // 
-            this.grpGroup.Controls.Add(this.groupIDTB);
-            this.grpGroup.Controls.Add(this.lblYGroup);
             this.grpGroup.Controls.Add(this.lblCode);
-            this.grpGroup.Controls.Add(this.groupSizeTB);
-            this.grpGroup.Controls.Add(this.groupName);
+            this.grpGroup.Controls.Add(this.txtGroupSizeTB);
+            this.grpGroup.Controls.Add(this.txtGroupName);
             this.grpGroup.Controls.Add(this.lblSize);
             this.grpGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpGroup.Location = new System.Drawing.Point(23, 232);
@@ -162,54 +142,37 @@
             this.grpGroup.Text = "Module Input";
             this.grpGroup.Enter += new System.EventHandler(this.grpGroup_Enter);
             // 
-            // groupIDTB
-            // 
-            this.groupIDTB.Location = new System.Drawing.Point(275, 39);
-            this.groupIDTB.Name = "groupIDTB";
-            this.groupIDTB.Size = new System.Drawing.Size(182, 26);
-            this.groupIDTB.TabIndex = 3;
-            this.groupIDTB.TextChanged += new System.EventHandler(this.groupIDTB_TextChanged);
-            // 
-            // lblYGroup
-            // 
-            this.lblYGroup.AutoSize = true;
-            this.lblYGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYGroup.Location = new System.Drawing.Point(31, 42);
-            this.lblYGroup.Name = "lblYGroup";
-            this.lblYGroup.Size = new System.Drawing.Size(91, 18);
-            this.lblYGroup.TabIndex = 0;
-            this.lblYGroup.Text = "Year Group ID";
-            // 
             // lblCode
             // 
             this.lblCode.AutoSize = true;
             this.lblCode.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCode.Location = new System.Drawing.Point(28, 193);
+            this.lblCode.Location = new System.Drawing.Point(74, 149);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(74, 18);
             this.lblCode.TabIndex = 2;
             this.lblCode.Text = "Group Size";
             // 
-            // groupSizeTB
+            // txtGroupSizeTB
             // 
-            this.groupSizeTB.Location = new System.Drawing.Point(275, 190);
-            this.groupSizeTB.Name = "groupSizeTB";
-            this.groupSizeTB.Size = new System.Drawing.Size(182, 26);
-            this.groupSizeTB.TabIndex = 5;
+            this.txtGroupSizeTB.Location = new System.Drawing.Point(275, 146);
+            this.txtGroupSizeTB.Name = "txtGroupSizeTB";
+            this.txtGroupSizeTB.Size = new System.Drawing.Size(182, 26);
+            this.txtGroupSizeTB.TabIndex = 5;
+            this.txtGroupSizeTB.TextChanged += new System.EventHandler(this.txtGroupSizeTB_TextChanged);
             // 
-            // groupName
+            // txtGroupName
             // 
-            this.groupName.Location = new System.Drawing.Point(275, 112);
-            this.groupName.Name = "groupName";
-            this.groupName.Size = new System.Drawing.Size(182, 26);
-            this.groupName.TabIndex = 4;
-            this.groupName.TextChanged += new System.EventHandler(this.groupName_TextChanged);
+            this.txtGroupName.Location = new System.Drawing.Point(275, 60);
+            this.txtGroupName.Name = "txtGroupName";
+            this.txtGroupName.Size = new System.Drawing.Size(182, 26);
+            this.txtGroupName.TabIndex = 4;
+            this.txtGroupName.TextChanged += new System.EventHandler(this.txtGroupName_TextChanged);
             // 
             // lblSize
             // 
             this.lblSize.AutoSize = true;
             this.lblSize.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSize.Location = new System.Drawing.Point(28, 115);
+            this.lblSize.Location = new System.Drawing.Point(74, 68);
             this.lblSize.Name = "lblSize";
             this.lblSize.Size = new System.Drawing.Size(86, 18);
             this.lblSize.TabIndex = 1;
@@ -429,12 +392,72 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.dataGridView1.DataSource = this.yeargroupBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(491, 150);
+            this.dataGridView1.TabIndex = 23;
+            // 
+            // yeargroupBindingSource
+            // 
+            this.yeargroupBindingSource.DataMember = "yeargroup";
+            // 
+            // timetableDBYearGroup
+            // 
+            this.timetableDBYearGroup.DataSetName = "TimetableDBYearGroup";
+            this.timetableDBYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // timetableDBYearGroupBindingSource
+            // 
+            this.timetableDBYearGroupBindingSource.DataSource = this.timetableDBYearGroup;
+            this.timetableDBYearGroupBindingSource.Position = 0;
+            // 
+            // timetableDTYearGroup
+            // 
+            this.timetableDTYearGroup.DataSetName = "TimetableDTYearGroup";
+            this.timetableDTYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // yeargroupBindingSource1
+            // 
+            this.yeargroupBindingSource1.DataMember = "yeargroup";
+            this.yeargroupBindingSource1.DataSource = this.timetableDTYearGroup;
+            // 
+            // yeargroupTableAdapter
+            // 
+            this.yeargroupTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idYearGroup";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idYearGroup";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "yearGroupName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "yearGroupName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "noStudents";
+            this.dataGridViewTextBoxColumn3.HeaderText = "noStudents";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // YearGroup
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(537, 569);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
@@ -449,6 +472,12 @@
             this.grpGroup.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,20 +485,14 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader YGroup;
-        private System.Windows.Forms.ColumnHeader Size;
-        private System.Windows.Forms.ColumnHeader CCode;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox grpGroup;
-        private System.Windows.Forms.TextBox groupIDTB;
-        private System.Windows.Forms.Label lblYGroup;
         private System.Windows.Forms.Label lblCode;
-        private System.Windows.Forms.TextBox groupSizeTB;
-        private System.Windows.Forms.TextBox groupName;
+        private System.Windows.Forms.TextBox txtGroupSizeTB;
+        private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -499,6 +522,21 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        
+        private System.Windows.Forms.BindingSource yeargroupBindingSource;
+       
+        private System.Windows.Forms.DataGridViewTextBoxColumn idYearGroupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noStudentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource timetableDBYearGroupBindingSource;
+        private TimetableDBYearGroup timetableDBYearGroup;
+        private TimetableDTYearGroup timetableDTYearGroup;
+        private System.Windows.Forms.BindingSource yeargroupBindingSource1;
+        private TimetableDTYearGroupTableAdapters.yeargroupTableAdapter yeargroupTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
 
     }
 }
