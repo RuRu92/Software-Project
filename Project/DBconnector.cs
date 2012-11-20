@@ -25,7 +25,7 @@ namespace Project
     private void Initialize()
     {
         //connects to the localy hosted data base 
-        server = "localhost";
+        server = "172.30.17.100";
         database = "timetablese";
         uid = "root";
         password = "root";

@@ -13,7 +13,7 @@ namespace Project
         Int32 m_moduleHours;
         Int32 m_reqModuleHours;
 
-        public ModuleCL(int IDModule, string ModuleName, int ModHrs, int RepModHRS )
+        public ModuleCL(int IDModule, string ModuleName, int ModHrs, int ReqModHRS )
         {
             m_moduleID = ModuleID;
             m_moduleName = ModuleName;
