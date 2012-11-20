@@ -110,9 +110,10 @@
             this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(33, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 18);
+            this.label2.Size = new System.Drawing.Size(104, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Module Code";
+            this.label2.Text = "Required Hours";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbl
             // 

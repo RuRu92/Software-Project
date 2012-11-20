@@ -134,7 +134,8 @@ namespace Project
     }
     public void insertYG(YearGroupCL YG)
     {
-        string queryYG = "INSERT INTO yeargroup (yearGroupName, noStudents) VALUE('" + YG.YearGropName + "','" + YG.NumStudents  +"')";
+        string queryYG = "INSERT INTO yeargroup (yearGroupName, noStudents) VALUE('" + YG.YearGropName + "','" 
+        + YG.NumStudents  +"')";
         //open connection
         if (this.OpenConnection() == true)
         {
@@ -150,14 +151,14 @@ namespace Project
     }
     public List<ModuleCL> SeclectMod()
     {
-        string queryMod = "SELECT * FROM module";
+        string query = "SELECT * FROM module";
         List<ModuleCL> allMod = new List<ModuleCL>();
 
         //Open connection
         if (this.OpenConnection() == true)
         {
             //Create Command
-            MySqlCommand cmd = new MySqlCommand(queryMod, connection);
+            MySqlCommand cmd = new MySqlCommand(query, connection);
             //Create a data reader and Execute the command
             MySqlDataReader dataReader = cmd.ExecuteReader();
 
@@ -181,6 +182,24 @@ namespace Project
         return allMod;
     }
 
+    public void insertMOD(ModuleCL Mod)
+    {
+        string qureyMod = "INSERT INTO module(moduleName, moduleRequiredHours ,moduleTaughtHours ) VALUE('" + Mod.ModuleName + "','"
+        + Mod.ReqModHRS+"','"+ Mod.ModHrs+ "')";
+
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(qureyMod, connection);
+            //NOTE!! throws  exaption as to the  defluat data
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+
+    }
     //open connection to database
     private bool OpenConnection()
     {
@@ -209,23 +228,7 @@ namespace Project
             return false;
         }
     }
-    public void insertMOD(ModuleCL Mod)
-    {
-        string qureyMod = "INSERT INTO module(moduleName, moduleTaughtHours) VALUE('" + Mod.ModuleName + "','" + Mod.ModHrs+"' '" + Mod.ReqModHRS + "')";
-
-        if (this.OpenConnection() == true)
-        {
-            //create command and assign the query and connection from the constructor
-            MySqlCommand cmd = new MySqlCommand(qureyMod, connection);
-            //NOTE!! throws  exaption as to the  defluat data
-            //Execute command
-            cmd.ExecuteNonQuery();
-
-            //close connection
-            this.CloseConnection();
-        }
-
-    }
+    
 
     //Close connection
     private bool CloseConnection()
