@@ -64,5 +64,18 @@ namespace Project
         {
             // this text box is where the requied teaching hours are inputed on the form
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewLect.SelectedRows.Count > 0)
+            {   
+                int id = (int)this.dataGridViewLect.SelectedRows[0].Cells[0].Value;
+                DBconnector db = new DBconnector();
+                db.DeleteLect(id);
+                this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
+                
+            }
+            
+        }
     }
 }

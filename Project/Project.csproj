@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RoomCL.cs" />
     <Compile Include="DBconnector.cs" />
     <Compile Include="TimeTableDBLect.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -74,10 +73,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>timetableseDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="timetableseDataSetRoom.Designer.cs">
+    <Compile Include="timetableseDataSetRoom1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>timetableseDataSetRoom.xsd</DependentUpon>
+      <DependentUpon>timetableseDataSetRoom1.xsd</DependentUpon>
     </Compile>
     <Compile Include="YearGroupCL.cs" />
     <Compile Include="ModuleCL.cs" />
@@ -202,16 +201,16 @@
     <None Include="timetableseDataSet.xss">
       <DependentUpon>timetableseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="timetableseDataSetRoom.xsc">
-      <DependentUpon>timetableseDataSetRoom.xsd</DependentUpon>
+    <None Include="timetableseDataSetRoom1.xsc">
+      <DependentUpon>timetableseDataSetRoom1.xsd</DependentUpon>
     </None>
-    <None Include="timetableseDataSetRoom.xsd">
+    <None Include="timetableseDataSetRoom1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>timetableseDataSetRoom.Designer.cs</LastGenOutput>
+      <LastGenOutput>timetableseDataSetRoom1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="timetableseDataSetRoom.xss">
-      <DependentUpon>timetableseDataSetRoom.xsd</DependentUpon>
+    <None Include="timetableseDataSetRoom1.xss">
+      <DependentUpon>timetableseDataSetRoom1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

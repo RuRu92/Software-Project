@@ -72,7 +72,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timetableseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewModule = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,7 +86,7 @@
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).BeginInit();
@@ -431,20 +431,20 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // dataGridView1
+            // dataGridViewModule
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewModule.AutoGenerateColumns = false;
+            this.dataGridViewModule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewModule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dataGridView1.DataSource = this.moduleBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(491, 150);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridViewModule.DataSource = this.moduleBindingSource2;
+            this.dataGridViewModule.Location = new System.Drawing.Point(23, 56);
+            this.dataGridViewModule.Name = "dataGridViewModule";
+            this.dataGridViewModule.Size = new System.Drawing.Size(491, 150);
+            this.dataGridViewModule.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -494,7 +494,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(537, 569);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewModule);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
@@ -510,7 +510,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).EndInit();
@@ -567,7 +567,7 @@
         private System.Windows.Forms.BindingSource timetableseDataSet1BindingSource;
         
         
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewModule;
         private System.Windows.Forms.BindingSource timetableseDataSet2BindingSource;
        
         private System.Windows.Forms.BindingSource moduleBindingSource;

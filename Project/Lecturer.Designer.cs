@@ -69,21 +69,21 @@
             this.timetableseDataSet = new Project.timetableseDataSet();
             this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lecturerTableAdapter = new Project.timetableseDataSetTableAdapters.lecturerTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.timeTableDBLect = new Project.TimeTableDBLect();
-            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lecturerTableAdapter1 = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
+            this.dataGridViewLect = new System.Windows.Forms.DataGridView();
             this.idLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timeTableDBLect = new Project.TimeTableDBLect();
+            this.lecturerTableAdapter1 = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -94,6 +94,7 @@
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -401,58 +402,65 @@
             // 
             this.lecturerTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
+            // dataGridViewLect
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewLect.AllowUserToAddRows = false;
+            this.dataGridViewLect.AutoGenerateColumns = false;
+            this.dataGridViewLect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idLecturerDataGridViewTextBoxColumn,
             this.lecturerNameDataGridViewTextBoxColumn,
             this.lecturerRequiredHoursDataGridViewTextBoxColumn,
             this.lecturerTaughtHoursDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.lecturerBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(549, 150);
-            this.dataGridView1.TabIndex = 23;
-            // 
-            // timeTableDBLect
-            // 
-            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
-            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerBindingSource1
-            // 
-            this.lecturerBindingSource1.DataMember = "lecturer";
-            this.lecturerBindingSource1.DataSource = this.timeTableDBLect;
-            // 
-            // lecturerTableAdapter1
-            // 
-            this.lecturerTableAdapter1.ClearBeforeFill = true;
+            this.dataGridViewLect.DataSource = this.lecturerBindingSource1;
+            this.dataGridViewLect.Location = new System.Drawing.Point(23, 60);
+            this.dataGridViewLect.MultiSelect = false;
+            this.dataGridViewLect.Name = "dataGridViewLect";
+            this.dataGridViewLect.ReadOnly = true;
+            this.dataGridViewLect.Size = new System.Drawing.Size(549, 150);
+            this.dataGridViewLect.TabIndex = 23;
             // 
             // idLecturerDataGridViewTextBoxColumn
             // 
             this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
             this.idLecturerDataGridViewTextBoxColumn.HeaderText = "idLecturer";
             this.idLecturerDataGridViewTextBoxColumn.Name = "idLecturerDataGridViewTextBoxColumn";
+            this.idLecturerDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lecturerNameDataGridViewTextBoxColumn
             // 
             this.lecturerNameDataGridViewTextBoxColumn.DataPropertyName = "lecturerName";
             this.lecturerNameDataGridViewTextBoxColumn.HeaderText = "lecturerName";
             this.lecturerNameDataGridViewTextBoxColumn.Name = "lecturerNameDataGridViewTextBoxColumn";
+            this.lecturerNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lecturerRequiredHoursDataGridViewTextBoxColumn
             // 
             this.lecturerRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerRequiredHours";
             this.lecturerRequiredHoursDataGridViewTextBoxColumn.HeaderText = "lecturerRequiredHours";
             this.lecturerRequiredHoursDataGridViewTextBoxColumn.Name = "lecturerRequiredHoursDataGridViewTextBoxColumn";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lecturerTaughtHoursDataGridViewTextBoxColumn
             // 
             this.lecturerTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerTaughtHours";
             this.lecturerTaughtHoursDataGridViewTextBoxColumn.HeaderText = "lecturerTaughtHours";
             this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lecturerBindingSource1
+            // 
+            this.lecturerBindingSource1.DataMember = "lecturer";
+            this.lecturerBindingSource1.DataSource = this.timeTableDBLect;
+            // 
+            // timeTableDBLect
+            // 
+            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
+            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerTableAdapter1
+            // 
+            this.lecturerTableAdapter1.ClearBeforeFill = true;
             // 
             // Lecturer
             // 
@@ -460,7 +468,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(605, 569);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewLect);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
@@ -478,9 +486,9 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,7 +535,7 @@
         private timetableseDataSet timetableseDataSet;
         private System.Windows.Forms.BindingSource lecturerBindingSource;
         private timetableseDataSetTableAdapters.lecturerTableAdapter lecturerTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewLect;
         private TimeTableDBLect timeTableDBLect;
         private System.Windows.Forms.BindingSource lecturerBindingSource1;
         private TimeTableDBLectTableAdapters.lecturerTableAdapter lecturerTableAdapter1;

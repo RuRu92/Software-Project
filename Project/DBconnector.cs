@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 namespace Project
 {
     class DBconnector
@@ -35,6 +34,8 @@ namespace Project
 		database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
         // cerates a new connection to the database
         connection = new MySqlConnection(connectionString);
+       
+
     }
 
     //Select statement for the lectuer
@@ -97,6 +98,26 @@ namespace Project
             this.CloseConnection();
         }
     }
+    public void DeleteLect(int id) 
+    {
+
+        // query to allow data to  be placed  into the table  lectuere  on the  database from the lectuerCL class 
+        string queryLect = "DELETE FROM lecturer WHERE idLecturer = " + id + "";
+        
+        //open connection
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(queryLect, connection);
+
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+    }
+   
     public List<YearGroupCL> SeclectYearGroup()
     {
         string query = "SELECT * FROM yeargroup";
@@ -135,6 +156,25 @@ namespace Project
     {
         string queryYG = "INSERT INTO yeargroup (yearGroupName, noStudents) VALUE('" + YG.YearGropName + "','" 
         + YG.NumStudents  +"')";
+        //open connection
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(queryYG, connection);
+
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+    }
+    public void DeleteYG(int id)
+    {
+
+        // query to allow data to  be placed  into the table  lectuere  on the  database from the lectuerCL class 
+        string queryYG = "DELETE FROM yeargroup WHERE idYearGroup = " + id + "";
+
         //open connection
         if (this.OpenConnection() == true)
         {
@@ -191,6 +231,25 @@ namespace Project
             //create command and assign the query and connection from the constructor
             MySqlCommand cmd = new MySqlCommand(qureyMod, connection);
             //NOTE!! throws  exaption as to the  defluat data
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+      
+
+    } 
+   public void DeleteMod(int id)
+    {
+        string queryMod = "DELETE FROM module  WHERE idModule = "+id+"";
+
+        //open connection
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(queryMod, connection);
+
             //Execute command
             cmd.ExecuteNonQuery();
 

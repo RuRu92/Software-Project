@@ -67,18 +67,24 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtvRoom = new System.Windows.Forms.DataGridView();
-            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableDTYearGroup = new Project.TimetableDTYearGroup();
+            this.timetableDTYearGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
+            this.roomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
-            this.idRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroupRoomInfo.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -383,53 +389,67 @@
             this.dtvRoom.AutoGenerateColumns = false;
             this.dtvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idRoomDataGridViewTextBoxColumn,
-            this.roomNameDataGridViewTextBoxColumn,
-            this.roomCapacityDataGridViewTextBoxColumn,
-            this.roomTypeDataGridViewTextBoxColumn});
-            this.dtvRoom.DataSource = this.roomBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dtvRoom.DataSource = this.roomBindingSource1;
             this.dtvRoom.Location = new System.Drawing.Point(23, 36);
             this.dtvRoom.Name = "dtvRoom";
             this.dtvRoom.Size = new System.Drawing.Size(491, 190);
             this.dtvRoom.TabIndex = 23;
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataMember = "room";
+            // 
+            // timetableDTYearGroup
+            // 
+            this.timetableDTYearGroup.DataSetName = "TimetableDTYearGroup";
+            this.timetableDTYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // timetableDTYearGroupBindingSource
+            // 
+            this.timetableDTYearGroupBindingSource.DataSource = this.timetableDTYearGroup;
+            this.timetableDTYearGroupBindingSource.Position = 0;
             // 
             // timetableseDataSetRoom
             // 
             this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
             this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // roomBindingSource
+            // roomBindingSource1
             // 
-            this.roomBindingSource.DataMember = "room";
-            this.roomBindingSource.DataSource = this.timetableseDataSetRoom;
+            this.roomBindingSource1.DataMember = "room";
+            this.roomBindingSource1.DataSource = this.timetableseDataSetRoom;
             // 
             // roomTableAdapter
             // 
             this.roomTableAdapter.ClearBeforeFill = true;
             // 
-            // idRoomDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idRoomDataGridViewTextBoxColumn.DataPropertyName = "idRoom";
-            this.idRoomDataGridViewTextBoxColumn.HeaderText = "idRoom";
-            this.idRoomDataGridViewTextBoxColumn.Name = "idRoomDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idRoom";
+            this.dataGridViewTextBoxColumn1.HeaderText = "idRoom";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // roomNameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "roomName";
-            this.roomNameDataGridViewTextBoxColumn.HeaderText = "roomName";
-            this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "roomName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "roomName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // roomCapacityDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.roomCapacityDataGridViewTextBoxColumn.DataPropertyName = "roomCapacity";
-            this.roomCapacityDataGridViewTextBoxColumn.HeaderText = "roomCapacity";
-            this.roomCapacityDataGridViewTextBoxColumn.Name = "roomCapacityDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "roomCapacity";
+            this.dataGridViewTextBoxColumn3.HeaderText = "roomCapacity";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // roomTypeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "roomType";
-            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "roomType";
-            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "roomType";
+            this.dataGridViewTextBoxColumn4.HeaderText = "roomType";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // Room
             // 
@@ -453,8 +473,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -498,14 +521,21 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dtvRoom;
-        private timetableseDataSetRoom timetableseDataSetRoom;
+        private System.Windows.Forms.DataGridView dtvRoom;      
         private System.Windows.Forms.BindingSource roomBindingSource;
-        private timetableseDataSetRoomTableAdapters.roomTableAdapter roomTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRoomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomCapacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomTypeDataGridViewTextBoxColumn;
+        private TimetableDTYearGroup timetableDTYearGroup;
+        private System.Windows.Forms.BindingSource timetableDTYearGroupBindingSource;
+        private timetableseDataSetRoom timetableseDataSetRoom;
+        private System.Windows.Forms.BindingSource roomBindingSource1;
+        private timetableseDataSetRoomTableAdapters.roomTableAdapter roomTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 
     }
 }
