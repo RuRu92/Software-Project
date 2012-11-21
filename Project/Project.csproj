@@ -47,12 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompRoom.cs" />
     <Compile Include="DBconnector.cs" />
     <Compile Include="LabRoom.cs" />
     <Compile Include="LecRoom.cs" />
     <Compile Include="NetRoom.cs" />
     <Compile Include="RoomCL.cs" />
-    <Compile Include="RoomCSuite.cs" />
     <Compile Include="TimeTableDBLect.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
