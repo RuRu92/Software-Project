@@ -22,13 +22,20 @@ namespace Project
             // TODO: This line of code loads data into the 'timetableDTYearGroup.yeargroup' table. You can move, or remove it, as needed.
             this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
             
-           
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridViewYG.SelectedRows.Count > 0)
+            {
+                int id = (int)this.dataGridViewYG.SelectedRows[0].Cells[0].Value;
+                DBconnector db = new DBconnector();
+                db.DeleteYG(id);
+                this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
 
+            }
+            else
+                MessageBox.Show("record not deleted");
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

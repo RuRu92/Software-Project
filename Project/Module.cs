@@ -66,16 +66,27 @@ namespace Project
             MessageBox.Show("module information added");
 
         }
+       
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
+
+            if (dataGridViewModule.SelectedRows.Count > 0)
+            {
+                int id = (int)this.dataGridViewModule.SelectedRows[0].Cells[0].Value;
+                DBconnector db = new DBconnector();
+                db.DeleteMod(id);
+                this.moduleTableAdapter.Fill(this.timetableDBModule.module);
+                
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
+
+        
 
        
 
