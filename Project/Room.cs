@@ -21,5 +21,16 @@ namespace Project
         {
 
         }
+
+        private void Room_Load(object sender, EventArgs e)
+        {
+            DBconnector dbc = new DBconnector();
+
+            //TODO: Validate Data
+            // adds the lectuer information form the text boxes to the  databases and up dates it 
+            dbc.InsertLect(new LecturerCL(0, txtRName.Text, txtType., int.Parse(txtCap.Text));
+            this.roomTableAdapter.Fill(this.timeTableDBRoom.room);
+            MessageBox.Show("Room information added");
+        }
     }
 }
