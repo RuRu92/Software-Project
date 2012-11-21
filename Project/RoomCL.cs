@@ -8,15 +8,13 @@ namespace Project
 {
     class RoomCL
     {
-        class RoomCL
-        {
             private int m_roomId;
             private String m_rName;
             private int m_capacity;
             private String m_type;
 
             // Constructor
-            public RoomCL(int roomID, string rName, int cap, string type)
+            public RoomCL(int roomID, string rName, string type, int capacity)
             {
                 m_rName = rName;
                 m_capacity = capacity;
@@ -75,5 +73,4 @@ namespace Project
             }
         }
     }
-}
  

@@ -67,18 +67,18 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtvRoom = new System.Windows.Forms.DataGridView();
-            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
-            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
             this.idRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
+            this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
             this.grpGroupRoomInfo.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -117,6 +117,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // grpGroupRoomInfo
             // 
@@ -393,20 +394,6 @@
             this.dtvRoom.Size = new System.Drawing.Size(491, 190);
             this.dtvRoom.TabIndex = 23;
             // 
-            // timetableseDataSetRoom
-            // 
-            this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
-            this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // roomBindingSource
-            // 
-            this.roomBindingSource.DataMember = "room";
-            this.roomBindingSource.DataSource = this.timetableseDataSetRoom;
-            // 
-            // roomTableAdapter
-            // 
-            this.roomTableAdapter.ClearBeforeFill = true;
-            // 
             // idRoomDataGridViewTextBoxColumn
             // 
             this.idRoomDataGridViewTextBoxColumn.DataPropertyName = "idRoom";
@@ -431,6 +418,20 @@
             this.roomTypeDataGridViewTextBoxColumn.HeaderText = "roomType";
             this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
             // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataMember = "room";
+            this.roomBindingSource.DataSource = this.timetableseDataSetRoom;
+            // 
+            // timetableseDataSetRoom
+            // 
+            this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
+            this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roomTableAdapter
+            // 
+            this.roomTableAdapter.ClearBeforeFill = true;
+            // 
             // Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -453,8 +454,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtvRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

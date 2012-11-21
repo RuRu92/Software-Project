@@ -199,6 +199,70 @@ namespace Project
         }
 
     }
+
+    //Select statement for the lectuer
+    public List<RoomCL> SelectRoom()
+    {
+        string query = "SELECT * FROM room";
+
+        // creats a  list  of lectuer objects
+        List<RoomCL> allRoom = new List<RoomCL>();
+
+        //Open connection
+        if (this.OpenConnection() == true)
+        {
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            while (dataReader.Read())
+            {
+                // adds the  data in the columes to the class varbiles and pass them in
+                Int32 roomID = dataReader.GetInt32(0);
+                String rName = dataReader.GetString(1);
+                Int32 capacity = dataReader.GetInt32(2);
+                String type = dataReader.GetString(2);
+
+                // crates the  lectuer object  
+                RoomCL r = new RoomCL(roomID, rName, type, capacity);
+
+                // add all the curent  values to the  database
+                allRoom.Add(r);
+
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            //close Connection
+            this.CloseConnection();
+        }
+        // return all the records in the database for the lecturer
+        return allRoom;
+    }
+
+    //Insert statement for lectuer table
+    public void InsertRoom(RoomCL r)
+    {
+        // query to allow data to  be placed  into the table  lectuere  on the  database from the lectuerCL class 
+        string queryRoom = "INSERT INTO room (roomName, roomCapacity, roomTyple) VALUES('" + r.rName + "','" + r.capacity + "','" + r.type + "')";
+
+        //open connection
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(queryRoom, connection);
+
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+    }
+
     //open connection to database
     private bool OpenConnection()
     {
@@ -228,7 +292,6 @@ namespace Project
         }
     }
     
-
     //Close connection
     private bool CloseConnection()
     {
@@ -243,5 +306,6 @@ namespace Project
             return false;
         }
     }
+
   }
 }
