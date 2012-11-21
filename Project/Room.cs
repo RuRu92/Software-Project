@@ -24,13 +24,20 @@ namespace Project
 
         private void Room_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
             DBconnector dbc = new DBconnector();
 
             //TODO: Validate Data
-            // adds the lectuer information form the text boxes to the  databases and up dates it 
-            dbc.InsertLect(new LecturerCL(0, txtRName.Text, txtType., int.Parse(txtCap.Text));
+            // adds the room information form the text boxes to the  databases and up dates it 
+            dbc.InsertRoom(new RoomCL(0, txtRName.Text, txtType.Text, int.Parse(txtCap.Text)));
             this.roomTableAdapter.Fill(this.timeTableDBRoom.room);
             MessageBox.Show("Room information added");
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

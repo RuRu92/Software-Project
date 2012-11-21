@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Room));
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Rname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -69,37 +66,20 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dtvRoom = new System.Windows.Forms.DataGridView();
+            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
+            this.idRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomCapacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroupRoomInfo.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Rname,
-            this.Type,
-            this.Size});
-            this.listView1.Location = new System.Drawing.Point(23, 39);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(491, 176);
-            this.listView1.TabIndex = 21;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // Rname
-            // 
-            this.Rname.Text = "Room Name";
-            this.Rname.Width = 141;
-            // 
-            // Type
-            // 
-            this.Type.Text = "Type";
-            this.Type.Width = 163;
-            // 
-            // Size
-            // 
-            this.Size.Text = "Capacity";
-            this.Size.Width = 182;
             // 
             // btnDelete
             // 
@@ -127,6 +107,7 @@
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAdd
             // 
@@ -397,13 +378,66 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
+            // dtvRoom
+            // 
+            this.dtvRoom.AutoGenerateColumns = false;
+            this.dtvRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtvRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idRoomDataGridViewTextBoxColumn,
+            this.roomNameDataGridViewTextBoxColumn,
+            this.roomCapacityDataGridViewTextBoxColumn,
+            this.roomTypeDataGridViewTextBoxColumn});
+            this.dtvRoom.DataSource = this.roomBindingSource;
+            this.dtvRoom.Location = new System.Drawing.Point(23, 36);
+            this.dtvRoom.Name = "dtvRoom";
+            this.dtvRoom.Size = new System.Drawing.Size(491, 190);
+            this.dtvRoom.TabIndex = 23;
+            // 
+            // timetableseDataSetRoom
+            // 
+            this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
+            this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataMember = "room";
+            this.roomBindingSource.DataSource = this.timetableseDataSetRoom;
+            // 
+            // roomTableAdapter
+            // 
+            this.roomTableAdapter.ClearBeforeFill = true;
+            // 
+            // idRoomDataGridViewTextBoxColumn
+            // 
+            this.idRoomDataGridViewTextBoxColumn.DataPropertyName = "idRoom";
+            this.idRoomDataGridViewTextBoxColumn.HeaderText = "idRoom";
+            this.idRoomDataGridViewTextBoxColumn.Name = "idRoomDataGridViewTextBoxColumn";
+            // 
+            // roomNameDataGridViewTextBoxColumn
+            // 
+            this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "roomName";
+            this.roomNameDataGridViewTextBoxColumn.HeaderText = "roomName";
+            this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
+            // 
+            // roomCapacityDataGridViewTextBoxColumn
+            // 
+            this.roomCapacityDataGridViewTextBoxColumn.DataPropertyName = "roomCapacity";
+            this.roomCapacityDataGridViewTextBoxColumn.HeaderText = "roomCapacity";
+            this.roomCapacityDataGridViewTextBoxColumn.Name = "roomCapacityDataGridViewTextBoxColumn";
+            // 
+            // roomTypeDataGridViewTextBoxColumn
+            // 
+            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "roomType";
+            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "roomType";
+            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
+            // 
             // Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(537, 569);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.dtvRoom);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
@@ -418,6 +452,9 @@
             this.grpGroupRoomInfo.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtvRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,10 +462,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Rname;
-        private System.Windows.Forms.ColumnHeader Type;
-        private System.Windows.Forms.ColumnHeader Size;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnBack;
@@ -465,6 +498,14 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dtvRoom;
+        private timetableseDataSetRoom timetableseDataSetRoom;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private timetableseDataSetRoomTableAdapters.roomTableAdapter roomTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRoomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomCapacityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomTypeDataGridViewTextBoxColumn;
 
     }
 }

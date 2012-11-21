@@ -26,10 +26,10 @@ namespace Project
     private void Initialize()
     {
         //connects to the localy hosted data base 
-        server = "127.0.0.1";
+        server = "localhost";
         database = "timetablese";
         uid = "root";
-        password = "mysql";
+        password = "root";
         string connectionString;
         connectionString = "SERVER=" + server + ";" + "DATABASE=" + 
 		database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
