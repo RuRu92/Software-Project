@@ -42,7 +42,7 @@ namespace Project
             // adds the room information form the text boxes to the  databases and up dates it 
              dbc.InsertRoom(new RoomCL(0, txtRName.Text, txtType.Text, int.Parse(txtCap.Text)));
              this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
-            MessageBox.Show("Room information added");
+             MessageBox.Show("Room information added");
         }
         }
     }

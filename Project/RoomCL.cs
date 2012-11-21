@@ -11,14 +11,12 @@ namespace Project
             private int m_roomId;
             private String m_rName;
             private int m_capacity;
-            private String m_type;
 
             // Constructor
-            public RoomCL(int roomID, string rName, string type, int capacity)
+            public RoomCL(int roomID, string rName, int capacity)
             {
                 m_rName = rName;
                 m_capacity = capacity;
-                m_type = type;
                 m_roomId = roomID;
             }
 
@@ -47,17 +45,6 @@ namespace Project
                 }
             }
 
-            public String type
-            {
-                get
-                {
-                    return m_type;
-                }
-                set
-                {
-                    m_type = value;
-                }
-            }
             public int roomID
 
             {
