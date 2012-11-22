@@ -11,13 +11,16 @@ namespace Project
             private int m_roomId;
             private String m_rName;
             private int m_capacity;
+            private String m_type;
 
             // Constructor
-            public RoomCL(int roomID, string rName, int capacity)
+            public RoomCL(int roomID, string rName, string rType, int capacity)
+
             {
-                m_rName = rName;
-                m_capacity = capacity;
                 m_roomId = roomID;
+                m_rName = rName;
+                m_type = rType;
+                m_capacity = capacity;
             }
 
             // Property method to access instance varriables
@@ -57,6 +60,18 @@ namespace Project
                     m_roomId = value;
                 }
           
+            }
+            
+            public String rType
+            {
+                get
+                {
+                    return m_type;
+                }
+                set 
+                {
+                    m_type = value;
+                }
             }
         }
     }
