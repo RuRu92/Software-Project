@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>timetableseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="timetableseDataSetLesson.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>timetableseDataSetLesson.xsd</DependentUpon>
+    </Compile>
     <Compile Include="timetableseDataSetRoom1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,6 +210,17 @@
     </None>
     <None Include="timetableseDataSet.xss">
       <DependentUpon>timetableseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="timetableseDataSetLesson.xsc">
+      <DependentUpon>timetableseDataSetLesson.xsd</DependentUpon>
+    </None>
+    <None Include="timetableseDataSetLesson.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>timetableseDataSetLesson.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="timetableseDataSetLesson.xss">
+      <DependentUpon>timetableseDataSetLesson.xsd</DependentUpon>
     </None>
     <None Include="timetableseDataSetRoom1.xsc">
       <DependentUpon>timetableseDataSetRoom1.xsd</DependentUpon>
