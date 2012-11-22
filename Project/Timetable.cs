@@ -68,6 +68,8 @@ namespace Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'timetableseDataSetLesson.lesson' table. You can move, or remove it, as needed.
+            this.lessonTableAdapter.Fill(this.timetableseDataSetLesson.lesson);
 
         }
 
@@ -124,6 +126,11 @@ namespace Project
             this.Hide();
             roomForm.ShowDialog();
             this.Show();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +76,35 @@
             this.lblTime7 = new System.Windows.Forms.Label();
             this.lblTime8 = new System.Windows.Forms.Label();
             this.lblTime9 = new System.Windows.Forms.Label();
+            this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
+            this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idLessonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lessonLengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lessonDayTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomidRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleidModuleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureridLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timetableidTimetableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bntAddLesson = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tlpGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -90,7 +118,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(884, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(925, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -352,7 +380,7 @@
             this.tlpGrid.Controls.Add(this.lblTime7, 7, 0);
             this.tlpGrid.Controls.Add(this.lblTime8, 8, 0);
             this.tlpGrid.Controls.Add(this.lblTime9, 9, 0);
-            this.tlpGrid.Location = new System.Drawing.Point(12, 52);
+            this.tlpGrid.Location = new System.Drawing.Point(21, 279);
             this.tlpGrid.Name = "tlpGrid";
             this.tlpGrid.RowCount = 6;
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.71429F));
@@ -361,7 +389,7 @@
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.85714F));
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.85714F));
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.85714F));
-            this.tlpGrid.Size = new System.Drawing.Size(860, 424);
+            this.tlpGrid.Size = new System.Drawing.Size(880, 424);
             this.tlpGrid.TabIndex = 2;
             this.tlpGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_2);
             // 
@@ -371,7 +399,7 @@
             this.lblFri.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFri.Location = new System.Drawing.Point(6, 345);
             this.lblFri.Name = "lblFri";
-            this.lblFri.Size = new System.Drawing.Size(113, 76);
+            this.lblFri.Size = new System.Drawing.Size(116, 76);
             this.lblFri.TabIndex = 4;
             this.lblFri.Text = "Friday";
             this.lblFri.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -381,7 +409,7 @@
             this.lblMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMon.Location = new System.Drawing.Point(6, 49);
             this.lblMon.Name = "lblMon";
-            this.lblMon.Size = new System.Drawing.Size(113, 71);
+            this.lblMon.Size = new System.Drawing.Size(116, 71);
             this.lblMon.TabIndex = 0;
             this.lblMon.Text = "Monday";
             this.lblMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -393,7 +421,7 @@
             this.lblTue.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTue.Location = new System.Drawing.Point(6, 123);
             this.lblTue.Name = "lblTue";
-            this.lblTue.Size = new System.Drawing.Size(113, 71);
+            this.lblTue.Size = new System.Drawing.Size(116, 71);
             this.lblTue.TabIndex = 1;
             this.lblTue.Text = "Tuesday";
             this.lblTue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -404,7 +432,7 @@
             this.lblWed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblWed.Location = new System.Drawing.Point(6, 197);
             this.lblWed.Name = "lblWed";
-            this.lblWed.Size = new System.Drawing.Size(113, 71);
+            this.lblWed.Size = new System.Drawing.Size(116, 71);
             this.lblWed.TabIndex = 2;
             this.lblWed.Text = "Wednesday";
             this.lblWed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -415,14 +443,14 @@
             this.lblThu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblThu.Location = new System.Drawing.Point(6, 271);
             this.lblThu.Name = "lblThu";
-            this.lblThu.Size = new System.Drawing.Size(113, 71);
+            this.lblThu.Size = new System.Drawing.Size(116, 71);
             this.lblThu.TabIndex = 3;
             this.lblThu.Text = "Thursday";
             this.lblThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(128, 52);
+            this.panel1.Location = new System.Drawing.Point(131, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(72, 65);
             this.panel1.TabIndex = 5;
@@ -431,9 +459,9 @@
             // 
             this.lblTime1.AutoSize = true;
             this.lblTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime1.Location = new System.Drawing.Point(128, 3);
+            this.lblTime1.Location = new System.Drawing.Point(131, 3);
             this.lblTime1.Name = "lblTime1";
-            this.lblTime1.Size = new System.Drawing.Size(72, 43);
+            this.lblTime1.Size = new System.Drawing.Size(74, 43);
             this.lblTime1.TabIndex = 6;
             this.lblTime1.Text = "8:00";
             this.lblTime1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -442,9 +470,9 @@
             // 
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime2.Location = new System.Drawing.Point(209, 3);
+            this.lblTime2.Location = new System.Drawing.Point(214, 3);
             this.lblTime2.Name = "lblTime2";
-            this.lblTime2.Size = new System.Drawing.Size(72, 43);
+            this.lblTime2.Size = new System.Drawing.Size(74, 43);
             this.lblTime2.TabIndex = 7;
             this.lblTime2.Text = "09:00";
             this.lblTime2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -453,9 +481,9 @@
             // 
             this.lblTime3.AutoSize = true;
             this.lblTime3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime3.Location = new System.Drawing.Point(290, 3);
+            this.lblTime3.Location = new System.Drawing.Point(297, 3);
             this.lblTime3.Name = "lblTime3";
-            this.lblTime3.Size = new System.Drawing.Size(72, 43);
+            this.lblTime3.Size = new System.Drawing.Size(74, 43);
             this.lblTime3.TabIndex = 8;
             this.lblTime3.Text = "10:00";
             this.lblTime3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,9 +492,9 @@
             // 
             this.lblTime4.AutoSize = true;
             this.lblTime4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime4.Location = new System.Drawing.Point(371, 3);
+            this.lblTime4.Location = new System.Drawing.Point(380, 3);
             this.lblTime4.Name = "lblTime4";
-            this.lblTime4.Size = new System.Drawing.Size(72, 43);
+            this.lblTime4.Size = new System.Drawing.Size(74, 43);
             this.lblTime4.TabIndex = 9;
             this.lblTime4.Text = "11:00";
             this.lblTime4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -475,9 +503,9 @@
             // 
             this.lblTime5.AutoSize = true;
             this.lblTime5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime5.Location = new System.Drawing.Point(452, 3);
+            this.lblTime5.Location = new System.Drawing.Point(463, 3);
             this.lblTime5.Name = "lblTime5";
-            this.lblTime5.Size = new System.Drawing.Size(72, 43);
+            this.lblTime5.Size = new System.Drawing.Size(74, 43);
             this.lblTime5.TabIndex = 10;
             this.lblTime5.Text = "12:00";
             this.lblTime5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -486,9 +514,9 @@
             // 
             this.lblTime6.AutoSize = true;
             this.lblTime6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime6.Location = new System.Drawing.Point(533, 3);
+            this.lblTime6.Location = new System.Drawing.Point(546, 3);
             this.lblTime6.Name = "lblTime6";
-            this.lblTime6.Size = new System.Drawing.Size(72, 43);
+            this.lblTime6.Size = new System.Drawing.Size(74, 43);
             this.lblTime6.TabIndex = 11;
             this.lblTime6.Text = "13:00";
             this.lblTime6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -497,9 +525,9 @@
             // 
             this.lblTime7.AutoSize = true;
             this.lblTime7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime7.Location = new System.Drawing.Point(614, 3);
+            this.lblTime7.Location = new System.Drawing.Point(629, 3);
             this.lblTime7.Name = "lblTime7";
-            this.lblTime7.Size = new System.Drawing.Size(72, 43);
+            this.lblTime7.Size = new System.Drawing.Size(74, 43);
             this.lblTime7.TabIndex = 12;
             this.lblTime7.Text = "14:00";
             this.lblTime7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -508,9 +536,9 @@
             // 
             this.lblTime8.AutoSize = true;
             this.lblTime8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime8.Location = new System.Drawing.Point(695, 3);
+            this.lblTime8.Location = new System.Drawing.Point(712, 3);
             this.lblTime8.Name = "lblTime8";
-            this.lblTime8.Size = new System.Drawing.Size(72, 43);
+            this.lblTime8.Size = new System.Drawing.Size(74, 43);
             this.lblTime8.TabIndex = 13;
             this.lblTime8.Text = "15:00";
             this.lblTime8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -519,19 +547,216 @@
             // 
             this.lblTime9.AutoSize = true;
             this.lblTime9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime9.Location = new System.Drawing.Point(776, 3);
+            this.lblTime9.Location = new System.Drawing.Point(795, 3);
             this.lblTime9.Name = "lblTime9";
-            this.lblTime9.Size = new System.Drawing.Size(78, 43);
+            this.lblTime9.Size = new System.Drawing.Size(79, 43);
             this.lblTime9.TabIndex = 14;
             this.lblTime9.Text = "16:00";
             this.lblTime9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timetableseDataSetLesson
+            // 
+            this.timetableseDataSetLesson.DataSetName = "timetableseDataSetLesson";
+            this.timetableseDataSetLesson.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lessonBindingSource
+            // 
+            this.lessonBindingSource.DataMember = "lesson";
+            this.lessonBindingSource.DataSource = this.timetableseDataSetLesson;
+            // 
+            // lessonTableAdapter
+            // 
+            this.lessonTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idLessonDataGridViewTextBoxColumn,
+            this.lessonLengthDataGridViewTextBoxColumn,
+            this.lessonDayTimeDataGridViewTextBoxColumn,
+            this.roomidRoomDataGridViewTextBoxColumn,
+            this.moduleidModuleDataGridViewTextBoxColumn,
+            this.lectureridLecturerDataGridViewTextBoxColumn,
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn,
+            this.timetableidTimetableDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.lessonBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(31, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(882, 89);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // idLessonDataGridViewTextBoxColumn
+            // 
+            this.idLessonDataGridViewTextBoxColumn.DataPropertyName = "idLesson";
+            this.idLessonDataGridViewTextBoxColumn.HeaderText = "idLesson";
+            this.idLessonDataGridViewTextBoxColumn.Name = "idLessonDataGridViewTextBoxColumn";
+            // 
+            // lessonLengthDataGridViewTextBoxColumn
+            // 
+            this.lessonLengthDataGridViewTextBoxColumn.DataPropertyName = "lessonLength";
+            this.lessonLengthDataGridViewTextBoxColumn.HeaderText = "lessonLength";
+            this.lessonLengthDataGridViewTextBoxColumn.Name = "lessonLengthDataGridViewTextBoxColumn";
+            // 
+            // lessonDayTimeDataGridViewTextBoxColumn
+            // 
+            this.lessonDayTimeDataGridViewTextBoxColumn.DataPropertyName = "lessonDayTime";
+            this.lessonDayTimeDataGridViewTextBoxColumn.HeaderText = "lessonDayTime";
+            this.lessonDayTimeDataGridViewTextBoxColumn.Name = "lessonDayTimeDataGridViewTextBoxColumn";
+            // 
+            // roomidRoomDataGridViewTextBoxColumn
+            // 
+            this.roomidRoomDataGridViewTextBoxColumn.DataPropertyName = "Room_idRoom";
+            this.roomidRoomDataGridViewTextBoxColumn.HeaderText = "Room_idRoom";
+            this.roomidRoomDataGridViewTextBoxColumn.Name = "roomidRoomDataGridViewTextBoxColumn";
+            // 
+            // moduleidModuleDataGridViewTextBoxColumn
+            // 
+            this.moduleidModuleDataGridViewTextBoxColumn.DataPropertyName = "Module_idModule";
+            this.moduleidModuleDataGridViewTextBoxColumn.HeaderText = "Module_idModule";
+            this.moduleidModuleDataGridViewTextBoxColumn.Name = "moduleidModuleDataGridViewTextBoxColumn";
+            // 
+            // lectureridLecturerDataGridViewTextBoxColumn
+            // 
+            this.lectureridLecturerDataGridViewTextBoxColumn.DataPropertyName = "Lecturer_idLecturer";
+            this.lectureridLecturerDataGridViewTextBoxColumn.HeaderText = "Lecturer_idLecturer";
+            this.lectureridLecturerDataGridViewTextBoxColumn.Name = "lectureridLecturerDataGridViewTextBoxColumn";
+            // 
+            // yearGroupidYearGroupDataGridViewTextBoxColumn
+            // 
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn.DataPropertyName = "YearGroup_idYearGroup";
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn.HeaderText = "YearGroup_idYearGroup";
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn.Name = "yearGroupidYearGroupDataGridViewTextBoxColumn";
+            // 
+            // timetableidTimetableDataGridViewTextBoxColumn
+            // 
+            this.timetableidTimetableDataGridViewTextBoxColumn.DataPropertyName = "Timetable_idTimetable";
+            this.timetableidTimetableDataGridViewTextBoxColumn.HeaderText = "Timetable_idTimetable";
+            this.timetableidTimetableDataGridViewTextBoxColumn.Name = "timetableidTimetableDataGridViewTextBoxColumn";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(31, 176);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 27);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(192, 176);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 27);
+            this.comboBox2.TabIndex = 5;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(354, 176);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 27);
+            this.comboBox3.TabIndex = 6;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(510, 176);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(121, 27);
+            this.comboBox4.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Room ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(188, 154);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(76, 19);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Module ID";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(350, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 19);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Lectuer ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(506, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Year Group ID";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(654, 176);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(112, 27);
+            this.textBox1.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(650, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 19);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Timetable ID";
+            // 
+            // bntAddLesson
+            // 
+            this.bntAddLesson.Location = new System.Drawing.Point(31, 227);
+            this.bntAddLesson.Name = "bntAddLesson";
+            this.bntAddLesson.Size = new System.Drawing.Size(100, 27);
+            this.bntAddLesson.TabIndex = 14;
+            this.bntAddLesson.Text = "Add Lesson";
+            this.bntAddLesson.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(192, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 27);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Delete Lesson";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(884, 502);
+            this.ClientSize = new System.Drawing.Size(925, 703);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.bntAddLesson);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tlpGrid);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -543,6 +768,9 @@
             this.menuStrip1.PerformLayout();
             this.tlpGrid.ResumeLayout(false);
             this.tlpGrid.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,6 +824,30 @@
         private System.Windows.Forms.Label lblTime7;
         private System.Windows.Forms.Label lblTime8;
         private System.Windows.Forms.Label lblTime9;
+        private timetableseDataSetLesson timetableseDataSetLesson;
+        private System.Windows.Forms.BindingSource lessonBindingSource;
+        private timetableseDataSetLessonTableAdapters.lessonTableAdapter lessonTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLessonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lessonLengthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lessonDayTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomidRoomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moduleidModuleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lectureridLecturerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupidYearGroupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timetableidTimetableDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button bntAddLesson;
+        private System.Windows.Forms.Button button1;
     }
 }
 
