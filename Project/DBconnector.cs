@@ -282,14 +282,11 @@ namespace Project
                 Int32 roomID = dataReader.GetInt32(0);
                 String rName = dataReader.GetString(1);
                 Int32 capacity = dataReader.GetInt32(2);
-                String type = dataReader.GetString(2);
-
-                // crates the  lectuer object  
-                RoomCL r = new RoomCL(roomID, rName, type, capacity);
-
+                String rType = dataReader.GetString(2);
                 // add all the curent  values to the  database
-                allRoom.Add(r);
 
+                RoomCL r = new RoomCL(roomID, rName, rType, capacity);
+                allRoom.Add(r);
             }
 
             //close Data Reader
@@ -306,7 +303,7 @@ namespace Project
     public void InsertRoom(RoomCL r)
     {
         // query to allow data to  be placed  into the table  lectuere  on the  database from the lectuerCL class 
-        string queryRoom = "INSERT INTO room (roomName, roomCapacity, roomTyple) VALUES('" + r.rName + "','" + r.capacity + "','" + r.type + "')";
+        string queryRoom = "INSERT INTO room (roomName, roomCapacity, roomTyple) VALUES('" + r.rName + "','" + r.capacity + "','" + r.rType + "')";
 
         //open connection
         if (this.OpenConnection() == true)

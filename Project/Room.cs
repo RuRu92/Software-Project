@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Project
 {
@@ -15,7 +17,11 @@ namespace Project
         public Room()
         {
             InitializeComponent();
+            
         }
+            RoomCL room;
+
+
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
@@ -26,7 +32,36 @@ namespace Project
         {
             // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
             this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
+
+            DBconnector dbc = new DBconnector();
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM room Order by roomType", dbc);
+
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+
+            da.Fill(dt);
+
+            MySqlDataAdapter ad = new MySqlDataAdapter();
+            ad.SelectCommand = new SqlCommand("SELECT roomType FROM room", dbc);
+            ad.Fill(ds, "Problem");
+
+            dtgRoom.DataSource = dt;
+            //Biding the data with the control
+            BindingSource bs = new BindingSource();
+            bs.DataSource = ds;
+            bs.DataMember = "Problem";
+
+            DataGridView dvg = new DataGridView();
+            this.Controls.Add(dvg);
+            dvg.DataSource = bs;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbType.Items.Add(dt.Rows[i]["roomType"]);
+
+            }
         }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -40,9 +75,43 @@ namespace Project
 
             //TODO: Validate Data
             // adds the room information form the text boxes to the  databases and up dates it 
-             dbc.InsertRoom(new RoomCL(0, txtRName.Text, txtType.Text, int.Parse(txtCap.Text)));
+
+            switch (selectRoomType)
+            {
+                case LectureRoom:
+                    room = new LecRoom(roomID, rName, capacity, type);
+                    break;
+            
+                case Lab:
+                    room = new LabRoom(roomID, rName, capacity, type);
+                    break;
+
+                case Network:
+                    room = new NetRoom(roomID, rName, capacity, type);
+                    break;
+
+                case Network:
+                    room = new CompRoom(roomID, rName, capacity, type);
+                    break;
+            }
+
+             dbc.InsertRoom(room);
              this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
              MessageBox.Show("Room information added");
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
+
+
+
         }
     }
+}

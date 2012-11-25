@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompRoom.cs" />
     <Compile Include="DBconnector.cs" />
     <Compile Include="LabRoom.cs" />
     <Compile Include="LecRoom.cs" />
