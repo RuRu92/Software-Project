@@ -9,7 +9,7 @@ namespace Project
 {
     class DBconnector
     {
-     private MySqlConnection connection;
+    private MySqlConnection connection;
     private string server;
     private string database;
     private string uid;
@@ -264,7 +264,7 @@ namespace Project
     {
         string query = "SELECT * FROM room";
 
-        // creats a  list  of lectuer objects
+        // creats a  list  of room objects
         List<RoomCL> allRoom = new List<RoomCL>();
 
         //Open connection
@@ -295,15 +295,33 @@ namespace Project
             //close Connection
             this.CloseConnection();
         }
-        // return all the records in the database for the lecturer
+        // return all the records in the database for the room
         return allRoom;
     }
 
-    //Insert statement for lectuer table
+    //Insert statement for room table
     public void InsertRoom(RoomCL r)
     {
-        // query to allow data to  be placed  into the table  lectuere  on the  database from the lectuerCL class 
+        // query to allow data to  be placed  into the table  room  on the  database from the RoomCL class 
         string queryRoom = "INSERT INTO room (roomName, roomCapacity, roomTyple) VALUES('" + r.rName + "','" + r.capacity + "','" + r.rType + "')";
+
+        //open connection
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(queryRoom, connection);
+
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+    }
+
+    public void DeleteRoom(int id)
+    {
+        string queryRoom = "DELETE FROM module  WHERE idModule = " + id + "";
 
         //open connection
         if (this.OpenConnection() == true)
