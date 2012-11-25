@@ -303,7 +303,7 @@ namespace Project
     public void InsertRoom(RoomCL r)
     {
         // query to allow data to  be placed  into the table  room  on the  database from the RoomCL class 
-        string queryRoom = "INSERT INTO room (roomName, roomCapacity, roomTyple) VALUES('" + r.rName + "','" + r.capacity + "','" + r.rType + "')";
+        string queryRoom = "INSERT INTO room (roomName, roomCapacity, roomType) VALUES('" + r.rName + "','" + r.capacity + "','" + r.rType + "')";
 
         //open connection
         if (this.OpenConnection() == true)
@@ -321,13 +321,74 @@ namespace Project
 
     public void DeleteRoom(int id)
     {
-        string queryRoom = "DELETE FROM module  WHERE idModule = " + id + "";
+        string queryMod = "DELETE FROM room  WHERE idRoom = " + id + "";
 
         //open connection
         if (this.OpenConnection() == true)
         {
             //create command and assign the query and connection from the constructor
-            MySqlCommand cmd = new MySqlCommand(queryRoom, connection);
+            MySqlCommand cmd = new MySqlCommand(queryMod, connection);
+
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+    }
+
+
+    public List<LessonCL> SecletLesson()
+    {
+        string query = "SELECT * FROM lesson";
+
+        // creats a  list  of lectuer objects
+        List<LessonCL> allless = new List<LessonCL>();
+
+        //Open connection
+        if (this.OpenConnection() == true)
+        {
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                Int32 lessonID = dataReader.GetInt32(0);
+                String lessName = dataReader.GetString(1);
+                Int32 lessLenght = dataReader.GetInt32(2);
+                DateTime lessDT = dataReader.GetDateTime(3);
+
+                LessonCL less = new LessonCL(lessonID, lessName, lessLenght, lessDT);
+                allless.Add(less);
+
+            }
+            //close Data Reader
+            dataReader.Close();
+
+            //close Connectionon
+            this.CloseConnection();
+        }
+        return allless;
+    }
+
+   
+
+
+
+
+
+    public void InsertLess(LessonCL less)
+    {
+        string qureyMod = "INSERT INTO lesson(idlesson, lessonDayTime ,Room_idRoom, Module_idModule,Lecturer_idLecturer,YearGroup_idYearGroup, Timetable_idTimetable) VALUE('" + less.lessID + "','"
+        + less.lessDT +"')";
+
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(qureyMod, connection);
+            //NOTE!! throws  exaption as to the  defluat data
 
             //Execute command
             cmd.ExecuteNonQuery();

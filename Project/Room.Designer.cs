@@ -99,6 +99,7 @@
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -148,6 +149,11 @@
             // cmbType
             // 
             this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Lab Room",
+            "Network Room",
+            "Computer Room",
+            "Lexture Room"});
             this.cmbType.Location = new System.Drawing.Point(275, 117);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(182, 26);
@@ -394,6 +400,7 @@
             // 
             // dtgRoom
             // 
+            this.dtgRoom.AllowUserToAddRows = false;
             this.dtgRoom.AutoGenerateColumns = false;
             this.dtgRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
