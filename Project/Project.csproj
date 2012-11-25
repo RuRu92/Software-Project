@@ -51,6 +51,7 @@
     <Compile Include="DBconnector.cs" />
     <Compile Include="LabRoom.cs" />
     <Compile Include="LecRoom.cs" />
+    <Compile Include="LessonCL.cs" />
     <Compile Include="NetRoom.cs" />
     <Compile Include="RoomCL.cs" />
     <Compile Include="TimeTableDBLect.Designer.cs">

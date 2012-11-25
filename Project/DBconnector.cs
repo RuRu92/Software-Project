@@ -321,7 +321,66 @@ namespace Project
             this.CloseConnection();
         }
     }
+    public List<LessonCL> SecletLesson()
+    {
+        string query = "SELECT * FROM lesson";
 
+        // creats a  list  of lectuer objects
+        List<LessonCL> allless = new List<LessonCL();
+
+        //Open connection
+        if (this.OpenConnection() == true)
+        {
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            //Read the data and store them in the list
+            while (dataReader.Read())
+            {
+                // adds the  data in the columes to the class varbiles and pass them in
+                Int32 lessonID = dataReader.GetInt32(0);
+              //  String lessonName = dataReader.GetString(1);
+                Int32 lessonLenght = dataReader.GetInt32(2);
+                DateTime lessonDateTime = dataReader.GetDateTime(3);
+
+                // crates the  lectuer object  
+                LessonCL less = new LessonCL(lessonID , /*lessonName,*/ lessonLenght, lessonDateTime);
+
+                // add all the curent  values to the  database
+                allless.Add(less);
+
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
+            //close Connection
+            this.CloseConnection();
+        }
+        // return all the records in the database for the lecturer
+        return allless;
+    }
+    public void InsertLess(LessonCL less)
+    {
+        string qureyMod = "INSERT INTO lesson(idlesson, lessonDayTime ,Room_idRoom, Module_idModule,Lecturer_idLecturer,YearGroup_idYearGroup, Timetable_idTimetable) VALUE('" + less.lessID + "','"
+        + less.lessDT +"')";
+
+        if (this.OpenConnection() == true)
+        {
+            //create command and assign the query and connection from the constructor
+            MySqlCommand cmd = new MySqlCommand(qureyMod, connection);
+            //NOTE!! throws  exaption as to the  defluat data
+            //Execute command
+            cmd.ExecuteNonQuery();
+
+            //close connection
+            this.CloseConnection();
+        }
+
+ 
+    }
     //open connection to database
     private bool OpenConnection()
     {
