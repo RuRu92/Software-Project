@@ -132,5 +132,18 @@ namespace Project
         {
 
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void lessonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lesson les = new Lesson();
+            this.Hide();
+            les.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Project
 {
-    partial class Module
+    partial class Lesson
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Module));
-            this.lblName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl = new System.Windows.Forms.Label();
-            this.txtReqTeachHrs = new System.Windows.Forms.TextBox();
-            this.txtModTeachingHrs = new System.Windows.Forms.TextBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.txtModName = new System.Windows.Forms.TextBox();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.grpGroup = new System.Windows.Forms.GroupBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lesson));
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,138 +61,60 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timetableseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewModule = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableDBModule = new Project.TimetableDBModule();
-            this.moduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableseDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.moduleTableAdapter = new Project.TimetableDBModuleTableAdapters.moduleTableAdapter();
-            this.grpGroup.SuspendLayout();
+            this.cmbLec = new System.Windows.Forms.ComboBox();
+            this.cmbGroup = new System.Windows.Forms.ComboBox();
+            this.cmbMod = new System.Windows.Forms.ComboBox();
+            this.cmbTime = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblLect = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.lblYG = new System.Windows.Forms.Label();
+            this.lblMod = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.cmbRoom = new System.Windows.Forms.ComboBox();
+            this.lblRoom = new System.Windows.Forms.Label();
+            this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
+            this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
+            this.idLessonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lessonLengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lessonDayTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomidRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleidModuleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lectureridLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timetableidTimetableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeTableDBLect = new Project.TimeTableDBLect();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lecturerTableAdapter = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet2BindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblName
+            // dataGridView1
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(28, 39);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(96, 18);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Module Name";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Required Hours";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lbl
-            // 
-            this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(33, 195);
-            this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(151, 18);
-            this.lbl.TabIndex = 2;
-            this.lbl.Text = "Module Teaching hours";
-            // 
-            // txtReqTeachHrs
-            // 
-            this.txtReqTeachHrs.Location = new System.Drawing.Point(275, 112);
-            this.txtReqTeachHrs.Name = "txtReqTeachHrs";
-            this.txtReqTeachHrs.Size = new System.Drawing.Size(182, 26);
-            this.txtReqTeachHrs.TabIndex = 4;
-            this.txtReqTeachHrs.TextChanged += new System.EventHandler(this.modcode_TextChanged);
-            // 
-            // txtModTeachingHrs
-            // 
-            this.txtModTeachingHrs.Location = new System.Drawing.Point(275, 190);
-            this.txtModTeachingHrs.Name = "txtModTeachingHrs";
-            this.txtModTeachingHrs.Size = new System.Drawing.Size(182, 26);
-            this.txtModTeachingHrs.TabIndex = 5;
-            this.txtModTeachingHrs.TextChanged += new System.EventHandler(this.modTeachingHrs_TextChanged);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(23, 502);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(55, 55);
-            this.btnAdd.TabIndex = 7;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(459, 502);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(55, 55);
-            this.btnBack.TabIndex = 8;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // txtModName
-            // 
-            this.txtModName.Location = new System.Drawing.Point(275, 39);
-            this.txtModName.Name = "txtModName";
-            this.txtModName.Size = new System.Drawing.Size(182, 26);
-            this.txtModName.TabIndex = 3;
-            this.txtModName.TextChanged += new System.EventHandler(this.modName_TextChanged);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(152, 502);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(55, 55);
-            this.btnEdit.TabIndex = 11;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(298, 502);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(55, 55);
-            this.btnDelete.TabIndex = 12;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // grpGroup
-            // 
-            this.grpGroup.Controls.Add(this.txtModName);
-            this.grpGroup.Controls.Add(this.lblName);
-            this.grpGroup.Controls.Add(this.lbl);
-            this.grpGroup.Controls.Add(this.txtModTeachingHrs);
-            this.grpGroup.Controls.Add(this.txtReqTeachHrs);
-            this.grpGroup.Controls.Add(this.label2);
-            this.grpGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpGroup.Location = new System.Drawing.Point(23, 232);
-            this.grpGroup.Name = "grpGroup";
-            this.grpGroup.Size = new System.Drawing.Size(491, 251);
-            this.grpGroup.TabIndex = 13;
-            this.grpGroup.TabStop = false;
-            this.grpGroup.Text = "Module Input";
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idLessonDataGridViewTextBoxColumn,
+            this.lessonLengthDataGridViewTextBoxColumn,
+            this.lessonDayTimeDataGridViewTextBoxColumn,
+            this.roomidRoomDataGridViewTextBoxColumn,
+            this.moduleidModuleDataGridViewTextBoxColumn,
+            this.lectureridLecturerDataGridViewTextBoxColumn,
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn,
+            this.timetableidTimetableDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.lessonBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(513, 208);
+            this.dataGridView1.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -214,9 +126,11 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(537, 24);
-            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -431,91 +345,245 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // dataGridViewModule
+            // cmbLec
             // 
-            this.dataGridViewModule.AutoGenerateColumns = false;
-            this.dataGridViewModule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewModule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dataGridViewModule.DataSource = this.moduleBindingSource2;
-            this.dataGridViewModule.Location = new System.Drawing.Point(23, 39);
-            this.dataGridViewModule.Name = "dataGridViewModule";
-            this.dataGridViewModule.Size = new System.Drawing.Size(491, 187);
-            this.dataGridViewModule.TabIndex = 16;
+            this.cmbLec.DataSource = this.lecturerBindingSource;
+            this.cmbLec.DisplayMember = "lecturerName";
+            this.cmbLec.FormattingEnabled = true;
+            this.cmbLec.Location = new System.Drawing.Point(16, 64);
+            this.cmbLec.Name = "cmbLec";
+            this.cmbLec.Size = new System.Drawing.Size(163, 23);
+            this.cmbLec.TabIndex = 2;
+            this.cmbLec.ValueMember = "lecturerName";
+            this.cmbLec.SelectedIndexChanged += new System.EventHandler(this.cmbLec_SelectedIndexChanged);
             // 
-            // dataGridViewTextBoxColumn5
+            // cmbGroup
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "idModule";
-            this.dataGridViewTextBoxColumn5.HeaderText = "idModule";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.cmbGroup.FormattingEnabled = true;
+            this.cmbGroup.Location = new System.Drawing.Point(16, 144);
+            this.cmbGroup.Name = "cmbGroup";
+            this.cmbGroup.Size = new System.Drawing.Size(166, 23);
+            this.cmbGroup.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn6
+            // cmbMod
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "moduleName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "moduleName";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.cmbMod.FormattingEnabled = true;
+            this.cmbMod.Location = new System.Drawing.Point(332, 64);
+            this.cmbMod.Name = "cmbMod";
+            this.cmbMod.Size = new System.Drawing.Size(164, 23);
+            this.cmbMod.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn7
+            // cmbTime
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "moduleRequiredHours";
-            this.dataGridViewTextBoxColumn7.HeaderText = "moduleRequiredHours";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.cmbTime.FormattingEnabled = true;
+            this.cmbTime.Items.AddRange(new object[] {
+            "15",
+            "30",
+            "45",
+            "60",
+            "75",
+            "90",
+            "105",
+            "120"});
+            this.cmbTime.Location = new System.Drawing.Point(332, 144);
+            this.cmbTime.Name = "cmbTime";
+            this.cmbTime.Size = new System.Drawing.Size(164, 23);
+            this.cmbTime.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn8
+            // groupBox1
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "moduleTaughtHours";
-            this.dataGridViewTextBoxColumn8.HeaderText = "moduleTaughtHours";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.groupBox1.Controls.Add(this.lblRoom);
+            this.groupBox1.Controls.Add(this.cmbRoom);
+            this.groupBox1.Controls.Add(this.lblTime);
+            this.groupBox1.Controls.Add(this.lblMod);
+            this.groupBox1.Controls.Add(this.lblYG);
+            this.groupBox1.Controls.Add(this.lblLect);
+            this.groupBox1.Controls.Add(this.cmbLec);
+            this.groupBox1.Controls.Add(this.cmbGroup);
+            this.groupBox1.Controls.Add(this.cmbMod);
+            this.groupBox1.Controls.Add(this.cmbTime);
+            this.groupBox1.Location = new System.Drawing.Point(12, 261);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(513, 256);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Class Input";
             // 
-            // moduleBindingSource2
+            // lblLect
             // 
-            this.moduleBindingSource2.DataMember = "module";
-            this.moduleBindingSource2.DataSource = this.timetableDBModule;
+            this.lblLect.AutoSize = true;
+            this.lblLect.Location = new System.Drawing.Point(13, 37);
+            this.lblLect.Name = "lblLect";
+            this.lblLect.Size = new System.Drawing.Size(80, 15);
+            this.lblLect.TabIndex = 6;
+            this.lblLect.Text = "Lecture Name";
+            this.lblLect.Click += new System.EventHandler(this.lblLect_Click);
             // 
-            // timetableDBModule
+            // btnAdd
             // 
-            this.timetableDBModule.DataSetName = "TimetableDBModule";
-            this.timetableDBModule.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.btnAdd.Location = new System.Drawing.Point(12, 535);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(87, 27);
+            this.btnAdd.TabIndex = 7;
+            this.btnAdd.Text = "Create";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
-            // moduleBindingSource1
+            // btnBack
             // 
-            this.moduleBindingSource1.DataMember = "module";
+            this.btnBack.Location = new System.Drawing.Point(438, 535);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(87, 27);
+            this.btnBack.TabIndex = 8;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // moduleTableAdapter
+            // lblYG
             // 
-            this.moduleTableAdapter.ClearBeforeFill = true;
+            this.lblYG.AutoSize = true;
+            this.lblYG.Location = new System.Drawing.Point(13, 109);
+            this.lblYG.Name = "lblYG";
+            this.lblYG.Size = new System.Drawing.Size(67, 15);
+            this.lblYG.TabIndex = 7;
+            this.lblYG.Text = "Year Group";
             // 
-            // Module
+            // lblMod
+            // 
+            this.lblMod.AutoSize = true;
+            this.lblMod.Location = new System.Drawing.Point(329, 46);
+            this.lblMod.Name = "lblMod";
+            this.lblMod.Size = new System.Drawing.Size(83, 15);
+            this.lblMod.TabIndex = 8;
+            this.lblMod.Text = "Module Name";
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(329, 109);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(49, 15);
+            this.lblTime.TabIndex = 9;
+            this.lblTime.Text = "Leangth";
+            // 
+            // cmbRoom
+            // 
+            this.cmbRoom.FormattingEnabled = true;
+            this.cmbRoom.Location = new System.Drawing.Point(168, 216);
+            this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.Size = new System.Drawing.Size(166, 23);
+            this.cmbRoom.TabIndex = 10;
+            // 
+            // lblRoom
+            // 
+            this.lblRoom.AutoSize = true;
+            this.lblRoom.Location = new System.Drawing.Point(226, 187);
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Size = new System.Drawing.Size(38, 15);
+            this.lblRoom.TabIndex = 11;
+            this.lblRoom.Text = "Room";
+            // 
+            // timetableseDataSetLesson
+            // 
+            this.timetableseDataSetLesson.DataSetName = "timetableseDataSetLesson";
+            this.timetableseDataSetLesson.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lessonBindingSource
+            // 
+            this.lessonBindingSource.DataMember = "lesson";
+            this.lessonBindingSource.DataSource = this.timetableseDataSetLesson;
+            // 
+            // lessonTableAdapter
+            // 
+            this.lessonTableAdapter.ClearBeforeFill = true;
+            // 
+            // idLessonDataGridViewTextBoxColumn
+            // 
+            this.idLessonDataGridViewTextBoxColumn.DataPropertyName = "idLesson";
+            this.idLessonDataGridViewTextBoxColumn.HeaderText = "idLesson";
+            this.idLessonDataGridViewTextBoxColumn.Name = "idLessonDataGridViewTextBoxColumn";
+            // 
+            // lessonLengthDataGridViewTextBoxColumn
+            // 
+            this.lessonLengthDataGridViewTextBoxColumn.DataPropertyName = "lessonLength";
+            this.lessonLengthDataGridViewTextBoxColumn.HeaderText = "lessonLength";
+            this.lessonLengthDataGridViewTextBoxColumn.Name = "lessonLengthDataGridViewTextBoxColumn";
+            // 
+            // lessonDayTimeDataGridViewTextBoxColumn
+            // 
+            this.lessonDayTimeDataGridViewTextBoxColumn.DataPropertyName = "lessonDayTime";
+            this.lessonDayTimeDataGridViewTextBoxColumn.HeaderText = "lessonDayTime";
+            this.lessonDayTimeDataGridViewTextBoxColumn.Name = "lessonDayTimeDataGridViewTextBoxColumn";
+            // 
+            // roomidRoomDataGridViewTextBoxColumn
+            // 
+            this.roomidRoomDataGridViewTextBoxColumn.DataPropertyName = "Room_idRoom";
+            this.roomidRoomDataGridViewTextBoxColumn.HeaderText = "Room_idRoom";
+            this.roomidRoomDataGridViewTextBoxColumn.Name = "roomidRoomDataGridViewTextBoxColumn";
+            // 
+            // moduleidModuleDataGridViewTextBoxColumn
+            // 
+            this.moduleidModuleDataGridViewTextBoxColumn.DataPropertyName = "Module_idModule";
+            this.moduleidModuleDataGridViewTextBoxColumn.HeaderText = "Module_idModule";
+            this.moduleidModuleDataGridViewTextBoxColumn.Name = "moduleidModuleDataGridViewTextBoxColumn";
+            // 
+            // lectureridLecturerDataGridViewTextBoxColumn
+            // 
+            this.lectureridLecturerDataGridViewTextBoxColumn.DataPropertyName = "Lecturer_idLecturer";
+            this.lectureridLecturerDataGridViewTextBoxColumn.HeaderText = "Lecturer_idLecturer";
+            this.lectureridLecturerDataGridViewTextBoxColumn.Name = "lectureridLecturerDataGridViewTextBoxColumn";
+            // 
+            // yearGroupidYearGroupDataGridViewTextBoxColumn
+            // 
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn.DataPropertyName = "YearGroup_idYearGroup";
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn.HeaderText = "YearGroup_idYearGroup";
+            this.yearGroupidYearGroupDataGridViewTextBoxColumn.Name = "yearGroupidYearGroupDataGridViewTextBoxColumn";
+            // 
+            // timetableidTimetableDataGridViewTextBoxColumn
+            // 
+            this.timetableidTimetableDataGridViewTextBoxColumn.DataPropertyName = "Timetable_idTimetable";
+            this.timetableidTimetableDataGridViewTextBoxColumn.HeaderText = "Timetable_idTimetable";
+            this.timetableidTimetableDataGridViewTextBoxColumn.Name = "timetableidTimetableDataGridViewTextBoxColumn";
+            // 
+            // timeTableDBLect
+            // 
+            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
+            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "lecturer";
+            this.lecturerBindingSource.DataSource = this.timeTableDBLect;
+            // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // Lesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(537, 569);
-            this.Controls.Add(this.dataGridViewModule);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.grpGroup);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F);
-            this.Name = "Module";
-            this.Text = "Module";
-            this.Load += new System.EventHandler(this.Module_Load);
-            this.grpGroup.ResumeLayout(false);
-            this.grpGroup.PerformLayout();
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Lesson";
+            this.Text = "Lesson";
+            this.Load += new System.EventHandler(this.Lesson_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet2BindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,17 +591,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.TextBox txtReqTeachHrs;
-        private System.Windows.Forms.TextBox txtModTeachingHrs;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox txtModName;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.GroupBox grpGroup;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -564,30 +622,32 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.BindingSource timetableseDataSet1BindingSource;
-        
-        
-        private System.Windows.Forms.DataGridView dataGridViewModule;
-        private System.Windows.Forms.BindingSource timetableseDataSet2BindingSource;
-       
-        private System.Windows.Forms.BindingSource moduleBindingSource;
-       
-        private System.Windows.Forms.DataGridViewTextBoxColumn idModuleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleRequiredHoursDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleTaughtHoursDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.BindingSource moduleBindingSource1;
-        private TimetableDBModule timetableDBModule;
-        private System.Windows.Forms.BindingSource moduleBindingSource2;
-        private TimetableDBModuleTableAdapters.moduleTableAdapter moduleTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        
+        private System.Windows.Forms.ComboBox cmbLec;
+        private System.Windows.Forms.ComboBox cmbGroup;
+        private System.Windows.Forms.ComboBox cmbMod;
+        private System.Windows.Forms.ComboBox cmbTime;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblLect;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblMod;
+        private System.Windows.Forms.Label lblYG;
+        private System.Windows.Forms.ComboBox cmbRoom;
+        private System.Windows.Forms.Label lblRoom;
+        private timetableseDataSetLesson timetableseDataSetLesson;
+        private System.Windows.Forms.BindingSource lessonBindingSource;
+        private timetableseDataSetLessonTableAdapters.lessonTableAdapter lessonTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idLessonDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lessonLengthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lessonDayTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomidRoomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moduleidModuleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lectureridLecturerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupidYearGroupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timetableidTimetableDataGridViewTextBoxColumn;
+        private TimeTableDBLect timeTableDBLect;
+        private System.Windows.Forms.BindingSource lecturerBindingSource;
+        private TimeTableDBLectTableAdapters.lecturerTableAdapter lecturerTableAdapter;
     }
 }

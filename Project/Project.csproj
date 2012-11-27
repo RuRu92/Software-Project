@@ -48,6 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBconnector.cs" />
+    <Compile Include="Lesson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lesson.Designer.cs">
+      <DependentUpon>Lesson.cs</DependentUpon>
+    </Compile>
     <Compile Include="LessonCL.cs" />
     <Compile Include="RoomCL.cs" />
     <Compile Include="TimeTableDBLect.Designer.cs">
@@ -120,6 +126,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Lesson.resx">
+      <DependentUpon>Lesson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Timetable.resx">
       <DependentUpon>Timetable.cs</DependentUpon>
     </EmbeddedResource>

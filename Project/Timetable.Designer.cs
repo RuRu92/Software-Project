@@ -100,6 +100,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.bntAddLesson = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lessonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tlpGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
@@ -118,9 +119,10 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(925, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1039, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -289,9 +291,10 @@
             this.addModuleToolStripMenuItem,
             this.addLecturerToolStripMenuItem,
             this.addYearGroupToolStripMenuItem,
-            this.addRoomToolStripMenuItem});
+            this.addRoomToolStripMenuItem,
+            this.lessonToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
@@ -738,12 +741,19 @@
             this.button1.Text = "Delete Lesson";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lessonToolStripMenuItem
+            // 
+            this.lessonToolStripMenuItem.Name = "lessonToolStripMenuItem";
+            this.lessonToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.lessonToolStripMenuItem.Text = "Lesson";
+            this.lessonToolStripMenuItem.Click += new System.EventHandler(this.lessonToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(925, 703);
+            this.ClientSize = new System.Drawing.Size(1039, 703);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bntAddLesson);
             this.Controls.Add(this.label5);
@@ -848,6 +858,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bntAddLesson;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem lessonToolStripMenuItem;
     }
 }
 
