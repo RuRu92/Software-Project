@@ -398,6 +398,33 @@ namespace Project
         }
     }
 
+    public Boolean checkClash(String lname, string ygroup, string Room, string modn)
+    {
+        Boolean res = true;
+        string qclash = "SELECT count(*) from xxx where lname='" + lname + "' AND '";
+        //Open connection
+        if (this.OpenConnection() == true)
+        {
+            //Create Command
+            MySqlCommand cmd = new MySqlCommand(qclash, connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            dataReader.Read(); hello  
+            if(dataReader.GetInt32(0)==0)
+                res = false;
+            //close Data Reader
+            dataReader.Close();
+
+            //close Connectionon
+            this.CloseConnection();
+        }
+
+        return res;
+
+    }
+
+
     //open connection to database
     private bool OpenConnection()
     {

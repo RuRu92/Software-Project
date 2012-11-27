@@ -61,7 +61,11 @@
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lectureWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduleWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearGroupWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -360,16 +364,49 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem});
+            this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
-            // customizeToolStripMenuItem
+            // optionsToolStripMenuItem
             // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lectureWindowToolStripMenuItem,
+            this.moduleWindowToolStripMenuItem,
+            this.yearGroupWindowToolStripMenuItem,
+            this.lessonWindowToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // lectureWindowToolStripMenuItem
+            // 
+            this.lectureWindowToolStripMenuItem.Name = "lectureWindowToolStripMenuItem";
+            this.lectureWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lectureWindowToolStripMenuItem.Text = "Lecture Window";
+            this.lectureWindowToolStripMenuItem.Click += new System.EventHandler(this.lectureWindowToolStripMenuItem_Click);
+            // 
+            // moduleWindowToolStripMenuItem
+            // 
+            this.moduleWindowToolStripMenuItem.Name = "moduleWindowToolStripMenuItem";
+            this.moduleWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moduleWindowToolStripMenuItem.Text = "Module Window";
+            this.moduleWindowToolStripMenuItem.Click += new System.EventHandler(this.moduleWindowToolStripMenuItem_Click);
+            // 
+            // yearGroupWindowToolStripMenuItem
+            // 
+            this.yearGroupWindowToolStripMenuItem.Name = "yearGroupWindowToolStripMenuItem";
+            this.yearGroupWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yearGroupWindowToolStripMenuItem.Text = "Year Group Window";
+            this.yearGroupWindowToolStripMenuItem.Click += new System.EventHandler(this.yearGroupWindowToolStripMenuItem_Click);
+            // 
+            // lessonWindowToolStripMenuItem
+            // 
+            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
+            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
+            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -547,7 +584,6 @@
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -568,6 +604,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lectureWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moduleWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearGroupWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lessonWindowToolStripMenuItem;
 
     }
 }

@@ -50,7 +50,7 @@ namespace Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -82,6 +82,38 @@ namespace Project
         private void txtGroupSizeTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void lecturerWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lecturer lecWin = new Lecturer();
+            this.Hide();
+            lecWin.ShowDialog();
+            this.Show();
+        }
+
+        private void moduleWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Module modFrom = new Module();
+            this.Hide();
+            modFrom.ShowDialog();
+            this.Show();
+        }
+
+        private void roomWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Room roomWin = new Room();
+            this.Hide();
+            roomWin.ShowDialog();
+            this.Show();
+        }
+
+        private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lesson lesWin = new Lesson();
+            this.Hide();
+            lesWin.ShowDialog();
+            this.Show();
         }
 
        

@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lesson));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,8 +54,11 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lectureOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduleOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearGroupOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,59 +66,54 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbLec = new System.Windows.Forms.ComboBox();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timeTableDBLect = new Project.TimeTableDBLect();
             this.cmbGroup = new System.Windows.Forms.ComboBox();
+            this.yeargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableDTYearGroup = new Project.TimetableDTYearGroup();
             this.cmbMod = new System.Windows.Forms.ComboBox();
+            this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableDBModule = new Project.TimetableDBModule();
             this.cmbTime = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblRoom = new System.Windows.Forms.Label();
+            this.cmbRoom = new System.Windows.Forms.ComboBox();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblMod = new System.Windows.Forms.Label();
+            this.lblYG = new System.Windows.Forms.Label();
             this.lblLect = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lblYG = new System.Windows.Forms.Label();
-            this.lblMod = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.cmbRoom = new System.Windows.Forms.ComboBox();
-            this.lblRoom = new System.Windows.Forms.Label();
-            this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
-            this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
-            this.idLessonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lessonLengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lessonDayTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomidRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleidModuleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureridLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timetableidTimetableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeTableDBLect = new Project.TimeTableDBLect();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lecturerTableAdapter = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
+            this.moduleTableAdapter = new Project.TimetableDBModuleTableAdapters.moduleTableAdapter();
+            this.yeargroupTableAdapter = new Project.TimetableDTYearGroupTableAdapters.yeargroupTableAdapter();
+            this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // lessonBindingSource
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idLessonDataGridViewTextBoxColumn,
-            this.lessonLengthDataGridViewTextBoxColumn,
-            this.lessonDayTimeDataGridViewTextBoxColumn,
-            this.roomidRoomDataGridViewTextBoxColumn,
-            this.moduleidModuleDataGridViewTextBoxColumn,
-            this.lectureridLecturerDataGridViewTextBoxColumn,
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn,
-            this.timetableidTimetableDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.lessonBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(513, 208);
-            this.dataGridView1.TabIndex = 0;
+            this.lessonBindingSource.DataMember = "lesson";
+            this.lessonBindingSource.DataSource = this.timetableseDataSetLesson;
+            // 
+            // timetableseDataSetLesson
+            // 
+            this.timetableseDataSetLesson.DataSetName = "timetableseDataSetLesson";
+            this.timetableseDataSetLesson.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -286,23 +285,49 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem,
             this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
-            // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lectureOptionsToolStripMenuItem,
+            this.moduleOptionsToolStripMenuItem,
+            this.yearGroupOptionsToolStripMenuItem,
+            this.roomOptionsToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // lectureOptionsToolStripMenuItem
+            // 
+            this.lectureOptionsToolStripMenuItem.Name = "lectureOptionsToolStripMenuItem";
+            this.lectureOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lectureOptionsToolStripMenuItem.Text = "Lecturer Window";
+            this.lectureOptionsToolStripMenuItem.Click += new System.EventHandler(this.lectureOptionsToolStripMenuItem_Click);
+            // 
+            // moduleOptionsToolStripMenuItem
+            // 
+            this.moduleOptionsToolStripMenuItem.Name = "moduleOptionsToolStripMenuItem";
+            this.moduleOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moduleOptionsToolStripMenuItem.Text = "Module Window";
+            this.moduleOptionsToolStripMenuItem.Click += new System.EventHandler(this.moduleOptionsToolStripMenuItem_Click);
+            // 
+            // yearGroupOptionsToolStripMenuItem
+            // 
+            this.yearGroupOptionsToolStripMenuItem.Name = "yearGroupOptionsToolStripMenuItem";
+            this.yearGroupOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yearGroupOptionsToolStripMenuItem.Text = "Year Group Window";
+            this.yearGroupOptionsToolStripMenuItem.Click += new System.EventHandler(this.yearGroupOptionsToolStripMenuItem_Click);
+            // 
+            // roomOptionsToolStripMenuItem
+            // 
+            this.roomOptionsToolStripMenuItem.Name = "roomOptionsToolStripMenuItem";
+            this.roomOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roomOptionsToolStripMenuItem.Text = "Room Window";
+            this.roomOptionsToolStripMenuItem.Click += new System.EventHandler(this.roomOptionsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -357,21 +382,57 @@
             this.cmbLec.ValueMember = "lecturerName";
             this.cmbLec.SelectedIndexChanged += new System.EventHandler(this.cmbLec_SelectedIndexChanged);
             // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "lecturer";
+            this.lecturerBindingSource.DataSource = this.timeTableDBLect;
+            // 
+            // timeTableDBLect
+            // 
+            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
+            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmbGroup
             // 
+            this.cmbGroup.DataSource = this.yeargroupBindingSource;
+            this.cmbGroup.DisplayMember = "yearGroupName";
             this.cmbGroup.FormattingEnabled = true;
             this.cmbGroup.Location = new System.Drawing.Point(16, 144);
             this.cmbGroup.Name = "cmbGroup";
             this.cmbGroup.Size = new System.Drawing.Size(166, 23);
             this.cmbGroup.TabIndex = 3;
+            this.cmbGroup.ValueMember = "yearGroupName";
+            // 
+            // yeargroupBindingSource
+            // 
+            this.yeargroupBindingSource.DataMember = "yeargroup";
+            this.yeargroupBindingSource.DataSource = this.timetableDTYearGroup;
+            // 
+            // timetableDTYearGroup
+            // 
+            this.timetableDTYearGroup.DataSetName = "TimetableDTYearGroup";
+            this.timetableDTYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbMod
             // 
+            this.cmbMod.DataSource = this.moduleBindingSource;
+            this.cmbMod.DisplayMember = "moduleName";
             this.cmbMod.FormattingEnabled = true;
             this.cmbMod.Location = new System.Drawing.Point(332, 64);
             this.cmbMod.Name = "cmbMod";
             this.cmbMod.Size = new System.Drawing.Size(164, 23);
             this.cmbMod.TabIndex = 4;
+            this.cmbMod.ValueMember = "moduleName";
+            // 
+            // moduleBindingSource
+            // 
+            this.moduleBindingSource.DataMember = "module";
+            this.moduleBindingSource.DataSource = this.timetableDBModule;
+            // 
+            // timetableDBModule
+            // 
+            this.timetableDBModule.DataSetName = "TimetableDBModule";
+            this.timetableDBModule.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbTime
             // 
@@ -409,6 +470,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Input";
             // 
+            // lblRoom
+            // 
+            this.lblRoom.AutoSize = true;
+            this.lblRoom.Location = new System.Drawing.Point(226, 187);
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Size = new System.Drawing.Size(38, 15);
+            this.lblRoom.TabIndex = 11;
+            this.lblRoom.Text = "Room";
+            // 
+            // cmbRoom
+            // 
+            this.cmbRoom.DataSource = this.roomBindingSource;
+            this.cmbRoom.DisplayMember = "roomName";
+            this.cmbRoom.FormattingEnabled = true;
+            this.cmbRoom.Location = new System.Drawing.Point(168, 216);
+            this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.Size = new System.Drawing.Size(166, 23);
+            this.cmbRoom.TabIndex = 10;
+            this.cmbRoom.ValueMember = "roomName";
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataMember = "room";
+            this.roomBindingSource.DataSource = this.timetableseDataSetRoom;
+            // 
+            // timetableseDataSetRoom
+            // 
+            this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
+            this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(329, 109);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(49, 15);
+            this.lblTime.TabIndex = 9;
+            this.lblTime.Text = "Leangth";
+            // 
+            // lblMod
+            // 
+            this.lblMod.AutoSize = true;
+            this.lblMod.Location = new System.Drawing.Point(329, 46);
+            this.lblMod.Name = "lblMod";
+            this.lblMod.Size = new System.Drawing.Size(83, 15);
+            this.lblMod.TabIndex = 8;
+            this.lblMod.Text = "Module Name";
+            // 
+            // lblYG
+            // 
+            this.lblYG.AutoSize = true;
+            this.lblYG.Location = new System.Drawing.Point(13, 109);
+            this.lblYG.Name = "lblYG";
+            this.lblYG.Size = new System.Drawing.Size(67, 15);
+            this.lblYG.TabIndex = 7;
+            this.lblYG.Text = "Year Group";
+            // 
             // lblLect
             // 
             this.lblLect.AutoSize = true;
@@ -427,6 +545,7 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Create";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnBack
             // 
@@ -438,125 +557,25 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // lblYG
-            // 
-            this.lblYG.AutoSize = true;
-            this.lblYG.Location = new System.Drawing.Point(13, 109);
-            this.lblYG.Name = "lblYG";
-            this.lblYG.Size = new System.Drawing.Size(67, 15);
-            this.lblYG.TabIndex = 7;
-            this.lblYG.Text = "Year Group";
-            // 
-            // lblMod
-            // 
-            this.lblMod.AutoSize = true;
-            this.lblMod.Location = new System.Drawing.Point(329, 46);
-            this.lblMod.Name = "lblMod";
-            this.lblMod.Size = new System.Drawing.Size(83, 15);
-            this.lblMod.TabIndex = 8;
-            this.lblMod.Text = "Module Name";
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(329, 109);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(49, 15);
-            this.lblTime.TabIndex = 9;
-            this.lblTime.Text = "Leangth";
-            // 
-            // cmbRoom
-            // 
-            this.cmbRoom.FormattingEnabled = true;
-            this.cmbRoom.Location = new System.Drawing.Point(168, 216);
-            this.cmbRoom.Name = "cmbRoom";
-            this.cmbRoom.Size = new System.Drawing.Size(166, 23);
-            this.cmbRoom.TabIndex = 10;
-            // 
-            // lblRoom
-            // 
-            this.lblRoom.AutoSize = true;
-            this.lblRoom.Location = new System.Drawing.Point(226, 187);
-            this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(38, 15);
-            this.lblRoom.TabIndex = 11;
-            this.lblRoom.Text = "Room";
-            // 
-            // timetableseDataSetLesson
-            // 
-            this.timetableseDataSetLesson.DataSetName = "timetableseDataSetLesson";
-            this.timetableseDataSetLesson.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lessonBindingSource
-            // 
-            this.lessonBindingSource.DataMember = "lesson";
-            this.lessonBindingSource.DataSource = this.timetableseDataSetLesson;
-            // 
             // lessonTableAdapter
             // 
             this.lessonTableAdapter.ClearBeforeFill = true;
             // 
-            // idLessonDataGridViewTextBoxColumn
-            // 
-            this.idLessonDataGridViewTextBoxColumn.DataPropertyName = "idLesson";
-            this.idLessonDataGridViewTextBoxColumn.HeaderText = "idLesson";
-            this.idLessonDataGridViewTextBoxColumn.Name = "idLessonDataGridViewTextBoxColumn";
-            // 
-            // lessonLengthDataGridViewTextBoxColumn
-            // 
-            this.lessonLengthDataGridViewTextBoxColumn.DataPropertyName = "lessonLength";
-            this.lessonLengthDataGridViewTextBoxColumn.HeaderText = "lessonLength";
-            this.lessonLengthDataGridViewTextBoxColumn.Name = "lessonLengthDataGridViewTextBoxColumn";
-            // 
-            // lessonDayTimeDataGridViewTextBoxColumn
-            // 
-            this.lessonDayTimeDataGridViewTextBoxColumn.DataPropertyName = "lessonDayTime";
-            this.lessonDayTimeDataGridViewTextBoxColumn.HeaderText = "lessonDayTime";
-            this.lessonDayTimeDataGridViewTextBoxColumn.Name = "lessonDayTimeDataGridViewTextBoxColumn";
-            // 
-            // roomidRoomDataGridViewTextBoxColumn
-            // 
-            this.roomidRoomDataGridViewTextBoxColumn.DataPropertyName = "Room_idRoom";
-            this.roomidRoomDataGridViewTextBoxColumn.HeaderText = "Room_idRoom";
-            this.roomidRoomDataGridViewTextBoxColumn.Name = "roomidRoomDataGridViewTextBoxColumn";
-            // 
-            // moduleidModuleDataGridViewTextBoxColumn
-            // 
-            this.moduleidModuleDataGridViewTextBoxColumn.DataPropertyName = "Module_idModule";
-            this.moduleidModuleDataGridViewTextBoxColumn.HeaderText = "Module_idModule";
-            this.moduleidModuleDataGridViewTextBoxColumn.Name = "moduleidModuleDataGridViewTextBoxColumn";
-            // 
-            // lectureridLecturerDataGridViewTextBoxColumn
-            // 
-            this.lectureridLecturerDataGridViewTextBoxColumn.DataPropertyName = "Lecturer_idLecturer";
-            this.lectureridLecturerDataGridViewTextBoxColumn.HeaderText = "Lecturer_idLecturer";
-            this.lectureridLecturerDataGridViewTextBoxColumn.Name = "lectureridLecturerDataGridViewTextBoxColumn";
-            // 
-            // yearGroupidYearGroupDataGridViewTextBoxColumn
-            // 
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn.DataPropertyName = "YearGroup_idYearGroup";
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn.HeaderText = "YearGroup_idYearGroup";
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn.Name = "yearGroupidYearGroupDataGridViewTextBoxColumn";
-            // 
-            // timetableidTimetableDataGridViewTextBoxColumn
-            // 
-            this.timetableidTimetableDataGridViewTextBoxColumn.DataPropertyName = "Timetable_idTimetable";
-            this.timetableidTimetableDataGridViewTextBoxColumn.HeaderText = "Timetable_idTimetable";
-            this.timetableidTimetableDataGridViewTextBoxColumn.Name = "timetableidTimetableDataGridViewTextBoxColumn";
-            // 
-            // timeTableDBLect
-            // 
-            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
-            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerBindingSource
-            // 
-            this.lecturerBindingSource.DataMember = "lecturer";
-            this.lecturerBindingSource.DataSource = this.timeTableDBLect;
-            // 
             // lecturerTableAdapter
             // 
             this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // moduleTableAdapter
+            // 
+            this.moduleTableAdapter.ClearBeforeFill = true;
+            // 
+            // yeargroupTableAdapter
+            // 
+            this.yeargroupTableAdapter.ClearBeforeFill = true;
+            // 
+            // roomTableAdapter
+            // 
+            this.roomTableAdapter.ClearBeforeFill = true;
             // 
             // Lesson
             // 
@@ -566,7 +585,6 @@
             this.ClientSize = new System.Drawing.Size(537, 569);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F);
@@ -575,15 +593,20 @@
             this.Name = "Lesson";
             this.Text = "Lesson";
             this.Load += new System.EventHandler(this.Lesson_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -591,7 +614,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -613,9 +635,6 @@
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem indexToolStripMenuItem;
@@ -638,16 +657,23 @@
         private timetableseDataSetLesson timetableseDataSetLesson;
         private System.Windows.Forms.BindingSource lessonBindingSource;
         private timetableseDataSetLessonTableAdapters.lessonTableAdapter lessonTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idLessonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lessonLengthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lessonDayTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomidRoomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleidModuleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lectureridLecturerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupidYearGroupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timetableidTimetableDataGridViewTextBoxColumn;
         private TimeTableDBLect timeTableDBLect;
         private System.Windows.Forms.BindingSource lecturerBindingSource;
         private TimeTableDBLectTableAdapters.lecturerTableAdapter lecturerTableAdapter;
+        private TimetableDBModule timetableDBModule;
+        private System.Windows.Forms.BindingSource moduleBindingSource;
+        private TimetableDBModuleTableAdapters.moduleTableAdapter moduleTableAdapter;
+        private TimetableDTYearGroup timetableDTYearGroup;
+        private System.Windows.Forms.BindingSource yeargroupBindingSource;
+        private TimetableDTYearGroupTableAdapters.yeargroupTableAdapter yeargroupTableAdapter;
+        private timetableseDataSetRoom timetableseDataSetRoom;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private timetableseDataSetRoomTableAdapters.roomTableAdapter roomTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lectureOptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moduleOptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearGroupOptionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roomOptionsToolStripMenuItem;
     }
 }

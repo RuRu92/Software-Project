@@ -21,11 +21,7 @@ namespace Project
         {
             // TODO: This line of code loads data into the 'timetableDBModule.module' table. You can move, or remove it, as needed.
             this.moduleTableAdapter.Fill(this.timetableDBModule.module);
-           
-           
-        }
-
-       
+        }  
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
@@ -86,10 +82,36 @@ namespace Project
 
         }
 
-        
+        private void lecturerWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lecturer lecWin = new Lecturer();
+            this.Hide();
+            lecWin.ShowDialog();
+            this.Show();
+        }
 
-       
+        private void yearGroupWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            YearGroup ygWin = new YearGroup();
+            this.Hide();
+            ygWin.ShowDialog();
+            this.Show();
+        }
 
-       
+        private void roomWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Room roomWin = new Room();
+            this.Hide();
+            roomWin.ShowDialog();
+            this.Show();
+        }
+
+        private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lesson lesWin = new Lesson();
+            this.Hide();
+            lesWin.ShowDialog();
+            this.Show();
+        }
     }
 }
