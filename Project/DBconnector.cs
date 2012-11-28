@@ -386,11 +386,13 @@ namespace Project
             while (dataReader.Read())
             {
                 Int32 lessonID = dataReader.GetInt32(0);
-                String lessName = dataReader.GetString(1);
-                Int32 lessLenght = dataReader.GetInt32(2);
-                DateTime lessDT = dataReader.GetDateTime(3);
+                String lectName = dataReader.GetString(1);
+                String ygName = dataReader.GetString(2);
+                String roomsName = dataReader.GetString(3);
+                String modName = dataReader.GetString(4);
+                Int32 lessTime = dataReader.GetInt32(5);
 
-                LessonCL less = new LessonCL(lessonID, lessName, lessLenght, lessDT);
+                LessonCL less = new LessonCL(lessonID, lectName, ygName, roomsName, modName, lessTime);
                 allless.Add(less);
 
             }
@@ -405,15 +407,52 @@ namespace Project
 
     public void InsertLess(LessonCL less)
     {
-        string qureyMod = "INSERT INTO lesson(idlesson, lessonDayTime ,Room_idRoom, Module_idModule,Lecturer_idLecturer,YearGroup_idYearGroup, Timetable_idTimetable) VALUE('" + less.lessID + "','"
-        + less.lessDT +"')";
+        //INSERT INTO lesson(idLesson, Lecturer_idLecturer, YearGroup_idYearGroup, Room_idRoom, Module_idModule )  VALUES('0','Nigel Edwards','BSc Computer Science Yr 2','Y106','Database Design')
+        //Pulls id field from the lecturer table
 
         if (this.OpenConnection() == true)
         {
-            //create command and assign the query and connection from the constructor
-            MySqlCommand cmd = new MySqlCommand(qureyMod, connection);
-            //NOTE!! throws  exaption as to the  defluat data
+            MySqlCommand cmd = new MySqlCommand("SELECT idLecturer from lecturer WHERE lecturerName='" + less.lectName + "'", connection);
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int lecturerid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
 
+            //Pulls id field from the table year group
+            cmd = new MySqlCommand("SELECT idYearGroup from yeargroup WHERE yearGroupName='" + less.ygName + "'" , connection);
+            //Create a data reader and Execute the command
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int ygid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
+
+
+            //Pulls id field from the room table
+            cmd = new MySqlCommand("SELECT idRoom from room WHERE roomName='" + less.roomsName + "'", connection);
+            //Create a data reader and Execute the command
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int roomid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
+
+            //Pulls id field from module the table
+            cmd = new MySqlCommand("SELECT idModule from module WHERE moduleName='" + less.modName + "'", connection);
+            //Create a data reader and Execute the command
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int modid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
+
+            //create command and assign the query and connection from the constructor
+            string qureyLesson = "INSERT INTO lesson(idLesson, Lecturer_idLecturer, YearGroup_idYearGroup, Room_idRoom, Module_idModule, lessonLength ) VALUES('" + less.lessID + "','" + lecturerid + "','" + ygid + "','" + roomid + "','" + modid + "','" + less.lessTime + "')";
+            cmd = new MySqlCommand(qureyLesson, connection);
+            
+            //NOTE!! throws  exaption as to the  defluat data
             //Execute command
             cmd.ExecuteNonQuery();
 
@@ -429,39 +468,50 @@ namespace Project
         //Open connection
         if (this.OpenConnection() == true)
         {
-            //Create Command
+            //Pulls id field from the lecturer table
             MySqlCommand cmd = new MySqlCommand("SELECT idLecturer from lecturer WHERE lecturerName='" + lname + "'", connection);
             //Create a data reader and Execute the command
             MySqlDataReader dataReader = cmd.ExecuteReader();
             dataReader.Read();
             int lecturerid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
 
-            //Create Command
-            cmd = new MySqlCommand("SELECT idYearGroup from room WHERE yearGroupName='" + ygroup + "'", connection);
+
+            //Pulls id field from the table year group
+            cmd = new MySqlCommand("SELECT idYearGroup from yeargroup WHERE yearGroupName='" + ygroup + "'", connection);
             //Create a data reader and Execute the command
             dataReader = cmd.ExecuteReader();
             dataReader.Read();
             int ygid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
 
-            //Create Command
+           
+            //Pulls id field from the room table
             cmd = new MySqlCommand("SELECT idRoom from room WHERE roomName='" + roomN + "'", connection);
             //Create a data reader and Execute the command
             dataReader = cmd.ExecuteReader();
             dataReader.Read();
             int roomid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
 
-            //Create Command
-            cmd = new MySqlCommand("SELECT idModule from room WHERE moduleName='" + modn + "'", connection);
+            //Pulls id field from module the table
+            cmd = new MySqlCommand("SELECT idModule from module WHERE moduleName='" + modn + "'", connection);
             //Create a data reader and Execute the command
             dataReader = cmd.ExecuteReader();
             dataReader.Read();
             int modid = dataReader.GetInt32(0);
+            //close Data Reader
+            dataReader.Close();
 
-            //SELECT count(*) from lesson WHERE lecturerName='Nigel Edwards' AND yeargroup.yearGroupName='BSc Computer Science Yr 2' AND room.roomName='Y106' AND module.moduleName='Database Design'
-            string qclash = "SELECT count(*) from lesson, WHERE lecturerName='" + lname + "' AND yeargroup.yearGroupName='" + ygroup + "' AND room.roomName='" + roomN + "' AND module.moduleName='" + modn + "'";
-            Console.WriteLine(qclash);
-            if(dataReader.GetInt32(0)==0)
-                res = false;
+            // Uses the query to check if there is a clash in lesson table
+            string qclash = "SELECT count(*) from lesson WHERE Lecturer_idLecturer=" + lecturerid + " And YearGroup_idYearGroup =" + ygid + " AND Room_idRoom=" + roomid + " AND Module_idModule=" + modid + ";";
+            cmd = new MySqlCommand(qclash, connection);
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            res = dataReader.GetInt32(0) > 0 ? true : false;
             //close Data Reader
             dataReader.Close();
 
@@ -470,7 +520,6 @@ namespace Project
         }
         return res;
     }
-
 
     //open connection to database
     private bool OpenConnection()

@@ -89,6 +89,11 @@
             this.moduleTableAdapter = new Project.TimetableDBModuleTableAdapters.moduleTableAdapter();
             this.yeargroupTableAdapter = new Project.TimetableDTYearGroupTableAdapters.yeargroupTableAdapter();
             this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
+            this.timetableseDataSetLess = new Project.timetableseDataSetLess();
+            this.lessonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lessonTableAdapter1 = new Project.timetableseDataSetLessTableAdapters.lessonTableAdapter();
+            this.cmbTime = new System.Windows.Forms.ComboBox();
+            this.lblTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -101,6 +106,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLess)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lessonBindingSource
@@ -434,6 +441,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblTime);
+            this.groupBox1.Controls.Add(this.cmbTime);
             this.groupBox1.Controls.Add(this.lblRoom);
             this.groupBox1.Controls.Add(this.cmbRoom);
             this.groupBox1.Controls.Add(this.lblMod);
@@ -442,9 +451,9 @@
             this.groupBox1.Controls.Add(this.cmbLec);
             this.groupBox1.Controls.Add(this.cmbGroup);
             this.groupBox1.Controls.Add(this.cmbMod);
-            this.groupBox1.Location = new System.Drawing.Point(12, 60);
+            this.groupBox1.Location = new System.Drawing.Point(12, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 204);
+            this.groupBox1.Size = new System.Drawing.Size(513, 258);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Input";
@@ -482,7 +491,7 @@
             // lblMod
             // 
             this.lblMod.AutoSize = true;
-            this.lblMod.Location = new System.Drawing.Point(329, 46);
+            this.lblMod.Location = new System.Drawing.Point(329, 37);
             this.lblMod.Name = "lblMod";
             this.lblMod.Size = new System.Drawing.Size(83, 15);
             this.lblMod.TabIndex = 8;
@@ -547,6 +556,42 @@
             // 
             this.roomTableAdapter.ClearBeforeFill = true;
             // 
+            // timetableseDataSetLess
+            // 
+            this.timetableseDataSetLess.DataSetName = "timetableseDataSetLess";
+            this.timetableseDataSetLess.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lessonBindingSource1
+            // 
+            this.lessonBindingSource1.DataMember = "lesson";
+            this.lessonBindingSource1.DataSource = this.timetableseDataSetLess;
+            // 
+            // lessonTableAdapter1
+            // 
+            this.lessonTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cmbTime
+            // 
+            this.cmbTime.FormattingEnabled = true;
+            this.cmbTime.Items.AddRange(new object[] {
+            "45",
+            "60",
+            "90",
+            "120"});
+            this.cmbTime.Location = new System.Drawing.Point(165, 214);
+            this.cmbTime.Name = "cmbTime";
+            this.cmbTime.Size = new System.Drawing.Size(166, 23);
+            this.cmbTime.TabIndex = 12;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(214, 181);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(73, 15);
+            this.lblTime.TabIndex = 13;
+            this.lblTime.Text = "Lesson Time";
+            // 
             // Lesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -577,6 +622,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLess)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,5 +690,10 @@
         private System.Windows.Forms.ToolStripMenuItem moduleOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yearGroupOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomOptionsToolStripMenuItem;
+        private timetableseDataSetLess timetableseDataSetLess;
+        private System.Windows.Forms.BindingSource lessonBindingSource1;
+        private timetableseDataSetLessTableAdapters.lessonTableAdapter lessonTableAdapter1;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.ComboBox cmbTime;
     }
 }

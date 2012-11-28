@@ -9,25 +9,99 @@ namespace Project
     class LessonCL
     {
         Int32 m_lessonID;
-        String m_lessonName;
-        Int32 m_lessonLenght;
-        DateTime m_lessonDateTime;
+        String m_lectName;
+        String m_ygName;
+        String m_roomsName;
+        String m_modName;
+        Int32 m_lessTime;
 
-        public LessonCL(int lessID, string lessName, int lessLenght, DateTime lessDT)
+        public LessonCL(int lessID, string lectName, String ygName, String roomsName, String modName, int lessTime)
         {
+
             m_lessonID = lessID;
-            m_lessonName = lessName;
-            m_lessonLenght = lessLenght;
-            m_lessonDateTime = lessDT;
+            m_lectName = lectName;
+            m_ygName = ygName;
+            m_roomsName = roomsName;
+            m_modName = modName;
+            m_lessTime = lessTime;
+
         }
 
-        public int lessID { get { return m_lessonID; } set { m_lessonID = value;} }
+        public int lessID
+       { 
+            get 
+            {
+                return m_lessonID;
+            } 
+            
+            set 
+            { 
+                m_lessonID = value;
+            } 
+        }
         
-        
-        public string lessName { get {return m_lessonName;} set {m_lessonName = value;} }
-       
-        public int lessLenght { get {return m_lessonLenght ;} set {m_lessonLenght = value;} }
+        public string lectName 
+        {
+            get 
+            {
+                return m_lectName;
+            } 
+            set 
+            {
+                m_lectName = value;
+            } 
+        }
 
-        public DateTime lessDT { get {return m_lessonDateTime;} set {m_lessonDateTime = value;} }
+        public string ygName
+        {
+            get
+            {
+                return m_ygName;
+            }
+
+            set
+            {
+                m_ygName = value;
+            }
+        }
+
+        public string roomsName
+        {
+            get
+            {
+                return m_roomsName;
+            }
+
+            set
+            {
+                m_roomsName = value;
+            }
+        }
+
+        public string modName
+        {
+            get
+            {
+                return m_modName;
+            }
+
+            set
+            {
+                m_modName = value;
+            }
+        }
+
+        public int lessTime
+        {
+            get
+            {
+                return m_lessTime;
+            }
+
+            set
+            {
+                m_lessTime = value;
+            }
+        }
     }
 }

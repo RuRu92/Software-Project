@@ -24,6 +24,8 @@ namespace Project
 
         private void Lesson_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'timetableseDataSetLess.lesson' table. You can move, or remove it, as needed.
+            this.lessonTableAdapter1.Fill(this.timetableseDataSetLess.lesson);
             // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
             this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
             // TODO: This line of code loads data into the 'timetableDTYearGroup.yeargroup' table. You can move, or remove it, as needed.
@@ -84,10 +86,23 @@ namespace Project
         // Checks user input for clashes with the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DBconnector db = new DBconnector();
-            if (db.checkClash(cmbLec.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text))
+            DBconnector dbc = new DBconnector();
+            if (dbc.checkClash(cmbLec.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text))
+            {
                 MessageBox.Show("Sorry there is a clash with your selection");
-        }
+                return;
+            }
 
+            //TODO: Validate Data
+            // adds the lectuer information form the text boxes to the  databases and up dates it
+            int t;
+            if (cmbTime.Text == "")
+                t = 0;
+            else
+            t = int.Parse(cmbTime.Text);
+            dbc.InsertLess(new LessonCL(0, cmbLec.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text,t ));
+            this.lessonTableAdapter1.Fill(this.timetableseDataSetLess.lesson);
+            MessageBox.Show("Lesson added information added");
+        }
     }
 }
