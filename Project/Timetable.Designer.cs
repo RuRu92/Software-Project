@@ -56,6 +56,7 @@
             this.addLecturerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addYearGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lessonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -79,33 +80,10 @@
             this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
             this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idLessonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lessonLengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lessonDayTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomidRoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleidModuleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lectureridLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timetableidTimetableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bntAddLesson = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lessonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tlpGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -301,30 +279,37 @@
             // addModuleToolStripMenuItem
             // 
             this.addModuleToolStripMenuItem.Name = "addModuleToolStripMenuItem";
-            this.addModuleToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.addModuleToolStripMenuItem.Text = "Module options";
+            this.addModuleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addModuleToolStripMenuItem.Text = "Module Window";
             this.addModuleToolStripMenuItem.Click += new System.EventHandler(this.addModuleToolStripMenuItem_Click);
             // 
             // addLecturerToolStripMenuItem
             // 
             this.addLecturerToolStripMenuItem.Name = "addLecturerToolStripMenuItem";
-            this.addLecturerToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.addLecturerToolStripMenuItem.Text = "Lecturer options";
+            this.addLecturerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addLecturerToolStripMenuItem.Text = "Lecturer Window";
             this.addLecturerToolStripMenuItem.Click += new System.EventHandler(this.addLecturerToolStripMenuItem_Click);
             // 
             // addYearGroupToolStripMenuItem
             // 
             this.addYearGroupToolStripMenuItem.Name = "addYearGroupToolStripMenuItem";
-            this.addYearGroupToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.addYearGroupToolStripMenuItem.Text = "Year Group options";
+            this.addYearGroupToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addYearGroupToolStripMenuItem.Text = "Year Group Window";
             this.addYearGroupToolStripMenuItem.Click += new System.EventHandler(this.addYearGroupToolStripMenuItem_Click);
             // 
             // addRoomToolStripMenuItem
             // 
             this.addRoomToolStripMenuItem.Name = "addRoomToolStripMenuItem";
-            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.addRoomToolStripMenuItem.Text = "Room options";
+            this.addRoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addRoomToolStripMenuItem.Text = "Room Window";
             this.addRoomToolStripMenuItem.Click += new System.EventHandler(this.addRoomToolStripMenuItem_Click);
+            // 
+            // lessonToolStripMenuItem
+            // 
+            this.lessonToolStripMenuItem.Name = "lessonToolStripMenuItem";
+            this.lessonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lessonToolStripMenuItem.Text = "Lesson Window";
+            this.lessonToolStripMenuItem.Click += new System.EventHandler(this.lessonToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -383,7 +368,7 @@
             this.tlpGrid.Controls.Add(this.lblTime7, 7, 0);
             this.tlpGrid.Controls.Add(this.lblTime8, 8, 0);
             this.tlpGrid.Controls.Add(this.lblTime9, 9, 0);
-            this.tlpGrid.Location = new System.Drawing.Point(21, 279);
+            this.tlpGrid.Location = new System.Drawing.Point(31, 58);
             this.tlpGrid.Name = "tlpGrid";
             this.tlpGrid.RowCount = 6;
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.71429F));
@@ -571,208 +556,19 @@
             // 
             this.lessonTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idLessonDataGridViewTextBoxColumn,
-            this.lessonLengthDataGridViewTextBoxColumn,
-            this.lessonDayTimeDataGridViewTextBoxColumn,
-            this.roomidRoomDataGridViewTextBoxColumn,
-            this.moduleidModuleDataGridViewTextBoxColumn,
-            this.lectureridLecturerDataGridViewTextBoxColumn,
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn,
-            this.timetableidTimetableDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.lessonBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(882, 89);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // idLessonDataGridViewTextBoxColumn
-            // 
-            this.idLessonDataGridViewTextBoxColumn.DataPropertyName = "idLesson";
-            this.idLessonDataGridViewTextBoxColumn.HeaderText = "idLesson";
-            this.idLessonDataGridViewTextBoxColumn.Name = "idLessonDataGridViewTextBoxColumn";
-            // 
-            // lessonLengthDataGridViewTextBoxColumn
-            // 
-            this.lessonLengthDataGridViewTextBoxColumn.DataPropertyName = "lessonLength";
-            this.lessonLengthDataGridViewTextBoxColumn.HeaderText = "lessonLength";
-            this.lessonLengthDataGridViewTextBoxColumn.Name = "lessonLengthDataGridViewTextBoxColumn";
-            // 
-            // lessonDayTimeDataGridViewTextBoxColumn
-            // 
-            this.lessonDayTimeDataGridViewTextBoxColumn.DataPropertyName = "lessonDayTime";
-            this.lessonDayTimeDataGridViewTextBoxColumn.HeaderText = "lessonDayTime";
-            this.lessonDayTimeDataGridViewTextBoxColumn.Name = "lessonDayTimeDataGridViewTextBoxColumn";
-            // 
-            // roomidRoomDataGridViewTextBoxColumn
-            // 
-            this.roomidRoomDataGridViewTextBoxColumn.DataPropertyName = "Room_idRoom";
-            this.roomidRoomDataGridViewTextBoxColumn.HeaderText = "Room_idRoom";
-            this.roomidRoomDataGridViewTextBoxColumn.Name = "roomidRoomDataGridViewTextBoxColumn";
-            // 
-            // moduleidModuleDataGridViewTextBoxColumn
-            // 
-            this.moduleidModuleDataGridViewTextBoxColumn.DataPropertyName = "Module_idModule";
-            this.moduleidModuleDataGridViewTextBoxColumn.HeaderText = "Module_idModule";
-            this.moduleidModuleDataGridViewTextBoxColumn.Name = "moduleidModuleDataGridViewTextBoxColumn";
-            // 
-            // lectureridLecturerDataGridViewTextBoxColumn
-            // 
-            this.lectureridLecturerDataGridViewTextBoxColumn.DataPropertyName = "Lecturer_idLecturer";
-            this.lectureridLecturerDataGridViewTextBoxColumn.HeaderText = "Lecturer_idLecturer";
-            this.lectureridLecturerDataGridViewTextBoxColumn.Name = "lectureridLecturerDataGridViewTextBoxColumn";
-            // 
-            // yearGroupidYearGroupDataGridViewTextBoxColumn
-            // 
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn.DataPropertyName = "YearGroup_idYearGroup";
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn.HeaderText = "YearGroup_idYearGroup";
-            this.yearGroupidYearGroupDataGridViewTextBoxColumn.Name = "yearGroupidYearGroupDataGridViewTextBoxColumn";
-            // 
-            // timetableidTimetableDataGridViewTextBoxColumn
-            // 
-            this.timetableidTimetableDataGridViewTextBoxColumn.DataPropertyName = "Timetable_idTimetable";
-            this.timetableidTimetableDataGridViewTextBoxColumn.HeaderText = "Timetable_idTimetable";
-            this.timetableidTimetableDataGridViewTextBoxColumn.Name = "timetableidTimetableDataGridViewTextBoxColumn";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(31, 176);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 27);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(192, 176);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 27);
-            this.comboBox2.TabIndex = 5;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(354, 176);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 27);
-            this.comboBox3.TabIndex = 6;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(510, 176);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 27);
-            this.comboBox4.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Room ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(188, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Module ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(350, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 19);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Lectuer ID";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(506, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 19);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Year Group ID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(654, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 27);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(650, 154);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 19);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Timetable ID";
-            // 
-            // bntAddLesson
-            // 
-            this.bntAddLesson.Location = new System.Drawing.Point(31, 227);
-            this.bntAddLesson.Name = "bntAddLesson";
-            this.bntAddLesson.Size = new System.Drawing.Size(100, 27);
-            this.bntAddLesson.TabIndex = 14;
-            this.bntAddLesson.Text = "Add Lesson";
-            this.bntAddLesson.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(192, 227);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 27);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Delete Lesson";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // lessonToolStripMenuItem
-            // 
-            this.lessonToolStripMenuItem.Name = "lessonToolStripMenuItem";
-            this.lessonToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
-            this.lessonToolStripMenuItem.Text = "Lesson";
-            this.lessonToolStripMenuItem.Click += new System.EventHandler(this.lessonToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1039, 703);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.bntAddLesson);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tlpGrid);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Text = "Timetable Main";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -780,7 +576,6 @@
             this.tlpGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -837,27 +632,6 @@
         private timetableseDataSetLesson timetableseDataSetLesson;
         private System.Windows.Forms.BindingSource lessonBindingSource;
         private timetableseDataSetLessonTableAdapters.lessonTableAdapter lessonTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idLessonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lessonLengthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lessonDayTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomidRoomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleidModuleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lectureridLecturerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupidYearGroupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timetableidTimetableDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button bntAddLesson;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem lessonToolStripMenuItem;
     }
 }

@@ -61,7 +61,6 @@
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -70,13 +69,18 @@
             this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lecturerTableAdapter = new Project.timetableseDataSetTableAdapters.lecturerTableAdapter();
             this.dataGridViewLect = new System.Windows.Forms.DataGridView();
+            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timeTableDBLect = new Project.TimeTableDBLect();
+            this.lecturerTableAdapter1 = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
             this.idLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.timeTableDBLect = new Project.TimeTableDBLect();
-            this.lecturerTableAdapter1 = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduleWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearGroupWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).BeginInit();
@@ -88,7 +92,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(298, 502);
+            this.btnDelete.Location = new System.Drawing.Point(302, 502);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(55, 55);
             this.btnDelete.TabIndex = 19;
@@ -107,7 +111,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(459, 502);
+            this.btnBack.Location = new System.Drawing.Point(470, 502);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(55, 55);
             this.btnBack.TabIndex = 17;
@@ -117,7 +121,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(23, 502);
+            this.btnAdd.Location = new System.Drawing.Point(12, 502);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(55, 55);
             this.btnAdd.TabIndex = 16;
@@ -134,9 +138,9 @@
             this.grpGroup.Controls.Add(this.txtReqHrs);
             this.grpGroup.Controls.Add(this.lblID);
             this.grpGroup.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpGroup.Location = new System.Drawing.Point(23, 232);
+            this.grpGroup.Location = new System.Drawing.Point(12, 232);
             this.grpGroup.Name = "grpGroup";
-            this.grpGroup.Size = new System.Drawing.Size(549, 251);
+            this.grpGroup.Size = new System.Drawing.Size(513, 251);
             this.grpGroup.TabIndex = 20;
             this.grpGroup.TabStop = false;
             this.grpGroup.Text = "Lecturer Input";
@@ -202,7 +206,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(605, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(537, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -347,16 +351,10 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem});
+            this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
-            // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // helpToolStripMenuItem
             // 
@@ -410,40 +408,12 @@
             this.lecturerRequiredHoursDataGridViewTextBoxColumn,
             this.lecturerTaughtHoursDataGridViewTextBoxColumn});
             this.dataGridViewLect.DataSource = this.lecturerBindingSource1;
-            this.dataGridViewLect.Location = new System.Drawing.Point(23, 60);
+            this.dataGridViewLect.Location = new System.Drawing.Point(12, 36);
             this.dataGridViewLect.MultiSelect = false;
             this.dataGridViewLect.Name = "dataGridViewLect";
             this.dataGridViewLect.ReadOnly = true;
-            this.dataGridViewLect.Size = new System.Drawing.Size(549, 150);
+            this.dataGridViewLect.Size = new System.Drawing.Size(513, 182);
             this.dataGridViewLect.TabIndex = 23;
-            // 
-            // idLecturerDataGridViewTextBoxColumn
-            // 
-            this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
-            this.idLecturerDataGridViewTextBoxColumn.HeaderText = "idLecturer";
-            this.idLecturerDataGridViewTextBoxColumn.Name = "idLecturerDataGridViewTextBoxColumn";
-            this.idLecturerDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lecturerNameDataGridViewTextBoxColumn
-            // 
-            this.lecturerNameDataGridViewTextBoxColumn.DataPropertyName = "lecturerName";
-            this.lecturerNameDataGridViewTextBoxColumn.HeaderText = "lecturerName";
-            this.lecturerNameDataGridViewTextBoxColumn.Name = "lecturerNameDataGridViewTextBoxColumn";
-            this.lecturerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lecturerRequiredHoursDataGridViewTextBoxColumn
-            // 
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerRequiredHours";
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.HeaderText = "lecturerRequiredHours";
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Name = "lecturerRequiredHoursDataGridViewTextBoxColumn";
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lecturerTaughtHoursDataGridViewTextBoxColumn
-            // 
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerTaughtHours";
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.HeaderText = "lecturerTaughtHours";
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lecturerBindingSource1
             // 
@@ -459,12 +429,85 @@
             // 
             this.lecturerTableAdapter1.ClearBeforeFill = true;
             // 
+            // idLecturerDataGridViewTextBoxColumn
+            // 
+            this.idLecturerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
+            this.idLecturerDataGridViewTextBoxColumn.HeaderText = "Lecture ID";
+            this.idLecturerDataGridViewTextBoxColumn.Name = "idLecturerDataGridViewTextBoxColumn";
+            this.idLecturerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idLecturerDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // lecturerNameDataGridViewTextBoxColumn
+            // 
+            this.lecturerNameDataGridViewTextBoxColumn.DataPropertyName = "lecturerName";
+            this.lecturerNameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.lecturerNameDataGridViewTextBoxColumn.Name = "lecturerNameDataGridViewTextBoxColumn";
+            this.lecturerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lecturerRequiredHoursDataGridViewTextBoxColumn
+            // 
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerRequiredHours";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.HeaderText = "Required Hours";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Name = "lecturerRequiredHoursDataGridViewTextBoxColumn";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // lecturerTaughtHoursDataGridViewTextBoxColumn
+            // 
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerTaughtHours";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.HeaderText = "Taught Hours";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.moduleWindowToolStripMenuItem,
+            this.yearGroupWindowToolStripMenuItem,
+            this.roomWindowToolStripMenuItem,
+            this.lessonWindowToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // moduleWindowToolStripMenuItem
+            // 
+            this.moduleWindowToolStripMenuItem.Name = "moduleWindowToolStripMenuItem";
+            this.moduleWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.moduleWindowToolStripMenuItem.Text = "Module Window";
+            this.moduleWindowToolStripMenuItem.Click += new System.EventHandler(this.moduleWindowToolStripMenuItem_Click);
+            // 
+            // yearGroupWindowToolStripMenuItem
+            // 
+            this.yearGroupWindowToolStripMenuItem.Name = "yearGroupWindowToolStripMenuItem";
+            this.yearGroupWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yearGroupWindowToolStripMenuItem.Text = "Year Group Window";
+            this.yearGroupWindowToolStripMenuItem.Click += new System.EventHandler(this.yearGroupWindowToolStripMenuItem_Click);
+            // 
+            // roomWindowToolStripMenuItem
+            // 
+            this.roomWindowToolStripMenuItem.Name = "roomWindowToolStripMenuItem";
+            this.roomWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roomWindowToolStripMenuItem.Text = "Room Window";
+            this.roomWindowToolStripMenuItem.Click += new System.EventHandler(this.roomWindowToolStripMenuItem_Click);
+            // 
+            // lessonWindowToolStripMenuItem
+            // 
+            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
+            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
+            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
+            // 
             // Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(605, 569);
+            this.ClientSize = new System.Drawing.Size(537, 569);
             this.Controls.Add(this.dataGridViewLect);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -524,7 +567,6 @@
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -536,6 +578,11 @@
         private TimeTableDBLect timeTableDBLect;
         private System.Windows.Forms.BindingSource lecturerBindingSource1;
         private TimeTableDBLectTableAdapters.lecturerTableAdapter lecturerTableAdapter1;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem moduleWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearGroupWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roomWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lessonWindowToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLecturerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecturerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecturerRequiredHoursDataGridViewTextBoxColumn;

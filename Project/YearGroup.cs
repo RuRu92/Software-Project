@@ -52,19 +52,71 @@ namespace Project
             else
                 MessageBox.Show("record not deleted");
         }
+
         /// <summary>
         /// this allows the user to add the yeargroup 
         /// information to the datagridview and the database 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBconnector dbc = new DBconnector();
             dbc.insertYG(new YearGroupCL(0, txtGroupName.Text, int.Parse(txtGroupSizeTB.Text)));
             this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
             MessageBox.Show(" year group information added");
-            
-        }       
+                   
+        }
+
+      
+
+        private void lecturerWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lecturer lecWin = new Lecturer();
+            this.Hide();
+            lecWin.ShowDialog();
+            this.Show();
+        }
+
+        private void moduleWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Module modFrom = new Module();
+            this.Hide();
+            modFrom.ShowDialog();
+            this.Show();
+        }
+
+        private void roomWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Room roomWin = new Room();
+            this.Hide();
+            roomWin.ShowDialog();
+            this.Show();
+        }
+
+        private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lesson lesWin = new Lesson();
+            this.Hide();
+            lesWin.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -63,7 +63,6 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +82,10 @@
             this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timetableseDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.moduleTableAdapter = new Project.TimetableDBModuleTableAdapters.moduleTableAdapter();
+            this.lecturerWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearGroupWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).BeginInit();
@@ -368,22 +371,20 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customizeToolStripMenuItem,
             this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
-            // customizeToolStripMenuItem
-            // 
-            this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
-            this.customizeToolStripMenuItem.Text = "&Customize";
-            // 
             // optionsToolStripMenuItem
             // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lecturerWindowToolStripMenuItem,
+            this.yearGroupWindowToolStripMenuItem,
+            this.roomWindowToolStripMenuItem,
+            this.lessonWindowToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
@@ -484,6 +485,34 @@
             // 
             this.moduleTableAdapter.ClearBeforeFill = true;
             // 
+            // lecturerWindowToolStripMenuItem
+            // 
+            this.lecturerWindowToolStripMenuItem.Name = "lecturerWindowToolStripMenuItem";
+            this.lecturerWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lecturerWindowToolStripMenuItem.Text = "Lecturer Window";
+            this.lecturerWindowToolStripMenuItem.Click += new System.EventHandler(this.lecturerWindowToolStripMenuItem_Click);
+            // 
+            // yearGroupWindowToolStripMenuItem
+            // 
+            this.yearGroupWindowToolStripMenuItem.Name = "yearGroupWindowToolStripMenuItem";
+            this.yearGroupWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yearGroupWindowToolStripMenuItem.Text = "Year Group Window";
+            this.yearGroupWindowToolStripMenuItem.Click += new System.EventHandler(this.yearGroupWindowToolStripMenuItem_Click);
+            // 
+            // roomWindowToolStripMenuItem
+            // 
+            this.roomWindowToolStripMenuItem.Name = "roomWindowToolStripMenuItem";
+            this.roomWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roomWindowToolStripMenuItem.Text = "Room Window";
+            this.roomWindowToolStripMenuItem.Click += new System.EventHandler(this.roomWindowToolStripMenuItem_Click);
+            // 
+            // lessonWindowToolStripMenuItem
+            // 
+            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
+            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
+            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
+            // 
             // Module
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -552,7 +581,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customizeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contentsToolStripMenuItem;
@@ -584,6 +612,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStripMenuItem lecturerWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yearGroupWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roomWindowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lessonWindowToolStripMenuItem;
         
     }
 }

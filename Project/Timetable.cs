@@ -122,8 +122,7 @@ namespace Project
 
         private void addRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Room roomForm = new Room();
-            this.Hide();
+            Room roomForm = new Room();            
             roomForm.ShowDialog();
             this.Show();
         }
@@ -140,9 +139,9 @@ namespace Project
 
         private void lessonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Lesson les = new Lesson();
+            Lesson lesWin = new Lesson();
             this.Hide();
-            les.ShowDialog();
+            lesWin.ShowDialog();
             this.Show();
         }
     }

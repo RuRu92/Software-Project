@@ -80,5 +80,37 @@ namespace Project
             }
             
         }
+
+        private void moduleWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Module modFrom = new Module();
+            this.Hide();
+            modFrom.ShowDialog();
+            this.Show();
+        }
+
+        private void yearGroupWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            YearGroup ygWin = new YearGroup();
+            this.Hide();
+            ygWin.ShowDialog();
+            this.Show();
+        }
+
+        private void roomWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Room roomWin = new Room();
+            this.Hide();
+            roomWin.ShowDialog();
+            this.Show();
+        }
+
+        private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lesson lesWin = new Lesson();
+            this.Hide();
+            lesWin.ShowDialog();
+            this.Show();
+        }
     }
 }

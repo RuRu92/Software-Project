@@ -19,9 +19,6 @@ namespace Project
             InitializeComponent();
             
         }
-            RoomCL room;
-
-
 
         private void lblTitle_Click(object sender, EventArgs e)
         {
@@ -32,13 +29,13 @@ namespace Project
         {
             // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
             this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);         
-           
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            var main = new  Timetable();
             this.Close();
+            main.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -57,14 +54,10 @@ namespace Project
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
         }
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -77,6 +70,37 @@ namespace Project
                 this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
 
             }
+        }
+
+        private void lectureWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lecturer lecWin = new Lecturer();
+            this.Close();
+            lecWin.ShowDialog();
+            this.Show();
+        }
+
+        private void moduleWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Module modFrom = new Module();
+            this.Hide();
+            modFrom.ShowDialog();
+            this.Show();
+        }
+
+        private void yearGroupWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            YearGroup ygWin = new YearGroup();
+            this.Hide();
+            ygWin.ShowDialog();
+            this.Show();
+        }
+
+        private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lesson lesWin = new Lesson();
+            this.Hide();
+            lesWin.Show();
         }
     }
 }
