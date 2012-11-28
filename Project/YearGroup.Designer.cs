@@ -105,7 +105,6 @@
             this.btnEdit.TabIndex = 18;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnBack
             // 
@@ -115,7 +114,6 @@
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAdd
             // 
@@ -140,7 +138,6 @@
             this.grpGroup.TabIndex = 20;
             this.grpGroup.TabStop = false;
             this.grpGroup.Text = "Module Input";
-            this.grpGroup.Enter += new System.EventHandler(this.grpGroup_Enter);
             // 
             // lblCode
             // 
@@ -158,7 +155,6 @@
             this.txtGroupSizeTB.Name = "txtGroupSizeTB";
             this.txtGroupSizeTB.Size = new System.Drawing.Size(182, 26);
             this.txtGroupSizeTB.TabIndex = 5;
-            this.txtGroupSizeTB.TextChanged += new System.EventHandler(this.txtGroupSizeTB_TextChanged);
             // 
             // txtGroupName
             // 
@@ -166,7 +162,6 @@
             this.txtGroupName.Name = "txtGroupName";
             this.txtGroupName.Size = new System.Drawing.Size(182, 26);
             this.txtGroupName.TabIndex = 4;
-            this.txtGroupName.TextChanged += new System.EventHandler(this.txtGroupName_TextChanged);
             // 
             // lblSize
             // 
@@ -191,7 +186,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(537, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 

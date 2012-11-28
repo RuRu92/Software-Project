@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Main : Form
+    public partial class Timetable : Form
     {
         private TableLayoutPanel tlp; 
-        public Main()
+        public Timetable()
         {
             InitializeComponent();
             this.tlp = new TableLayoutPanel();

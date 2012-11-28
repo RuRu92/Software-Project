@@ -113,7 +113,6 @@
             this.label2.Size = new System.Drawing.Size(104, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Required Hours";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbl
             // 
@@ -131,7 +130,6 @@
             this.txtReqTeachHrs.Name = "txtReqTeachHrs";
             this.txtReqTeachHrs.Size = new System.Drawing.Size(182, 26);
             this.txtReqTeachHrs.TabIndex = 4;
-            this.txtReqTeachHrs.TextChanged += new System.EventHandler(this.modcode_TextChanged);
             // 
             // txtModTeachingHrs
             // 
@@ -139,7 +137,6 @@
             this.txtModTeachingHrs.Name = "txtModTeachingHrs";
             this.txtModTeachingHrs.Size = new System.Drawing.Size(182, 26);
             this.txtModTeachingHrs.TabIndex = 5;
-            this.txtModTeachingHrs.TextChanged += new System.EventHandler(this.modTeachingHrs_TextChanged);
             // 
             // btnAdd
             // 
@@ -167,7 +164,6 @@
             this.txtModName.Name = "txtModName";
             this.txtModName.Size = new System.Drawing.Size(182, 26);
             this.txtModName.TabIndex = 3;
-            this.txtModName.TextChanged += new System.EventHandler(this.modName_TextChanged);
             // 
             // btnEdit
             // 

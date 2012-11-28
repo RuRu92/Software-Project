@@ -10,20 +10,35 @@ using System.Windows.Forms;
 
 namespace Project
 {
+    /// <summary>
+    /// this is the  year group form  
+    /// which holds all the controls for the yeargroupCL class
+    /// </summary>
     public partial class YearGroup : Form
     {
+        /// <summary>
+        /// intializes the form to be used 
+        /// </summary>
         public YearGroup()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// this updates the data in the datagridview 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void YearGroup_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'timetableDTYearGroup.yeargroup' table. You can move, or remove it, as needed.
             this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
             
         }
-
+        /// <summary>
+        /// this buton allows the user to delete a module 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dataGridViewYG.SelectedRows.Count > 0)
@@ -37,22 +52,12 @@ namespace Project
             else
                 MessageBox.Show("record not deleted");
         }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// this allows the user to add the yeargroup 
+        /// information to the datagridview and the database 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBconnector dbc = new DBconnector();
@@ -60,30 +65,6 @@ namespace Project
             this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
             MessageBox.Show(" year group information added");
             
-        }
-
-        private void grpGroup_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void txtgroupIDTB_TextChanged(object sender, EventArgs e)
-        {
-            
-
-        }
-
-        private void txtGroupName_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtGroupSizeTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-       
+        }       
     }
 }

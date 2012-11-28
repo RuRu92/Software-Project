@@ -12,8 +12,14 @@ using MySql.Data.MySqlClient;
 
 namespace Project
 {
+    /// <summary>
+    /// this is the lectuer from class that holds all the controls and information
+    /// </summary>
     public partial class Lecturer : Form
     {
+        /// <summary>
+        /// this initializes the form so it can be used  
+        /// </summary>
         public Lecturer()
         {
             InitializeComponent();
@@ -24,30 +30,26 @@ namespace Project
             // TODO: This line of code loads data into the 'timeTableDBLect.lecturer' table. You can move, or remove it, as needed.
             this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
             
-
-
         }
-
-        private void lectName_TextChanged(object sender, EventArgs e)
-        {
-            //LecturerCL lectClass = new LecturerCL();
-            //lectClass.lectName = lectName.Text;
-
-        }
-       
-        private void teachingHrs_TextChanged(object sender, EventArgs e)
-        {
-            // this text box is were the teaching hours are enterd on the form
-        }
-
+        /// <summary>
+        /// allows the user to go back to the main timetable form when this
+        /// button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
-            // close the from after crateing it 
+            // close the from and dispalys the time table form 
             Lecturer lectfrom = new Lecturer();
             this.Close();
 
         }
-
+        /// <summary>
+        /// this  allow the user to  and a  lectuer  to the 
+        /// database and show it in the datagridLect the  the user can see 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param> 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBconnector dbc = new DBconnector();
@@ -59,14 +61,15 @@ namespace Project
             MessageBox.Show("lectuer information added");
 
         }
-
-        private void txtReqHrs_TextChanged(object sender, EventArgs e)
-        {
-            // this text box is where the requied teaching hours are inputed on the form
-        }
-
+        /// <summary>
+        /// this button allows the user to 
+        /// delete a sectected lecuter from the dataGridView based  on the 
+        /// frist Colume and the frist Cell   
+        /// </summary>
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // if statement that counts the number of recods in the 
+            //table and deletes the one thats secleted
             if (dataGridViewLect.SelectedRows.Count > 0)
             {   
                 int id = (int)this.dataGridViewLect.SelectedRows[0].Cells[0].Value;

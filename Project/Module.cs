@@ -10,13 +10,25 @@ using System.Windows.Forms;
 
 namespace Project
 {
+    /// <summary>
+    /// this is the module forms  that contins all the user 
+    /// functions  for the module form
+    /// </summary>
     public partial class Module : Form
     {
+        /// <summary>
+        /// initialize the form to be used and displayed 
+        /// </summary>
         public Module()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// loads the  form infoamrtion and  updates the  
+        /// datagridview to show the values stored in the database for module
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Module_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'timetableDBModule.module' table. You can move, or remove it, as needed.
@@ -24,36 +36,24 @@ namespace Project
            
            
         }
-
-       
-
-        private void lblTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void modName_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void modcode_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void modTeachingHrs_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// this bunton allows the  user to  go back to the timetabling form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
             Module modfrom = new Module();
             this.Close();
            
         }
-
+        /// <summary>
+        /// this allows the  user to  
+        /// enter the lectuer informaton 
+        /// into the database form the text boxes  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //TODO: Validate Data
@@ -67,7 +67,12 @@ namespace Project
 
         }
        
-
+        /// <summary>
+        /// allows the user to delete a seclected 
+        /// modlue from the datagrid view and the data base 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
@@ -80,16 +85,5 @@ namespace Project
                 
             }
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-       
-
-       
     }
 }

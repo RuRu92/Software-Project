@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace Project
 {
+    /// <summary>
+    /// this class difines what a year group is and what values create the 
+    /// </summary>
     class YearGroupCL
     {
         Int32 m_yearGroupID;
         String m_yearGroupName;
         Int32 m_numStudents;
-
+        /// <summary>
+        /// this  gets and  sets  the  values accroding to what the user has inputed into the  text boxs and  passes them to the data base 
+        /// </summary>
+        /// <param name="YearGroupID"></param>
+        /// <param name="YearGruopName"></param>
+        /// <param name="NumStudents"></param>
         public YearGroupCL(int YearGroupID, string YearGruopName, int NumStudents)
         {
             m_yearGroupID = YearGroupID;

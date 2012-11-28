@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 namespace Project
-{
+{ 
+    /// <summary>
+    /// this class connects to the database 
+    /// and holds all the methods for adding 
+    /// and deleting 
+    /// </summary>
     class DBconnector
     {
+    // variables that allow a databases conection to be used
     private MySqlConnection connection;
     private string server;
     private string database;
@@ -21,7 +27,10 @@ namespace Project
         Initialize();
     }
 
-    //Initialize values
+    /// <summary>
+    /// Initialize the connection to
+    /// the sever were the database is stored and the database 
+    /// </summary>
     private void Initialize()
     {
         //connects to the localy hosted data base 
@@ -38,7 +47,11 @@ namespace Project
 
     }
 
-    //Select statement for the lectuer
+    /// <summary>
+    /// this seclests the lectuer from the database 
+    /// to be used with in this code and  useing a  seclect  query 
+    /// </summary>
+    /// <returns>list of lectuerCl</returns>
     public List<LecturerCL> SelectLectuer()
     {
         string query = "SELECT * FROM lecturer";
@@ -64,11 +77,9 @@ namespace Project
                 Int32 teachingHrs = dataReader.GetInt32(3);
                 // crates the  lectuer object  
                 LecturerCL l = new LecturerCL(lectuerID, lectuerName,  teachingHrs, requiedTeachingHrs);
-                // add all the curent  values to the  database
+                // add all the curent values to the database
                 allLect.Add(l);
-
             }
-
             //close Data Reader
             dataReader.Close();
 
@@ -79,10 +90,14 @@ namespace Project
         return allLect;
     }
 
-    //Insert statement for lectuer table
+   /// <summary>
+    /// this method allows a user to insert an lectuer 
+   /// infomation into the data base useing a Insert query 
+   /// </summary>
+   /// <param name="l"></param>
     public void InsertLect(LecturerCL l)
     {
-        // query to allow data to  be placed  into the table  lectuere  on the  database from the lectuerCL class 
+        // query to allow data to be placed into the table lectuere on the database from the lectuerCL class 
         string queryLect = "INSERT INTO lecturer (lecturerName, lecturerRequiredHours, lecturerTaughtHours) VALUES('" + l.lectName + "','" + l.ReqTeachingHrs + "','" + l.TeachingHrs + "')";
 
         //open connection
@@ -98,6 +113,10 @@ namespace Project
             this.CloseConnection();
         }
     }
+    /// <summary>
+    /// the delete method allows  user to delete a lectuer 
+    /// </summary>
+    /// <param name="id"></param>
     public void DeleteLect(int id) 
     {
 
@@ -117,7 +136,10 @@ namespace Project
             this.CloseConnection();
         }
     }
-   
+   /// <summary>
+   /// seclects the information from the database and return a list of YearGroupsCL
+   /// </summary>
+   /// <returns></returns>
     public List<YearGroupCL> SeclectYearGroup()
     {
         string query = "SELECT * FROM yeargroup";
@@ -152,6 +174,10 @@ namespace Project
         // return all the records in the database for the lecturer
         return allYGrop;
     }
+    /// <summary>
+    /// insert statement for the YearGroupCL 
+    /// </summary>
+    /// <param name="YG">List of  YearGroups</param>
     public void insertYG(YearGroupCL YG)
     {
         string queryYG = "INSERT INTO yeargroup (yearGroupName, noStudents) VALUE('" + YG.YearGropName + "','" 
@@ -169,6 +195,10 @@ namespace Project
             this.CloseConnection();
         }
     }
+    /// <summary>
+    /// delete a year group based on the seclted   
+    /// </summary>
+    /// <param name="id"></param>
     public void DeleteYG(int id)
     {
 

@@ -147,7 +147,6 @@
             this.txtLectName.Name = "txtLectName";
             this.txtLectName.Size = new System.Drawing.Size(182, 26);
             this.txtLectName.TabIndex = 3;
-            this.txtLectName.TextChanged += new System.EventHandler(this.lectName_TextChanged);
             // 
             // lblName
             // 
@@ -175,7 +174,6 @@
             this.txtTeachingHrs.Name = "txtTeachingHrs";
             this.txtTeachingHrs.Size = new System.Drawing.Size(182, 26);
             this.txtTeachingHrs.TabIndex = 5;
-            this.txtTeachingHrs.TextChanged += new System.EventHandler(this.teachingHrs_TextChanged);
             // 
             // txtReqHrs
             // 
@@ -183,7 +181,6 @@
             this.txtReqHrs.Name = "txtReqHrs";
             this.txtReqHrs.Size = new System.Drawing.Size(182, 26);
             this.txtReqHrs.TabIndex = 4;
-            this.txtReqHrs.TextChanged += new System.EventHandler(this.txtReqHrs_TextChanged);
             // 
             // lblID
             // 
