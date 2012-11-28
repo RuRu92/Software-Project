@@ -33,9 +33,7 @@ namespace Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            var main = new  Timetable();
             this.Close();
-            main.Show();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

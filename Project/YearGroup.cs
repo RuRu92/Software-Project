@@ -85,38 +85,37 @@ namespace Project
                    
         }
 
-      
-
         private void lecturerWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lecturer lecWin = new Lecturer();
-            this.Hide();
             lecWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void moduleWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Module modFrom = new Module();
-            this.Hide();
             modFrom.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void roomWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Room roomWin = new Room();
-            this.Hide();
             roomWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lesson lesWin = new Lesson();
-            this.Hide();
+            this.Close();
             lesWin.ShowDialog();
-            this.Show();
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

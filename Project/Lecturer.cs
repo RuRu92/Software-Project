@@ -40,7 +40,6 @@ namespace Project
         private void btnBack_Click(object sender, EventArgs e)
         {
             // close the from and dispalys the time table form 
-            Lecturer lectfrom = new Lecturer();
             this.Close();
 
         }
@@ -84,33 +83,29 @@ namespace Project
         private void moduleWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Module modFrom = new Module();
-            this.Hide();
             modFrom.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void yearGroupWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             YearGroup ygWin = new YearGroup();
-            this.Hide();
             ygWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void roomWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Room roomWin = new Room();
-            this.Hide();
             roomWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void lessonWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lesson lesWin = new Lesson();
-            this.Hide();
             lesWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
     }
 }

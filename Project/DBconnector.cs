@@ -403,12 +403,6 @@ namespace Project
         return allless;
     }
 
-   
-
-
-
-
-
     public void InsertLess(LessonCL less)
     {
         string qureyMod = "INSERT INTO lesson(idlesson, lessonDayTime ,Room_idRoom, Module_idModule,Lecturer_idLecturer,YearGroup_idYearGroup, Timetable_idTimetable) VALUE('" + less.lessID + "','"
@@ -428,19 +422,44 @@ namespace Project
         }
     }
 
-    public Boolean checkClash(String lname, string ygroup, string Room, string modn)
+    public Boolean checkClash(String lname, string ygroup, string roomN, string modn)
     {
         Boolean res = true;
-        string qclash = "SELECT count(*) from xxx where lname='" + lname + "' AND '";
+        
         //Open connection
         if (this.OpenConnection() == true)
         {
             //Create Command
-            MySqlCommand cmd = new MySqlCommand(qclash, connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT idLecturer from lecturer WHERE lecturerName='" + lname + "'", connection);
             //Create a data reader and Execute the command
             MySqlDataReader dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int lecturerid = dataReader.GetInt32(0);
 
-            dataReader.Read();   
+            //Create Command
+            cmd = new MySqlCommand("SELECT idYearGroup from room WHERE yearGroupName='" + ygroup + "'", connection);
+            //Create a data reader and Execute the command
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int ygid = dataReader.GetInt32(0);
+
+            //Create Command
+            cmd = new MySqlCommand("SELECT idRoom from room WHERE roomName='" + roomN + "'", connection);
+            //Create a data reader and Execute the command
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int roomid = dataReader.GetInt32(0);
+
+            //Create Command
+            cmd = new MySqlCommand("SELECT idModule from room WHERE moduleName='" + modn + "'", connection);
+            //Create a data reader and Execute the command
+            dataReader = cmd.ExecuteReader();
+            dataReader.Read();
+            int modid = dataReader.GetInt32(0);
+
+            //SELECT count(*) from lesson WHERE lecturerName='Nigel Edwards' AND yeargroup.yearGroupName='BSc Computer Science Yr 2' AND room.roomName='Y106' AND module.moduleName='Database Design'
+            string qclash = "SELECT count(*) from lesson, WHERE lecturerName='" + lname + "' AND yeargroup.yearGroupName='" + ygroup + "' AND room.roomName='" + roomN + "' AND module.moduleName='" + modn + "'";
+            Console.WriteLine(qclash);
             if(dataReader.GetInt32(0)==0)
                 res = false;
             //close Data Reader
@@ -449,9 +468,7 @@ namespace Project
             //close Connectionon
             this.CloseConnection();
         }
-
         return res;
-
     }
 
 

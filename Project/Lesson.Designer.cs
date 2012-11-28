@@ -74,13 +74,11 @@
             this.cmbMod = new System.Windows.Forms.ComboBox();
             this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timetableDBModule = new Project.TimetableDBModule();
-            this.cmbTime = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblRoom = new System.Windows.Forms.Label();
             this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
-            this.lblTime = new System.Windows.Forms.Label();
             this.lblMod = new System.Windows.Forms.Label();
             this.lblYG = new System.Windows.Forms.Label();
             this.lblLect = new System.Windows.Forms.Label();
@@ -434,38 +432,19 @@
             this.timetableDBModule.DataSetName = "TimetableDBModule";
             this.timetableDBModule.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmbTime
-            // 
-            this.cmbTime.FormattingEnabled = true;
-            this.cmbTime.Items.AddRange(new object[] {
-            "15",
-            "30",
-            "45",
-            "60",
-            "75",
-            "90",
-            "105",
-            "120"});
-            this.cmbTime.Location = new System.Drawing.Point(332, 144);
-            this.cmbTime.Name = "cmbTime";
-            this.cmbTime.Size = new System.Drawing.Size(164, 23);
-            this.cmbTime.TabIndex = 5;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblRoom);
             this.groupBox1.Controls.Add(this.cmbRoom);
-            this.groupBox1.Controls.Add(this.lblTime);
             this.groupBox1.Controls.Add(this.lblMod);
             this.groupBox1.Controls.Add(this.lblYG);
             this.groupBox1.Controls.Add(this.lblLect);
             this.groupBox1.Controls.Add(this.cmbLec);
             this.groupBox1.Controls.Add(this.cmbGroup);
             this.groupBox1.Controls.Add(this.cmbMod);
-            this.groupBox1.Controls.Add(this.cmbTime);
-            this.groupBox1.Location = new System.Drawing.Point(12, 261);
+            this.groupBox1.Location = new System.Drawing.Point(12, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 256);
+            this.groupBox1.Size = new System.Drawing.Size(513, 204);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Input";
@@ -473,7 +452,7 @@
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.Location = new System.Drawing.Point(226, 187);
+            this.lblRoom.Location = new System.Drawing.Point(329, 109);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(38, 15);
             this.lblRoom.TabIndex = 11;
@@ -484,7 +463,7 @@
             this.cmbRoom.DataSource = this.roomBindingSource;
             this.cmbRoom.DisplayMember = "roomName";
             this.cmbRoom.FormattingEnabled = true;
-            this.cmbRoom.Location = new System.Drawing.Point(168, 216);
+            this.cmbRoom.Location = new System.Drawing.Point(330, 144);
             this.cmbRoom.Name = "cmbRoom";
             this.cmbRoom.Size = new System.Drawing.Size(166, 23);
             this.cmbRoom.TabIndex = 10;
@@ -499,15 +478,6 @@
             // 
             this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
             this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(329, 109);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(49, 15);
-            this.lblTime.TabIndex = 9;
-            this.lblTime.Text = "Leangth";
             // 
             // lblMod
             // 
@@ -539,9 +509,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 535);
+            this.btnAdd.Location = new System.Drawing.Point(28, 499);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 27);
+            this.btnAdd.Size = new System.Drawing.Size(65, 58);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Create";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -549,9 +519,9 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(438, 535);
+            this.btnBack.Location = new System.Drawing.Point(440, 499);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(87, 27);
+            this.btnBack.Size = new System.Drawing.Size(68, 58);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -644,12 +614,10 @@
         private System.Windows.Forms.ComboBox cmbLec;
         private System.Windows.Forms.ComboBox cmbGroup;
         private System.Windows.Forms.ComboBox cmbMod;
-        private System.Windows.Forms.ComboBox cmbTime;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblLect;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblMod;
         private System.Windows.Forms.Label lblYG;
         private System.Windows.Forms.ComboBox cmbRoom;

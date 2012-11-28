@@ -39,9 +39,7 @@ namespace Project
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            var main = new Timetable();
             this.Close();
-            main.Show();
         }
 
         private void lblLect_Click(object sender, EventArgs e)
@@ -57,47 +55,39 @@ namespace Project
         private void lectureOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lecturer lecWin = new Lecturer();
-            this.Hide();
             lecWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void moduleOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Module modFrom = new Module();
-            this.Hide();
             modFrom.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void yearGroupOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             YearGroup ygWin = new YearGroup();
-            this.Hide();
             ygWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void roomOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Room roomWin = new Room();
-            this.Hide();
             roomWin.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
      
-
+        // Checks user input for clashes with the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBconnector db = new DBconnector();
-         //   if (db.checkClash(lname, ygroup, , modn))
-                MessageBox.Show("Clash");
-
-
+            if (db.checkClash(cmbLec.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text))
+                MessageBox.Show("Sorry there is a clash with your selection");
         }
-
-
 
     }
 }

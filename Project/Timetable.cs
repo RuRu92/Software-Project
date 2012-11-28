@@ -48,7 +48,6 @@ namespace Project
         private void addModuleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Module modFrom = new Module();
-            this.Hide();
             modFrom.ShowDialog();
             this.Show();
         }
@@ -56,7 +55,6 @@ namespace Project
         private void addYearGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             YearGroup yearGFrom = new YearGroup();
-            this.Hide();
             yearGFrom.ShowDialog();
             this.Show();
         }
@@ -69,7 +67,7 @@ namespace Project
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'timetableseDataSetLesson.lesson' table. You can move, or remove it, as needed.
-            this.lessonTableAdapter.Fill(this.timetableseDataSetLesson.lesson);
+
 
         }
 
@@ -115,7 +113,6 @@ namespace Project
         private void addLecturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lecturer lectfrom = new Lecturer();
-            this.Hide();
             lectfrom.ShowDialog();
             this.Show();
         }
@@ -140,7 +137,6 @@ namespace Project
         private void lessonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lesson lesWin = new Lesson();
-            this.Hide();
             lesWin.ShowDialog();
             this.Show();
         }

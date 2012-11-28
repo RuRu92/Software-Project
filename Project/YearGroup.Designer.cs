@@ -62,6 +62,10 @@
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lecturerWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduleWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
@@ -76,10 +80,6 @@
             this.timetableDBYearGroup = new Project.TimetableDBYearGroup();
             this.timetableDBYearGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.yeargroupTableAdapter = new Project.TimetableDTYearGroupTableAdapters.yeargroupTableAdapter();
-            this.lecturerWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.moduleWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewYG)).BeginInit();
@@ -117,6 +117,7 @@
             this.btnBack.TabIndex = 17;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
             // btnAdd
             // 
@@ -292,26 +293,26 @@
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(119, 6);
             // 
             // cutToolStripMenuItem
             // 
             this.cutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem.Image")));
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -319,7 +320,7 @@
             this.copyToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem.Image")));
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -327,18 +328,18 @@
             this.pasteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem.Image")));
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(119, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -357,8 +358,36 @@
             this.roomWindowToolStripMenuItem,
             this.lessonWindowToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // lecturerWindowToolStripMenuItem
+            // 
+            this.lecturerWindowToolStripMenuItem.Name = "lecturerWindowToolStripMenuItem";
+            this.lecturerWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.lecturerWindowToolStripMenuItem.Text = "Lecturer Window";
+            this.lecturerWindowToolStripMenuItem.Click += new System.EventHandler(this.lecturerWindowToolStripMenuItem_Click);
+            // 
+            // moduleWindowToolStripMenuItem
+            // 
+            this.moduleWindowToolStripMenuItem.Name = "moduleWindowToolStripMenuItem";
+            this.moduleWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.moduleWindowToolStripMenuItem.Text = "Module Window";
+            this.moduleWindowToolStripMenuItem.Click += new System.EventHandler(this.moduleWindowToolStripMenuItem_Click);
+            // 
+            // roomWindowToolStripMenuItem
+            // 
+            this.roomWindowToolStripMenuItem.Name = "roomWindowToolStripMenuItem";
+            this.roomWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.roomWindowToolStripMenuItem.Text = "Room Window";
+            this.roomWindowToolStripMenuItem.Click += new System.EventHandler(this.roomWindowToolStripMenuItem_Click);
+            // 
+            // lessonWindowToolStripMenuItem
+            // 
+            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
+            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
+            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -447,34 +476,6 @@
             // yeargroupTableAdapter
             // 
             this.yeargroupTableAdapter.ClearBeforeFill = true;
-            // 
-            // lecturerWindowToolStripMenuItem
-            // 
-            this.lecturerWindowToolStripMenuItem.Name = "lecturerWindowToolStripMenuItem";
-            this.lecturerWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.lecturerWindowToolStripMenuItem.Text = "Lecturer Window";
-            this.lecturerWindowToolStripMenuItem.Click += new System.EventHandler(this.lecturerWindowToolStripMenuItem_Click);
-            // 
-            // moduleWindowToolStripMenuItem
-            // 
-            this.moduleWindowToolStripMenuItem.Name = "moduleWindowToolStripMenuItem";
-            this.moduleWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.moduleWindowToolStripMenuItem.Text = "Module Window";
-            this.moduleWindowToolStripMenuItem.Click += new System.EventHandler(this.moduleWindowToolStripMenuItem_Click);
-            // 
-            // roomWindowToolStripMenuItem
-            // 
-            this.roomWindowToolStripMenuItem.Name = "roomWindowToolStripMenuItem";
-            this.roomWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.roomWindowToolStripMenuItem.Text = "Room Window";
-            this.roomWindowToolStripMenuItem.Click += new System.EventHandler(this.roomWindowToolStripMenuItem_Click);
-            // 
-            // lessonWindowToolStripMenuItem
-            // 
-            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
-            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
-            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
             // 
             // YearGroup
             // 
