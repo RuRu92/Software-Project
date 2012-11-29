@@ -92,8 +92,18 @@
             this.timetableseDataSetLess = new Project.timetableseDataSetLess();
             this.lessonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lessonTableAdapter1 = new Project.timetableseDataSetLessTableAdapters.lessonTableAdapter();
-            this.cmbTime = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbDate = new System.Windows.Forms.ComboBox();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.startTimeDB = new Project.StartTimeDB();
+            this.ttabletimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ttabletimeTableAdapter = new Project.StartTimeDBTableAdapters.ttabletimeTableAdapter();
+            this.timetableseDataSet1 = new Project.timetableseDataSet1();
+            this.ttabledayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ttabledayTableAdapter = new Project.timetableseDataSet1TableAdapters.ttabledayTableAdapter();
             this.lblTime = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblEndTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -108,6 +118,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLess)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startTimeDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttabletimeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttabledayBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lessonBindingSource
@@ -441,8 +455,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblEndTime);
+            this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.lblTime);
-            this.groupBox1.Controls.Add(this.cmbTime);
+            this.groupBox1.Controls.Add(this.lblDate);
+            this.groupBox1.Controls.Add(this.cmbDate);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.lblRoom);
             this.groupBox1.Controls.Add(this.cmbRoom);
             this.groupBox1.Controls.Add(this.lblMod);
@@ -451,9 +469,9 @@
             this.groupBox1.Controls.Add(this.cmbLec);
             this.groupBox1.Controls.Add(this.cmbGroup);
             this.groupBox1.Controls.Add(this.cmbMod);
-            this.groupBox1.Location = new System.Drawing.Point(12, 71);
+            this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 258);
+            this.groupBox1.Size = new System.Drawing.Size(513, 335);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Input";
@@ -518,7 +536,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(28, 499);
+            this.btnAdd.Location = new System.Drawing.Point(12, 499);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(65, 58);
             this.btnAdd.TabIndex = 7;
@@ -528,7 +546,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(440, 499);
+            this.btnBack.Location = new System.Drawing.Point(457, 499);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(68, 58);
             this.btnBack.TabIndex = 8;
@@ -570,27 +588,93 @@
             // 
             this.lessonTableAdapter1.ClearBeforeFill = true;
             // 
-            // cmbTime
+            // comboBox1
             // 
-            this.cmbTime.FormattingEnabled = true;
-            this.cmbTime.Items.AddRange(new object[] {
-            "45",
-            "60",
-            "90",
-            "120"});
-            this.cmbTime.Location = new System.Drawing.Point(165, 214);
-            this.cmbTime.Name = "cmbTime";
-            this.cmbTime.Size = new System.Drawing.Size(166, 23);
-            this.cmbTime.TabIndex = 12;
+            this.comboBox1.DataSource = this.ttabletimeBindingSource;
+            this.comboBox1.DisplayMember = "time";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 214);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(166, 23);
+            this.comboBox1.TabIndex = 14;
+            this.comboBox1.ValueMember = "time";
+            // 
+            // cmbDate
+            // 
+            this.cmbDate.DataSource = this.ttabledayBindingSource;
+            this.cmbDate.DisplayMember = "day";
+            this.cmbDate.FormattingEnabled = true;
+            this.cmbDate.Location = new System.Drawing.Point(330, 214);
+            this.cmbDate.Name = "cmbDate";
+            this.cmbDate.Size = new System.Drawing.Size(166, 23);
+            this.cmbDate.TabIndex = 15;
+            this.cmbDate.ValueMember = "day";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(329, 185);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(32, 15);
+            this.lblDate.TabIndex = 16;
+            this.lblDate.Text = "Date";
+            // 
+            // startTimeDB
+            // 
+            this.startTimeDB.DataSetName = "StartTimeDB";
+            this.startTimeDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ttabletimeBindingSource
+            // 
+            this.ttabletimeBindingSource.DataMember = "ttabletime";
+            this.ttabletimeBindingSource.DataSource = this.startTimeDB;
+            // 
+            // ttabletimeTableAdapter
+            // 
+            this.ttabletimeTableAdapter.ClearBeforeFill = true;
+            // 
+            // timetableseDataSet1
+            // 
+            this.timetableseDataSet1.DataSetName = "timetableseDataSet1";
+            this.timetableseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ttabledayBindingSource
+            // 
+            this.ttabledayBindingSource.DataMember = "ttableday";
+            this.ttabledayBindingSource.DataSource = this.timetableseDataSet1;
+            // 
+            // ttabledayTableAdapter
+            // 
+            this.ttabledayTableAdapter.ClearBeforeFill = true;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(214, 181);
+            this.lblTime.Location = new System.Drawing.Point(19, 185);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(73, 15);
-            this.lblTime.TabIndex = 13;
-            this.lblTime.Text = "Lesson Time";
+            this.lblTime.Size = new System.Drawing.Size(62, 15);
+            this.lblTime.TabIndex = 17;
+            this.lblTime.Text = "Start Time";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.ttabletimeBindingSource;
+            this.comboBox2.DisplayMember = "time";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(168, 293);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(166, 23);
+            this.comboBox2.TabIndex = 18;
+            this.comboBox2.ValueMember = "time";
+            // 
+            // lblEndTime
+            // 
+            this.lblEndTime.AutoSize = true;
+            this.lblEndTime.Location = new System.Drawing.Point(223, 261);
+            this.lblEndTime.Name = "lblEndTime";
+            this.lblEndTime.Size = new System.Drawing.Size(56, 15);
+            this.lblEndTime.TabIndex = 19;
+            this.lblEndTime.Text = "End Time";
             // 
             // Lesson
             // 
@@ -624,6 +708,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLess)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.startTimeDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttabletimeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ttabledayBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,7 +781,17 @@
         private timetableseDataSetLess timetableseDataSetLess;
         private System.Windows.Forms.BindingSource lessonBindingSource1;
         private timetableseDataSetLessTableAdapters.lessonTableAdapter lessonTableAdapter1;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.ComboBox cmbDate;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private StartTimeDB startTimeDB;
+        private System.Windows.Forms.BindingSource ttabletimeBindingSource;
+        private StartTimeDBTableAdapters.ttabletimeTableAdapter ttabletimeTableAdapter;
+        private timetableseDataSet1 timetableseDataSet1;
+        private System.Windows.Forms.BindingSource ttabledayBindingSource;
+        private timetableseDataSet1TableAdapters.ttabledayTableAdapter ttabledayTableAdapter;
+        private System.Windows.Forms.Label lblEndTime;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.ComboBox cmbTime;
     }
 }

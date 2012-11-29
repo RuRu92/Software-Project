@@ -67,7 +67,6 @@
             this.lblTue = new System.Windows.Forms.Label();
             this.lblWed = new System.Windows.Forms.Label();
             this.lblThu = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lblTime1 = new System.Windows.Forms.Label();
             this.lblTime2 = new System.Windows.Forms.Label();
             this.lblTime3 = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.lblTime7 = new System.Windows.Forms.Label();
             this.lblTime8 = new System.Windows.Forms.Label();
             this.lblTime9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
             this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
@@ -100,7 +100,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1131, 25);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -125,8 +124,7 @@
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.newToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
             this.newToolStripMenuItem.Text = "Create New Timetable";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
-            // 
+             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
@@ -261,7 +259,6 @@
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 19);
             this.toolsToolStripMenuItem.Text = "&Tools";
-            this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
             // 
             // optionsToolStripMenuItem
             // 
@@ -274,7 +271,6 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
-            this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // addModuleToolStripMenuItem
             // 
@@ -349,22 +345,21 @@
             this.tlpGrid.BackColor = System.Drawing.Color.Lavender;
             this.tlpGrid.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
             this.tlpGrid.ColumnCount = 10;
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.4568F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
-            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.504801F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.72918F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
+            this.tlpGrid.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.807869F));
             this.tlpGrid.Controls.Add(this.lblFri, 0, 5);
             this.tlpGrid.Controls.Add(this.lblMon, 0, 1);
             this.tlpGrid.Controls.Add(this.lblTue, 0, 2);
             this.tlpGrid.Controls.Add(this.lblWed, 0, 3);
             this.tlpGrid.Controls.Add(this.lblThu, 0, 4);
-            this.tlpGrid.Controls.Add(this.panel1, 1, 1);
             this.tlpGrid.Controls.Add(this.lblTime1, 1, 0);
             this.tlpGrid.Controls.Add(this.lblTime2, 2, 0);
             this.tlpGrid.Controls.Add(this.lblTime3, 3, 0);
@@ -374,6 +369,7 @@
             this.tlpGrid.Controls.Add(this.lblTime7, 7, 0);
             this.tlpGrid.Controls.Add(this.lblTime8, 8, 0);
             this.tlpGrid.Controls.Add(this.lblTime9, 9, 0);
+            this.tlpGrid.Controls.Add(this.panel1, 1, 1);
             this.tlpGrid.Location = new System.Drawing.Point(112, 122);
             this.tlpGrid.Name = "tlpGrid";
             this.tlpGrid.RowCount = 6;
@@ -383,17 +379,17 @@
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.85714F));
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.85714F));
             this.tlpGrid.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.85714F));
-            this.tlpGrid.Size = new System.Drawing.Size(864, 413);
+            this.tlpGrid.Size = new System.Drawing.Size(848, 407);
             this.tlpGrid.TabIndex = 2;
-            this.tlpGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint_2);
+            this.tlpGrid.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpGrid_Paint);
             // 
             // lblFri
             // 
             this.lblFri.AutoSize = true;
             this.lblFri.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFri.Location = new System.Drawing.Point(6, 336);
+            this.lblFri.Location = new System.Drawing.Point(6, 331);
             this.lblFri.Name = "lblFri";
-            this.lblFri.Size = new System.Drawing.Size(114, 74);
+            this.lblFri.Size = new System.Drawing.Size(89, 73);
             this.lblFri.TabIndex = 4;
             this.lblFri.Text = "Friday";
             this.lblFri.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -401,21 +397,20 @@
             // lblMon
             // 
             this.lblMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMon.Location = new System.Drawing.Point(6, 48);
+            this.lblMon.Location = new System.Drawing.Point(6, 47);
             this.lblMon.Name = "lblMon";
-            this.lblMon.Size = new System.Drawing.Size(114, 69);
+            this.lblMon.Size = new System.Drawing.Size(89, 68);
             this.lblMon.TabIndex = 0;
             this.lblMon.Text = "Monday";
             this.lblMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMon.Click += new System.EventHandler(this.lbbMon_Click);
             // 
             // lblTue
             // 
             this.lblTue.AutoSize = true;
             this.lblTue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTue.Location = new System.Drawing.Point(6, 120);
+            this.lblTue.Location = new System.Drawing.Point(6, 118);
             this.lblTue.Name = "lblTue";
-            this.lblTue.Size = new System.Drawing.Size(114, 69);
+            this.lblTue.Size = new System.Drawing.Size(89, 68);
             this.lblTue.TabIndex = 1;
             this.lblTue.Text = "Tuesday";
             this.lblTue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -424,9 +419,9 @@
             // 
             this.lblWed.AutoSize = true;
             this.lblWed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblWed.Location = new System.Drawing.Point(6, 192);
+            this.lblWed.Location = new System.Drawing.Point(6, 189);
             this.lblWed.Name = "lblWed";
-            this.lblWed.Size = new System.Drawing.Size(114, 69);
+            this.lblWed.Size = new System.Drawing.Size(89, 68);
             this.lblWed.TabIndex = 2;
             this.lblWed.Text = "Wednesday";
             this.lblWed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,27 +430,20 @@
             // 
             this.lblThu.AutoSize = true;
             this.lblThu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblThu.Location = new System.Drawing.Point(6, 264);
+            this.lblThu.Location = new System.Drawing.Point(6, 260);
             this.lblThu.Name = "lblThu";
-            this.lblThu.Size = new System.Drawing.Size(114, 69);
+            this.lblThu.Size = new System.Drawing.Size(89, 68);
             this.lblThu.TabIndex = 3;
             this.lblThu.Text = "Thursday";
             this.lblThu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(129, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(72, 63);
-            this.panel1.TabIndex = 5;
             // 
             // lblTime1
             // 
             this.lblTime1.AutoSize = true;
             this.lblTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime1.Location = new System.Drawing.Point(129, 3);
+            this.lblTime1.Location = new System.Drawing.Point(104, 3);
             this.lblTime1.Name = "lblTime1";
-            this.lblTime1.Size = new System.Drawing.Size(72, 42);
+            this.lblTime1.Size = new System.Drawing.Size(73, 41);
             this.lblTime1.TabIndex = 6;
             this.lblTime1.Text = "8:00";
             this.lblTime1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -464,9 +452,9 @@
             // 
             this.lblTime2.AutoSize = true;
             this.lblTime2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime2.Location = new System.Drawing.Point(210, 3);
+            this.lblTime2.Location = new System.Drawing.Point(186, 3);
             this.lblTime2.Name = "lblTime2";
-            this.lblTime2.Size = new System.Drawing.Size(72, 42);
+            this.lblTime2.Size = new System.Drawing.Size(73, 41);
             this.lblTime2.TabIndex = 7;
             this.lblTime2.Text = "09:00";
             this.lblTime2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -475,9 +463,9 @@
             // 
             this.lblTime3.AutoSize = true;
             this.lblTime3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime3.Location = new System.Drawing.Point(291, 3);
+            this.lblTime3.Location = new System.Drawing.Point(268, 3);
             this.lblTime3.Name = "lblTime3";
-            this.lblTime3.Size = new System.Drawing.Size(72, 42);
+            this.lblTime3.Size = new System.Drawing.Size(73, 41);
             this.lblTime3.TabIndex = 8;
             this.lblTime3.Text = "10:00";
             this.lblTime3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -486,9 +474,9 @@
             // 
             this.lblTime4.AutoSize = true;
             this.lblTime4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime4.Location = new System.Drawing.Point(372, 3);
+            this.lblTime4.Location = new System.Drawing.Point(350, 3);
             this.lblTime4.Name = "lblTime4";
-            this.lblTime4.Size = new System.Drawing.Size(72, 42);
+            this.lblTime4.Size = new System.Drawing.Size(73, 41);
             this.lblTime4.TabIndex = 9;
             this.lblTime4.Text = "11:00";
             this.lblTime4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -497,9 +485,9 @@
             // 
             this.lblTime5.AutoSize = true;
             this.lblTime5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime5.Location = new System.Drawing.Point(453, 3);
+            this.lblTime5.Location = new System.Drawing.Point(432, 3);
             this.lblTime5.Name = "lblTime5";
-            this.lblTime5.Size = new System.Drawing.Size(72, 42);
+            this.lblTime5.Size = new System.Drawing.Size(73, 41);
             this.lblTime5.TabIndex = 10;
             this.lblTime5.Text = "12:00";
             this.lblTime5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -508,9 +496,9 @@
             // 
             this.lblTime6.AutoSize = true;
             this.lblTime6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime6.Location = new System.Drawing.Point(534, 3);
+            this.lblTime6.Location = new System.Drawing.Point(514, 3);
             this.lblTime6.Name = "lblTime6";
-            this.lblTime6.Size = new System.Drawing.Size(72, 42);
+            this.lblTime6.Size = new System.Drawing.Size(73, 41);
             this.lblTime6.TabIndex = 11;
             this.lblTime6.Text = "13:00";
             this.lblTime6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -519,9 +507,9 @@
             // 
             this.lblTime7.AutoSize = true;
             this.lblTime7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime7.Location = new System.Drawing.Point(615, 3);
+            this.lblTime7.Location = new System.Drawing.Point(596, 3);
             this.lblTime7.Name = "lblTime7";
-            this.lblTime7.Size = new System.Drawing.Size(72, 42);
+            this.lblTime7.Size = new System.Drawing.Size(73, 41);
             this.lblTime7.TabIndex = 12;
             this.lblTime7.Text = "14:00";
             this.lblTime7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -530,9 +518,9 @@
             // 
             this.lblTime8.AutoSize = true;
             this.lblTime8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime8.Location = new System.Drawing.Point(696, 3);
+            this.lblTime8.Location = new System.Drawing.Point(678, 3);
             this.lblTime8.Name = "lblTime8";
-            this.lblTime8.Size = new System.Drawing.Size(72, 42);
+            this.lblTime8.Size = new System.Drawing.Size(73, 41);
             this.lblTime8.TabIndex = 13;
             this.lblTime8.Text = "15:00";
             this.lblTime8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -541,12 +529,20 @@
             // 
             this.lblTime9.AutoSize = true;
             this.lblTime9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime9.Location = new System.Drawing.Point(777, 3);
+            this.lblTime9.Location = new System.Drawing.Point(760, 3);
             this.lblTime9.Name = "lblTime9";
-            this.lblTime9.Size = new System.Drawing.Size(81, 42);
+            this.lblTime9.Size = new System.Drawing.Size(82, 41);
             this.lblTime9.TabIndex = 14;
             this.lblTime9.Text = "16:00";
             this.lblTime9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(104, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(73, 62);
+            this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // timetableseDataSetLesson
             // 

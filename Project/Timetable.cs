@@ -20,31 +20,6 @@ namespace Project
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void newToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addModuleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Module modFrom = new Module();
@@ -68,7 +43,9 @@ namespace Project
         {
             // TODO: This line of code loads data into the 'timetableseDataSetLesson.lesson' table. You can move, or remove it, as needed.
 
-
+            this.tlpGrid.AllowDrop = true;
+            this.tlpGrid.DragOver += new DragEventHandler(tlpGrid_DragOver);
+            this.tlpGrid.DragDrop += new DragEventHandler(tlpGrid_DragDrop); 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -80,37 +57,7 @@ namespace Project
             formGraphics.Dispose();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblMon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblFri_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbbMon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint_2(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void addLecturerToolStripMenuItem_Click(object sender, EventArgs e)
+       private void addLecturerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lecturer lectfrom = new Lecturer();
             lectfrom.ShowDialog();
@@ -124,21 +71,36 @@ namespace Project
             this.Show();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void lessonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Lesson lesWin = new Lesson();
             lesWin.ShowDialog();
             this.Show();
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tlpGrid_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        void tlpGrid_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        void tlpGrid_DragDrop(object sender, DragEventArgs e)
+        {
+            Control c = e.Data.GetData(e.Data.GetFormats()[0]) as Control;
+            if (c != null)
+            {
+                c.Location = this.tlpGrid.PointToClient(new Point(e.X, e.Y));
+                this.tlpGrid.Controls.Add(c);
+            }
         }
     }
 }

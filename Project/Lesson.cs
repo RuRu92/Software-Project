@@ -24,6 +24,10 @@ namespace Project
 
         private void Lesson_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'timetableseDataSet1.ttableday' table. You can move, or remove it, as needed.
+            this.ttabledayTableAdapter.Fill(this.timetableseDataSet1.ttableday);
+            // TODO: This line of code loads data into the 'startTimeDB.ttabletime' table. You can move, or remove it, as needed.
+            this.ttabletimeTableAdapter.Fill(this.startTimeDB.ttabletime);
             // TODO: This line of code loads data into the 'timetableseDataSetLess.lesson' table. You can move, or remove it, as needed.
             this.lessonTableAdapter1.Fill(this.timetableseDataSetLess.lesson);
             // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
@@ -36,7 +40,6 @@ namespace Project
             this.lecturerTableAdapter.Fill(this.timeTableDBLect.lecturer);
             // TODO: This line of code loads data into the 'timetableseDataSetLesson.lesson' table. You can move, or remove it, as needed.
             this.lessonTableAdapter.Fill(this.timetableseDataSetLesson.lesson);
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -104,5 +107,6 @@ namespace Project
             this.lessonTableAdapter1.Fill(this.timetableseDataSetLess.lesson);
             MessageBox.Show("Lesson added information added");
         }
-    }
-}
+     } 
+  }
+
