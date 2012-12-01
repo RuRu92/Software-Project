@@ -12,8 +12,14 @@ using MySql.Data.MySqlClient;
 
 namespace Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Room : Form
     {
+        /// <summary>
+        /// jjj
+        /// </summary>
         public Room()
         {
             InitializeComponent();
@@ -27,8 +33,12 @@ namespace Project
 
         private void Room_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
-            this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);         
+            // TODO: This line of code loads data into the 'timetableseDS.room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.timetableseDS.room);
+            // TODO: This line of code loads data into the 'dataSetTimetable.room' table. You can move, or remove it, as needed.
+            
+          
+                   
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -38,15 +48,14 @@ namespace Project
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-             // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
-            this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
+             
             DBconnector dbc = new DBconnector();
 
             //TODO: Validate Data
             // adds the room information form the text boxes to the  databases and up dates it 
 
              dbc.InsertRoom(new RoomCL(0, txtRName.Text, cmbType.SelectedItem.ToString(), int.Parse(txtCap.Text)));
-             this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
+            
              MessageBox.Show("Room information added");
         }
 
@@ -65,7 +74,8 @@ namespace Project
                 int id = (int)this.dtgRoom.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteRoom(id);
-                this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
+               
+                
 
             }
         }

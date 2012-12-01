@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lesson));
-            this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,74 +63,48 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmbLec = new System.Windows.Forms.ComboBox();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timeTableDBLect = new Project.TimeTableDBLect();
             this.cmbGroup = new System.Windows.Forms.ComboBox();
             this.yeargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableDTYearGroup = new Project.TimetableDTYearGroup();
+            this.timetableseDS = new Project.timetableseDS();
             this.cmbMod = new System.Windows.Forms.ComboBox();
+            this.moduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableDBModule = new Project.TimetableDBModule();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbEndTime = new System.Windows.Forms.ComboBox();
+            this.Day = new System.Windows.Forms.Label();
+            this.cmbDay = new System.Windows.Forms.ComboBox();
+            this.cmblect = new System.Windows.Forms.ComboBox();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblTime = new System.Windows.Forms.Label();
+            this.cmbStartTime = new System.Windows.Forms.ComboBox();
             this.lblRoom = new System.Windows.Forms.Label();
             this.cmbRoom = new System.Windows.Forms.ComboBox();
             this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableseDataSetRoom = new Project.timetableseDataSetRoom();
             this.lblMod = new System.Windows.Forms.Label();
             this.lblYG = new System.Windows.Forms.Label();
             this.lblLect = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
-            this.lecturerTableAdapter = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
-            this.moduleTableAdapter = new Project.TimetableDBModuleTableAdapters.moduleTableAdapter();
-            this.yeargroupTableAdapter = new Project.TimetableDTYearGroupTableAdapters.yeargroupTableAdapter();
-            this.roomTableAdapter = new Project.timetableseDataSetRoomTableAdapters.roomTableAdapter();
-            this.timetableseDataSetLess = new Project.timetableseDataSetLess();
-            this.lessonBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lessonTableAdapter1 = new Project.timetableseDataSetLessTableAdapters.lessonTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cmbDate = new System.Windows.Forms.ComboBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.startTimeDB = new Project.StartTimeDB();
-            this.ttabletimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttabletimeTableAdapter = new Project.StartTimeDBTableAdapters.ttabletimeTableAdapter();
-            this.timetableseDataSet1 = new Project.timetableseDataSet1();
-            this.ttabledayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ttabledayTableAdapter = new Project.timetableseDataSet1TableAdapters.ttabledayTableAdapter();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.lblEndTime = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
+            this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lessonTableAdapter = new Project.timetableseDSTableAdapters.lessonTableAdapter();
+            this.lecturerTableAdapter = new Project.timetableseDSTableAdapters.lecturerTableAdapter();
+            this.moduleTableAdapter = new Project.timetableseDSTableAdapters.moduleTableAdapter();
+            this.roomTableAdapter = new Project.timetableseDSTableAdapters.roomTableAdapter();
+            this.yeargroupTableAdapter = new Project.timetableseDSTableAdapters.yeargroupTableAdapter();
+            this.dgvLesson = new System.Windows.Forms.DataGridView();
+            this.bntDelete = new System.Windows.Forms.Button();
+            this.labEndTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLess)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startTimeDB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttabletimeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttabledayBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLesson)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lessonBindingSource
-            // 
-            this.lessonBindingSource.DataMember = "lesson";
-            this.lessonBindingSource.DataSource = this.timetableseDataSetLesson;
-            // 
-            // timetableseDataSetLesson
-            // 
-            this.timetableseDataSetLesson.DataSetName = "timetableseDataSetLesson";
-            this.timetableseDataSetLesson.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // menuStrip1
             // 
@@ -145,7 +117,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(537, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(819, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -389,28 +361,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // cmbLec
-            // 
-            this.cmbLec.DataSource = this.lecturerBindingSource;
-            this.cmbLec.DisplayMember = "lecturerName";
-            this.cmbLec.FormattingEnabled = true;
-            this.cmbLec.Location = new System.Drawing.Point(16, 64);
-            this.cmbLec.Name = "cmbLec";
-            this.cmbLec.Size = new System.Drawing.Size(163, 23);
-            this.cmbLec.TabIndex = 2;
-            this.cmbLec.ValueMember = "lecturerName";
-            this.cmbLec.SelectedIndexChanged += new System.EventHandler(this.cmbLec_SelectedIndexChanged);
-            // 
-            // lecturerBindingSource
-            // 
-            this.lecturerBindingSource.DataMember = "lecturer";
-            this.lecturerBindingSource.DataSource = this.timeTableDBLect;
-            // 
-            // timeTableDBLect
-            // 
-            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
-            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cmbGroup
             // 
             this.cmbGroup.DataSource = this.yeargroupBindingSource;
@@ -425,61 +375,141 @@
             // yeargroupBindingSource
             // 
             this.yeargroupBindingSource.DataMember = "yeargroup";
-            this.yeargroupBindingSource.DataSource = this.timetableDTYearGroup;
+            this.yeargroupBindingSource.DataSource = this.timetableseDS;
             // 
-            // timetableDTYearGroup
+            // timetableseDS
             // 
-            this.timetableDTYearGroup.DataSetName = "TimetableDTYearGroup";
-            this.timetableDTYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.timetableseDS.DataSetName = "timetableseDS";
+            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbMod
             // 
-            this.cmbMod.DataSource = this.moduleBindingSource;
+            this.cmbMod.DataSource = this.moduleBindingSource1;
             this.cmbMod.DisplayMember = "moduleName";
             this.cmbMod.FormattingEnabled = true;
-            this.cmbMod.Location = new System.Drawing.Point(332, 64);
+            this.cmbMod.Location = new System.Drawing.Point(271, 64);
             this.cmbMod.Name = "cmbMod";
             this.cmbMod.Size = new System.Drawing.Size(164, 23);
             this.cmbMod.TabIndex = 4;
             this.cmbMod.ValueMember = "moduleName";
             // 
-            // moduleBindingSource
+            // moduleBindingSource1
             // 
-            this.moduleBindingSource.DataMember = "module";
-            this.moduleBindingSource.DataSource = this.timetableDBModule;
-            // 
-            // timetableDBModule
-            // 
-            this.timetableDBModule.DataSetName = "TimetableDBModule";
-            this.timetableDBModule.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.moduleBindingSource1.DataMember = "module";
+            this.moduleBindingSource1.DataSource = this.timetableseDS;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblEndTime);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.labEndTime);
+            this.groupBox1.Controls.Add(this.cmbEndTime);
+            this.groupBox1.Controls.Add(this.Day);
+            this.groupBox1.Controls.Add(this.cmbDay);
+            this.groupBox1.Controls.Add(this.cmblect);
             this.groupBox1.Controls.Add(this.lblTime);
-            this.groupBox1.Controls.Add(this.lblDate);
-            this.groupBox1.Controls.Add(this.cmbDate);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbStartTime);
             this.groupBox1.Controls.Add(this.lblRoom);
             this.groupBox1.Controls.Add(this.cmbRoom);
             this.groupBox1.Controls.Add(this.lblMod);
             this.groupBox1.Controls.Add(this.lblYG);
             this.groupBox1.Controls.Add(this.lblLect);
-            this.groupBox1.Controls.Add(this.cmbLec);
             this.groupBox1.Controls.Add(this.cmbGroup);
             this.groupBox1.Controls.Add(this.cmbMod);
-            this.groupBox1.Location = new System.Drawing.Point(12, 67);
+            this.groupBox1.Location = new System.Drawing.Point(12, 207);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 335);
+            this.groupBox1.Size = new System.Drawing.Size(807, 254);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Input";
             // 
+            // cmbEndTime
+            // 
+            this.cmbEndTime.FormattingEnabled = true;
+            this.cmbEndTime.Items.AddRange(new object[] {
+            "08:00",
+            "08:45",
+            "08:15",
+            "08:55",
+            "09:00",
+            "09:45",
+            "09:15",
+            "09:55"});
+            this.cmbEndTime.Location = new System.Drawing.Point(497, 144);
+            this.cmbEndTime.Name = "cmbEndTime";
+            this.cmbEndTime.Size = new System.Drawing.Size(166, 23);
+            this.cmbEndTime.TabIndex = 21;
+            // 
+            // Day
+            // 
+            this.Day.AutoSize = true;
+            this.Day.Location = new System.Drawing.Point(268, 174);
+            this.Day.Name = "Day";
+            this.Day.Size = new System.Drawing.Size(28, 15);
+            this.Day.TabIndex = 20;
+            this.Day.Text = "Day";
+            // 
+            // cmbDay
+            // 
+            this.cmbDay.FormattingEnabled = true;
+            this.cmbDay.Items.AddRange(new object[] {
+            "Monday",
+            "Tuseday",
+            "Wednesday",
+            "Thursday",
+            "Firday"});
+            this.cmbDay.Location = new System.Drawing.Point(271, 209);
+            this.cmbDay.Name = "cmbDay";
+            this.cmbDay.Size = new System.Drawing.Size(166, 23);
+            this.cmbDay.TabIndex = 19;
+            // 
+            // cmblect
+            // 
+            this.cmblect.DataSource = this.lecturerBindingSource;
+            this.cmblect.DisplayMember = "lecturerName";
+            this.cmblect.FormattingEnabled = true;
+            this.cmblect.Location = new System.Drawing.Point(20, 62);
+            this.cmblect.Name = "cmblect";
+            this.cmblect.Size = new System.Drawing.Size(162, 23);
+            this.cmblect.TabIndex = 18;
+            this.cmblect.ValueMember = "lecturerName";
+            // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "lecturer";
+            this.lecturerBindingSource.DataSource = this.timetableseDS;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(494, 37);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(62, 15);
+            this.lblTime.TabIndex = 17;
+            this.lblTime.Text = "Start Time";
+            // 
+            // cmbStartTime
+            // 
+            this.cmbStartTime.FormattingEnabled = true;
+            this.cmbStartTime.Items.AddRange(new object[] {
+            "08:00",
+            "09:00",
+            "10:00",
+            "11:00",
+            "12:00",
+            "13:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            ""});
+            this.cmbStartTime.Location = new System.Drawing.Point(497, 64);
+            this.cmbStartTime.Name = "cmbStartTime";
+            this.cmbStartTime.Size = new System.Drawing.Size(166, 23);
+            this.cmbStartTime.TabIndex = 14;
+            // 
             // lblRoom
             // 
             this.lblRoom.AutoSize = true;
-            this.lblRoom.Location = new System.Drawing.Point(329, 109);
+            this.lblRoom.Location = new System.Drawing.Point(268, 109);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(38, 15);
             this.lblRoom.TabIndex = 11;
@@ -490,7 +520,7 @@
             this.cmbRoom.DataSource = this.roomBindingSource;
             this.cmbRoom.DisplayMember = "roomName";
             this.cmbRoom.FormattingEnabled = true;
-            this.cmbRoom.Location = new System.Drawing.Point(330, 144);
+            this.cmbRoom.Location = new System.Drawing.Point(269, 144);
             this.cmbRoom.Name = "cmbRoom";
             this.cmbRoom.Size = new System.Drawing.Size(166, 23);
             this.cmbRoom.TabIndex = 10;
@@ -499,17 +529,12 @@
             // roomBindingSource
             // 
             this.roomBindingSource.DataMember = "room";
-            this.roomBindingSource.DataSource = this.timetableseDataSetRoom;
-            // 
-            // timetableseDataSetRoom
-            // 
-            this.timetableseDataSetRoom.DataSetName = "timetableseDataSetRoom";
-            this.timetableseDataSetRoom.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.roomBindingSource.DataSource = this.timetableseDS;
             // 
             // lblMod
             // 
             this.lblMod.AutoSize = true;
-            this.lblMod.Location = new System.Drawing.Point(329, 37);
+            this.lblMod.Location = new System.Drawing.Point(268, 37);
             this.lblMod.Name = "lblMod";
             this.lblMod.Size = new System.Drawing.Size(83, 15);
             this.lblMod.TabIndex = 8;
@@ -532,7 +557,6 @@
             this.lblLect.Size = new System.Drawing.Size(80, 15);
             this.lblLect.TabIndex = 6;
             this.lblLect.Text = "Lecture Name";
-            this.lblLect.Click += new System.EventHandler(this.lblLect_Click);
             // 
             // btnAdd
             // 
@@ -546,13 +570,18 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(457, 499);
+            this.btnBack.Location = new System.Drawing.Point(701, 499);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(68, 58);
             this.btnBack.TabIndex = 8;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // lessonBindingSource
+            // 
+            this.lessonBindingSource.DataMember = "lesson";
+            this.lessonBindingSource.DataSource = this.timetableseDS;
             // 
             // lessonTableAdapter
             // 
@@ -566,122 +595,51 @@
             // 
             this.moduleTableAdapter.ClearBeforeFill = true;
             // 
-            // yeargroupTableAdapter
-            // 
-            this.yeargroupTableAdapter.ClearBeforeFill = true;
-            // 
             // roomTableAdapter
             // 
             this.roomTableAdapter.ClearBeforeFill = true;
             // 
-            // timetableseDataSetLess
+            // yeargroupTableAdapter
             // 
-            this.timetableseDataSetLess.DataSetName = "timetableseDataSetLess";
-            this.timetableseDataSetLess.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.yeargroupTableAdapter.ClearBeforeFill = true;
             // 
-            // lessonBindingSource1
+            // dgvLesson
             // 
-            this.lessonBindingSource1.DataMember = "lesson";
-            this.lessonBindingSource1.DataSource = this.timetableseDataSetLess;
+            this.dgvLesson.AllowUserToAddRows = false;
+            this.dgvLesson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLesson.Location = new System.Drawing.Point(12, 39);
+            this.dgvLesson.Name = "dgvLesson";
+            this.dgvLesson.ReadOnly = true;
+            this.dgvLesson.Size = new System.Drawing.Size(757, 150);
+            this.dgvLesson.TabIndex = 9;
             // 
-            // lessonTableAdapter1
+            // bntDelete
             // 
-            this.lessonTableAdapter1.ClearBeforeFill = true;
+            this.bntDelete.Location = new System.Drawing.Point(349, 499);
+            this.bntDelete.Name = "bntDelete";
+            this.bntDelete.Size = new System.Drawing.Size(75, 58);
+            this.bntDelete.TabIndex = 10;
+            this.bntDelete.Text = "Delete";
+            this.bntDelete.UseVisualStyleBackColor = true;
+            this.bntDelete.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // labEndTime
             // 
-            this.comboBox1.DataSource = this.ttabletimeBindingSource;
-            this.comboBox1.DisplayMember = "time";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 214);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 23);
-            this.comboBox1.TabIndex = 14;
-            this.comboBox1.ValueMember = "time";
-            // 
-            // cmbDate
-            // 
-            this.cmbDate.DataSource = this.ttabledayBindingSource;
-            this.cmbDate.DisplayMember = "day";
-            this.cmbDate.FormattingEnabled = true;
-            this.cmbDate.Location = new System.Drawing.Point(330, 214);
-            this.cmbDate.Name = "cmbDate";
-            this.cmbDate.Size = new System.Drawing.Size(166, 23);
-            this.cmbDate.TabIndex = 15;
-            this.cmbDate.ValueMember = "day";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(329, 185);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(32, 15);
-            this.lblDate.TabIndex = 16;
-            this.lblDate.Text = "Date";
-            // 
-            // startTimeDB
-            // 
-            this.startTimeDB.DataSetName = "StartTimeDB";
-            this.startTimeDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ttabletimeBindingSource
-            // 
-            this.ttabletimeBindingSource.DataMember = "ttabletime";
-            this.ttabletimeBindingSource.DataSource = this.startTimeDB;
-            // 
-            // ttabletimeTableAdapter
-            // 
-            this.ttabletimeTableAdapter.ClearBeforeFill = true;
-            // 
-            // timetableseDataSet1
-            // 
-            this.timetableseDataSet1.DataSetName = "timetableseDataSet1";
-            this.timetableseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ttabledayBindingSource
-            // 
-            this.ttabledayBindingSource.DataMember = "ttableday";
-            this.ttabledayBindingSource.DataSource = this.timetableseDataSet1;
-            // 
-            // ttabledayTableAdapter
-            // 
-            this.ttabledayTableAdapter.ClearBeforeFill = true;
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(19, 185);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(62, 15);
-            this.lblTime.TabIndex = 17;
-            this.lblTime.Text = "Start Time";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.ttabletimeBindingSource;
-            this.comboBox2.DisplayMember = "time";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(168, 293);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(166, 23);
-            this.comboBox2.TabIndex = 18;
-            this.comboBox2.ValueMember = "time";
-            // 
-            // lblEndTime
-            // 
-            this.lblEndTime.AutoSize = true;
-            this.lblEndTime.Location = new System.Drawing.Point(223, 261);
-            this.lblEndTime.Name = "lblEndTime";
-            this.lblEndTime.Size = new System.Drawing.Size(56, 15);
-            this.lblEndTime.TabIndex = 19;
-            this.lblEndTime.Text = "End Time";
+            this.labEndTime.AutoSize = true;
+            this.labEndTime.Location = new System.Drawing.Point(497, 125);
+            this.labEndTime.Name = "labEndTime";
+            this.labEndTime.Size = new System.Drawing.Size(56, 15);
+            this.labEndTime.TabIndex = 22;
+            this.labEndTime.Text = "End Time";
             // 
             // Lesson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(537, 569);
+            this.ClientSize = new System.Drawing.Size(819, 569);
+            this.Controls.Add(this.bntDelete);
+            this.Controls.Add(this.dgvLesson);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.menuStrip1);
@@ -692,33 +650,24 @@
             this.Name = "Lesson";
             this.Text = "Lesson";
             this.Load += new System.EventHandler(this.Lesson_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetRoom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLess)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.startTimeDB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttabletimeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ttabledayBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLesson)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -746,7 +695,6 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ComboBox cmbLec;
         private System.Windows.Forms.ComboBox cmbGroup;
         private System.Windows.Forms.ComboBox cmbMod;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -757,41 +705,44 @@
         private System.Windows.Forms.Label lblYG;
         private System.Windows.Forms.ComboBox cmbRoom;
         private System.Windows.Forms.Label lblRoom;
-        private timetableseDataSetLesson timetableseDataSetLesson;
-        private System.Windows.Forms.BindingSource lessonBindingSource;
-        private timetableseDataSetLessonTableAdapters.lessonTableAdapter lessonTableAdapter;
-        private TimeTableDBLect timeTableDBLect;
-        private System.Windows.Forms.BindingSource lecturerBindingSource;
-        private TimeTableDBLectTableAdapters.lecturerTableAdapter lecturerTableAdapter;
-        private TimetableDBModule timetableDBModule;
-        private System.Windows.Forms.BindingSource moduleBindingSource;
-        private TimetableDBModuleTableAdapters.moduleTableAdapter moduleTableAdapter;
-        private TimetableDTYearGroup timetableDTYearGroup;
-        private System.Windows.Forms.BindingSource yeargroupBindingSource;
-        private TimetableDTYearGroupTableAdapters.yeargroupTableAdapter yeargroupTableAdapter;
-        private timetableseDataSetRoom timetableseDataSetRoom;
-        private System.Windows.Forms.BindingSource roomBindingSource;
-        private timetableseDataSetRoomTableAdapters.roomTableAdapter roomTableAdapter;
+ 
+     
+
+       
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lectureOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moduleOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yearGroupOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomOptionsToolStripMenuItem;
-        private timetableseDataSetLess timetableseDataSetLess;
-        private System.Windows.Forms.BindingSource lessonBindingSource1;
-        private timetableseDataSetLessTableAdapters.lessonTableAdapter lessonTableAdapter1;
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.ComboBox cmbDate;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private StartTimeDB startTimeDB;
-        private System.Windows.Forms.BindingSource ttabletimeBindingSource;
-        private StartTimeDBTableAdapters.ttabletimeTableAdapter ttabletimeTableAdapter;
-        private timetableseDataSet1 timetableseDataSet1;
-        private System.Windows.Forms.BindingSource ttabledayBindingSource;
-        private timetableseDataSet1TableAdapters.ttabledayTableAdapter ttabledayTableAdapter;
-        private System.Windows.Forms.Label lblEndTime;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbStartTime;
+      
         private System.Windows.Forms.Label lblTime;
+
+        private System.Windows.Forms.ComboBox cmblect;
+      
+      
+       
+       
+        private System.Windows.Forms.BindingSource moduleBindingSource;
+       
+        private System.Windows.Forms.Label Day;
+        private System.Windows.Forms.ComboBox cmbDay;
+        private timetableseDS timetableseDS;
+        private System.Windows.Forms.BindingSource lessonBindingSource;
+        private timetableseDSTableAdapters.lessonTableAdapter lessonTableAdapter;
+        private System.Windows.Forms.BindingSource lecturerBindingSource;
+        private timetableseDSTableAdapters.lecturerTableAdapter lecturerTableAdapter;
+        private System.Windows.Forms.BindingSource moduleBindingSource1;
+        private timetableseDSTableAdapters.moduleTableAdapter moduleTableAdapter;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private timetableseDSTableAdapters.roomTableAdapter roomTableAdapter;
+        private System.Windows.Forms.BindingSource yeargroupBindingSource;
+        private timetableseDSTableAdapters.yeargroupTableAdapter yeargroupTableAdapter;
+        private System.Windows.Forms.DataGridView dgvLesson;
+        private System.Windows.Forms.Button bntDelete;
+        private System.Windows.Forms.ComboBox cmbEndTime;
+        private System.Windows.Forms.Label labEndTime;
+       
     }
 }

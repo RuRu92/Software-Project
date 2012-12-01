@@ -30,9 +30,11 @@ namespace Project
         /// <param name="e"></param>
         private void YearGroup_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timetableDTYearGroup.yeargroup' table. You can move, or remove it, as needed.
-            this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
+            // TODO: This line of code loads data into the 'timetableseDS.yeargroup' table. You can move, or remove it, as needed.
+            this.yeargroupTableAdapter.Fill(this.timetableseDS.yeargroup);
+            // TODO: This line of code loads data into the 'dataSetTimetable.yeargroup' table. You can move, or remove it, as needed.
             
+                                
         }
         /// <summary>
         /// this buton allows the user to delete a module 
@@ -40,13 +42,13 @@ namespace Project
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
-        {
+        {     //TODO call  on  detle  fucntion to  make it cann be delted (TRY CAtch
             if (dataGridViewYG.SelectedRows.Count > 0)
             {
                 int id = (int)this.dataGridViewYG.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteYG(id);
-                this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
+                
 
             }
             else
@@ -80,7 +82,7 @@ namespace Project
         {
             DBconnector dbc = new DBconnector();
             dbc.insertYG(new YearGroupCL(0, txtGroupName.Text, int.Parse(txtGroupSizeTB.Text)));
-            this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
+            
             MessageBox.Show(" year group information added");
                    
         }

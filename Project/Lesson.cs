@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Lesson : Form
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public Lesson()
         {
             InitializeComponent();
@@ -24,22 +30,22 @@ namespace Project
 
         private void Lesson_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timetableseDataSet1.ttableday' table. You can move, or remove it, as needed.
-            this.ttabledayTableAdapter.Fill(this.timetableseDataSet1.ttableday);
-            // TODO: This line of code loads data into the 'startTimeDB.ttabletime' table. You can move, or remove it, as needed.
-            this.ttabletimeTableAdapter.Fill(this.startTimeDB.ttabletime);
-            // TODO: This line of code loads data into the 'timetableseDataSetLess.lesson' table. You can move, or remove it, as needed.
-            this.lessonTableAdapter1.Fill(this.timetableseDataSetLess.lesson);
-            // TODO: This line of code loads data into the 'timetableseDataSetRoom.room' table. You can move, or remove it, as needed.
-            this.roomTableAdapter.Fill(this.timetableseDataSetRoom.room);
-            // TODO: This line of code loads data into the 'timetableDTYearGroup.yeargroup' table. You can move, or remove it, as needed.
-            this.yeargroupTableAdapter.Fill(this.timetableDTYearGroup.yeargroup);
-            // TODO: This line of code loads data into the 'timetableDBModule.module' table. You can move, or remove it, as needed.
-            this.moduleTableAdapter.Fill(this.timetableDBModule.module);
-            // TODO: This line of code loads data into the 'timeTableDBLect.lecturer' table. You can move, or remove it, as needed.
-            this.lecturerTableAdapter.Fill(this.timeTableDBLect.lecturer);
-            // TODO: This line of code loads data into the 'timetableseDataSetLesson.lesson' table. You can move, or remove it, as needed.
-            this.lessonTableAdapter.Fill(this.timetableseDataSetLesson.lesson);
+            // TODO: This line of code loads data into the 'timetableseDS.yeargroup' table. You can move, or remove it, as needed.
+            this.yeargroupTableAdapter.Fill(this.timetableseDS.yeargroup);
+            // TODO: This line of code loads data into the 'timetableseDS.room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.timetableseDS.room);
+            // TODO: This line of code loads data into the 'timetableseDS.module' table. You can move, or remove it, as needed.
+            this.moduleTableAdapter.Fill(this.timetableseDS.module);
+            // TODO: This line of code loads data into the 'timetableseDS.lecturer' table. You can move, or remove it, as needed.
+            this.lecturerTableAdapter.Fill(this.timetableseDS.lecturer);
+
+            DBconnector dbc = new DBconnector();
+            dgvLesson.DataSource = dbc.LessonVeiw();
+            // dt.Fill(dbc.LessonView());
+
+
+
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -47,15 +53,6 @@ namespace Project
             this.Close();
         }
 
-        private void lblLect_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbLec_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void lectureOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -85,28 +82,42 @@ namespace Project
             this.Close();
         }
 
-     
+
         // Checks user input for clashes with the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBconnector dbc = new DBconnector();
-            if (dbc.checkClash(cmbLec.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text))
+            if (dbc.checkClash(cmblect.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text, cmbStartTime.Text, cmbEndTime.Text, cmbDay.Text))
             {
                 MessageBox.Show("Sorry there is a clash with your selection");
                 return;
             }
 
             //TODO: Validate Data
-            // adds the lectuer information form the text boxes to the  databases and up dates it
-            int t;
-            if (cmbTime.Text == "")
-                t = 0;
-            else
-            t = int.Parse(cmbTime.Text);
-            dbc.InsertLess(new LessonCL(0, cmbLec.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text,t ));
-            this.lessonTableAdapter1.Fill(this.timetableseDataSetLess.lesson);
+            // adds the lectuer information form the text boxes to the  databases and up dates it   
+            dbc.InsertLess(new LessonCL(0, cmblect.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text, cmbStartTime.Text, cmbEndTime.Text, cmbDay.Text));
+            dgvLesson.DataSource = dbc.LessonVeiw();
             MessageBox.Show("Lesson added information added");
         }
-     } 
-  }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+             DBconnector dbc = new DBconnector();
+             int id = dbc.GetLessID(cmblect.Text, cmbGroup.Text, cmbRoom.Text, cmbMod.Text, cmbStartTime.Text, cmbDay.Text);
+             if (id > -1)
+             {
+                 dbc.DeleteLess(id);
+                 dgvLesson.DataSource = dbc.LessonVeiw();
+             }
+            
+
+        }
+
+     
+
+     
+    }
+}
+
 

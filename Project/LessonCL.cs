@@ -13,9 +13,12 @@ namespace Project
         String m_ygName;
         String m_roomsName;
         String m_modName;
-        Int32 m_lessTime;
+        String m_startTime;
+        String m_endTime;
+        String m_lessDay;
 
-        public LessonCL(int lessID, string lectName, String ygName, String roomsName, String modName, int lessTime)
+        public LessonCL(int lessID, string lectName, String ygName, 
+            String roomsName, String modName, String startTime,String endTime, String day)
         {
 
             m_lessonID = lessID;
@@ -23,7 +26,9 @@ namespace Project
             m_ygName = ygName;
             m_roomsName = roomsName;
             m_modName = modName;
-            m_lessTime = lessTime;
+            m_startTime = startTime;
+            m_endTime = endTime;
+            m_lessDay = day;
 
         }
 
@@ -91,16 +96,41 @@ namespace Project
             }
         }
 
-        public int lessTime
+        public string startTime
         {
             get
             {
-                return m_lessTime;
+                return m_startTime;
             }
 
             set
             {
-                m_lessTime = value;
+                m_startTime = value;
+            }
+        }
+
+        public string endTime
+        {
+            get
+            {
+                return m_endTime;
+            }
+            set
+            {
+                m_endTime = value;
+            }
+                         
+        }
+
+        public string Day
+        { 
+            get 
+            {
+                return m_lessDay ;
+            } 
+            set 
+            {
+                m_lessDay = value ;
             }
         }
     }

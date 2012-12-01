@@ -27,8 +27,11 @@ namespace Project
 
         private void Lecturer_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timeTableDBLect.lecturer' table. You can move, or remove it, as needed.
-            this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
+            // TODO: This line of code loads data into the 'timetableseDS.lecturer' table. You can move, or remove it, as needed.
+            this.lecturerTableAdapter.Fill(this.timetableseDS.lecturer);
+            // TODO: This line of code loads data into the 'dataSetTimetable.lecturer' table. You can move, or remove it, as needed.
+           
+            
             
         }
         /// <summary>
@@ -56,7 +59,7 @@ namespace Project
             //TODO: Validate Data
             // adds the lectuer information form the text boxes to the  databases and up dates it 
             dbc.InsertLect(new LecturerCL(0, txtLectName.Text, int.Parse(txtTeachingHrs.Text), int.Parse(txtReqHrs.Text)));
-            this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
+            
             MessageBox.Show("lectuer information added");
 
         }
@@ -74,7 +77,8 @@ namespace Project
                 int id = (int)this.dataGridViewLect.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteLect(id);
-                this.lecturerTableAdapter1.Fill(this.timeTableDBLect.lecturer);
+             
+            
                 
             }
             

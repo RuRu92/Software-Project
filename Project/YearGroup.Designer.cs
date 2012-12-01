@@ -71,23 +71,17 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewYG = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yeargroupBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableDTYearGroup = new Project.TimetableDTYearGroup();
+            this.timetableseDS = new Project.timetableseDS();
             this.yeargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableDBYearGroup = new Project.TimetableDBYearGroup();
-            this.timetableDBYearGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yeargroupTableAdapter = new Project.TimetableDTYearGroupTableAdapters.yeargroupTableAdapter();
+            this.yeargroupTableAdapter = new Project.timetableseDSTableAdapters.yeargroupTableAdapter();
+            this.idYearGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearGroupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noStudentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewYG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -149,9 +143,9 @@
             this.lblCode.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCode.Location = new System.Drawing.Point(74, 149);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(74, 18);
+            this.lblCode.Size = new System.Drawing.Size(125, 18);
             this.lblCode.TabIndex = 2;
-            this.lblCode.Text = "Group Size";
+            this.lblCode.Text = "Number of Studnts";
             // 
             // txtGroupSizeTB
             // 
@@ -422,60 +416,50 @@
             this.dataGridViewYG.AutoGenerateColumns = false;
             this.dataGridViewYG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewYG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
-            this.dataGridViewYG.DataSource = this.yeargroupBindingSource1;
+            this.idYearGroupDataGridViewTextBoxColumn,
+            this.yearGroupNameDataGridViewTextBoxColumn,
+            this.noStudentsDataGridViewTextBoxColumn});
+            this.dataGridViewYG.DataSource = this.yeargroupBindingSource;
             this.dataGridViewYG.Location = new System.Drawing.Point(23, 51);
             this.dataGridViewYG.Name = "dataGridViewYG";
+            this.dataGridViewYG.ReadOnly = true;
             this.dataGridViewYG.Size = new System.Drawing.Size(491, 150);
             this.dataGridViewYG.TabIndex = 23;
             // 
-            // dataGridViewTextBoxColumn1
+            // timetableseDS
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idYearGroup";
-            this.dataGridViewTextBoxColumn1.HeaderText = "idYearGroup";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "yearGroupName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "yearGroupName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "noStudents";
-            this.dataGridViewTextBoxColumn3.HeaderText = "noStudents";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // yeargroupBindingSource1
-            // 
-            this.yeargroupBindingSource1.DataMember = "yeargroup";
-            this.yeargroupBindingSource1.DataSource = this.timetableDTYearGroup;
-            // 
-            // timetableDTYearGroup
-            // 
-            this.timetableDTYearGroup.DataSetName = "TimetableDTYearGroup";
-            this.timetableDTYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.timetableseDS.DataSetName = "timetableseDS";
+            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // yeargroupBindingSource
             // 
             this.yeargroupBindingSource.DataMember = "yeargroup";
-            // 
-            // timetableDBYearGroup
-            // 
-            this.timetableDBYearGroup.DataSetName = "TimetableDBYearGroup";
-            this.timetableDBYearGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // timetableDBYearGroupBindingSource
-            // 
-            this.timetableDBYearGroupBindingSource.DataSource = this.timetableDBYearGroup;
-            this.timetableDBYearGroupBindingSource.Position = 0;
+            this.yeargroupBindingSource.DataSource = this.timetableseDS;
             // 
             // yeargroupTableAdapter
             // 
             this.yeargroupTableAdapter.ClearBeforeFill = true;
+            // 
+            // idYearGroupDataGridViewTextBoxColumn
+            // 
+            this.idYearGroupDataGridViewTextBoxColumn.DataPropertyName = "idYearGroup";
+            this.idYearGroupDataGridViewTextBoxColumn.HeaderText = "idYearGroup";
+            this.idYearGroupDataGridViewTextBoxColumn.Name = "idYearGroupDataGridViewTextBoxColumn";
+            this.idYearGroupDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearGroupNameDataGridViewTextBoxColumn
+            // 
+            this.yearGroupNameDataGridViewTextBoxColumn.DataPropertyName = "yearGroupName";
+            this.yearGroupNameDataGridViewTextBoxColumn.HeaderText = "yearGroupName";
+            this.yearGroupNameDataGridViewTextBoxColumn.Name = "yearGroupNameDataGridViewTextBoxColumn";
+            this.yearGroupNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // noStudentsDataGridViewTextBoxColumn
+            // 
+            this.noStudentsDataGridViewTextBoxColumn.DataPropertyName = "noStudents";
+            this.noStudentsDataGridViewTextBoxColumn.HeaderText = "noStudents";
+            this.noStudentsDataGridViewTextBoxColumn.Name = "noStudentsDataGridViewTextBoxColumn";
+            this.noStudentsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // YearGroup
             // 
@@ -498,11 +482,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewYG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDTYearGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBYearGroupBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,23 +529,18 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridViewYG;
         
-        private System.Windows.Forms.BindingSource yeargroupBindingSource;
-       
-        private System.Windows.Forms.DataGridViewTextBoxColumn idYearGroupDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noStudentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource timetableDBYearGroupBindingSource;
-        private TimetableDBYearGroup timetableDBYearGroup;
-        private TimetableDTYearGroup timetableDTYearGroup;
-        private System.Windows.Forms.BindingSource yeargroupBindingSource1;
-        private TimetableDTYearGroupTableAdapters.yeargroupTableAdapter yeargroupTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.ToolStripMenuItem lecturerWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moduleWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lessonWindowToolStripMenuItem;
+        private timetableseDS timetableseDS;
+        private System.Windows.Forms.BindingSource yeargroupBindingSource;
+        private timetableseDSTableAdapters.yeargroupTableAdapter yeargroupTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idYearGroupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearGroupNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noStudentsDataGridViewTextBoxColumn;
+        
+       
 
     }
 }

@@ -77,12 +77,12 @@
             this.lblTime8 = new System.Windows.Forms.Label();
             this.lblTime9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timetableseDataSetLesson = new Project.timetableseDataSetLesson();
+           
             this.lessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lessonTableAdapter = new Project.timetableseDataSetLessonTableAdapters.lessonTableAdapter();
+           
             this.menuStrip1.SuspendLayout();
             this.tlpGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -546,17 +546,15 @@
             // 
             // timetableseDataSetLesson
             // 
-            this.timetableseDataSetLesson.DataSetName = "timetableseDataSetLesson";
-            this.timetableseDataSetLesson.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            
             // 
             // lessonBindingSource
             // 
-            this.lessonBindingSource.DataMember = "lesson";
-            this.lessonBindingSource.DataSource = this.timetableseDataSetLesson;
+            
             // 
             // lessonTableAdapter
             // 
-            this.lessonTableAdapter.ClearBeforeFill = true;
+           
             // 
             // Timetable
             // 
@@ -578,8 +576,7 @@
             this.menuStrip1.PerformLayout();
             this.tlpGrid.ResumeLayout(false);
             this.tlpGrid.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSetLesson)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lessonBindingSource)).EndInit();
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,9 +630,7 @@
         private System.Windows.Forms.Label lblTime7;
         private System.Windows.Forms.Label lblTime8;
         private System.Windows.Forms.Label lblTime9;
-        private timetableseDataSetLesson timetableseDataSetLesson;
         private System.Windows.Forms.BindingSource lessonBindingSource;
-        private timetableseDataSetLessonTableAdapters.lessonTableAdapter lessonTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem lessonToolStripMenuItem;
     }
 }

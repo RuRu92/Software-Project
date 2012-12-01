@@ -61,33 +61,28 @@
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timetableseDataSet = new Project.timetableseDataSet();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lecturerTableAdapter = new Project.timetableseDataSetTableAdapters.lecturerTableAdapter();
-            this.dataGridViewLect = new System.Windows.Forms.DataGridView();
-            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.timeTableDBLect = new Project.TimeTableDBLect();
-            this.lecturerTableAdapter1 = new Project.TimeTableDBLectTableAdapters.lecturerTableAdapter();
-            this.idLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lecturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.moduleWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yearGroupWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewLect = new System.Windows.Forms.DataGridView();
+            this.timetableseDS = new Project.timetableseDS();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lecturerTableAdapter = new Project.timetableseDSTableAdapters.lecturerTableAdapter();
+            this.idLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -356,113 +351,6 @@
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchToolStripMenuItem,
-            this.toolStripSeparator5,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "&Help";
-            // 
-            // searchToolStripMenuItem
-            // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.searchToolStripMenuItem.Text = "User Guide";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(128, 6);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.aboutToolStripMenuItem.Text = "&About...";
-            // 
-            // timetableseDataSet
-            // 
-            this.timetableseDataSet.DataSetName = "timetableseDataSet";
-            this.timetableseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerBindingSource
-            // 
-            this.lecturerBindingSource.DataMember = "lecturer";
-            this.lecturerBindingSource.DataSource = this.timetableseDataSet;
-            // 
-            // lecturerTableAdapter
-            // 
-            this.lecturerTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridViewLect
-            // 
-            this.dataGridViewLect.AllowUserToAddRows = false;
-            this.dataGridViewLect.AutoGenerateColumns = false;
-            this.dataGridViewLect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idLecturerDataGridViewTextBoxColumn,
-            this.lecturerNameDataGridViewTextBoxColumn,
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn,
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn});
-            this.dataGridViewLect.DataSource = this.lecturerBindingSource1;
-            this.dataGridViewLect.Location = new System.Drawing.Point(12, 36);
-            this.dataGridViewLect.MultiSelect = false;
-            this.dataGridViewLect.Name = "dataGridViewLect";
-            this.dataGridViewLect.ReadOnly = true;
-            this.dataGridViewLect.Size = new System.Drawing.Size(513, 182);
-            this.dataGridViewLect.TabIndex = 23;
-            // 
-            // lecturerBindingSource1
-            // 
-            this.lecturerBindingSource1.DataMember = "lecturer";
-            this.lecturerBindingSource1.DataSource = this.timeTableDBLect;
-            // 
-            // timeTableDBLect
-            // 
-            this.timeTableDBLect.DataSetName = "TimeTableDBLect";
-            this.timeTableDBLect.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerTableAdapter1
-            // 
-            this.lecturerTableAdapter1.ClearBeforeFill = true;
-            // 
-            // idLecturerDataGridViewTextBoxColumn
-            // 
-            this.idLecturerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
-            this.idLecturerDataGridViewTextBoxColumn.HeaderText = "Lecture ID";
-            this.idLecturerDataGridViewTextBoxColumn.Name = "idLecturerDataGridViewTextBoxColumn";
-            this.idLecturerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idLecturerDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // lecturerNameDataGridViewTextBoxColumn
-            // 
-            this.lecturerNameDataGridViewTextBoxColumn.DataPropertyName = "lecturerName";
-            this.lecturerNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.lecturerNameDataGridViewTextBoxColumn.Name = "lecturerNameDataGridViewTextBoxColumn";
-            this.lecturerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lecturerRequiredHoursDataGridViewTextBoxColumn
-            // 
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerRequiredHours";
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.HeaderText = "Required Hours";
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Name = "lecturerRequiredHoursDataGridViewTextBoxColumn";
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Width = 107;
-            // 
-            // lecturerTaughtHoursDataGridViewTextBoxColumn
-            // 
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerTaughtHours";
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.HeaderText = "Taught Hours";
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Width = 96;
-            // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -471,7 +359,7 @@
             this.roomWindowToolStripMenuItem,
             this.lessonWindowToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // moduleWindowToolStripMenuItem
@@ -502,6 +390,92 @@
             this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
             this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.searchToolStripMenuItem.Text = "User Guide";
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(128, 6);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.aboutToolStripMenuItem.Text = "&About...";
+            // 
+            // dataGridViewLect
+            // 
+            this.dataGridViewLect.AllowUserToAddRows = false;
+            this.dataGridViewLect.AutoGenerateColumns = false;
+            this.dataGridViewLect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLect.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idLecturerDataGridViewTextBoxColumn,
+            this.lecturerNameDataGridViewTextBoxColumn,
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn,
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn});
+            this.dataGridViewLect.DataSource = this.lecturerBindingSource;
+            this.dataGridViewLect.Location = new System.Drawing.Point(12, 51);
+            this.dataGridViewLect.Name = "dataGridViewLect";
+            this.dataGridViewLect.ReadOnly = true;
+            this.dataGridViewLect.Size = new System.Drawing.Size(503, 150);
+            this.dataGridViewLect.TabIndex = 23;
+            // 
+            // timetableseDS
+            // 
+            this.timetableseDS.DataSetName = "timetableseDS";
+            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "lecturer";
+            this.lecturerBindingSource.DataSource = this.timetableseDS;
+            // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // idLecturerDataGridViewTextBoxColumn
+            // 
+            this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
+            this.idLecturerDataGridViewTextBoxColumn.HeaderText = "idLecturer";
+            this.idLecturerDataGridViewTextBoxColumn.Name = "idLecturerDataGridViewTextBoxColumn";
+            this.idLecturerDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lecturerNameDataGridViewTextBoxColumn
+            // 
+            this.lecturerNameDataGridViewTextBoxColumn.DataPropertyName = "lecturerName";
+            this.lecturerNameDataGridViewTextBoxColumn.HeaderText = "lecturerName";
+            this.lecturerNameDataGridViewTextBoxColumn.Name = "lecturerNameDataGridViewTextBoxColumn";
+            this.lecturerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lecturerRequiredHoursDataGridViewTextBoxColumn
+            // 
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerRequiredHours";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.HeaderText = "lecturerRequiredHours";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.Name = "lecturerRequiredHoursDataGridViewTextBoxColumn";
+            this.lecturerRequiredHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lecturerTaughtHoursDataGridViewTextBoxColumn
+            // 
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "lecturerTaughtHours";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.HeaderText = "lecturerTaughtHours";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
+            this.lecturerTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -524,11 +498,9 @@
             this.grpGroup.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timeTableDBLect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,22 +543,20 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private timetableseDataSet timetableseDataSet;
-        private System.Windows.Forms.BindingSource lecturerBindingSource;
-        private timetableseDataSetTableAdapters.lecturerTableAdapter lecturerTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridViewLect;
-        private TimeTableDBLect timeTableDBLect;
-        private System.Windows.Forms.BindingSource lecturerBindingSource1;
-        private TimeTableDBLectTableAdapters.lecturerTableAdapter lecturerTableAdapter1;
+       
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem moduleWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yearGroupWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lessonWindowToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridViewLect;
+        private timetableseDS timetableseDS;
+        private System.Windows.Forms.BindingSource lecturerBindingSource;
+        private timetableseDSTableAdapters.lecturerTableAdapter lecturerTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idLecturerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecturerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecturerRequiredHoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lecturerTaughtHoursDataGridViewTextBoxColumn;
-
+       
     }
 }

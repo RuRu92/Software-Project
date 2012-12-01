@@ -34,8 +34,10 @@ namespace Project
         /// <param name="e"></param>
         private void Module_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timetableDBModule.module' table. You can move, or remove it, as needed.
-            this.moduleTableAdapter.Fill(this.timetableDBModule.module);
+            // TODO: This line of code loads data into the 'timetableseDS.module' table. You can move, or remove it, as needed.
+            this.moduleTableAdapter.Fill(this.timetableseDS.module);
+            // TODO: This line of code loads data into the 'dataSetTimetable.module' table. You can move, or remove it, as need            
+           
 
 
 
@@ -66,7 +68,7 @@ namespace Project
 
             // dbc.insertMOD(new ModuleCL(0, txtModName.Text, int.Parse(txtModTeachingHrs.Text), int.Parse(txtReqTeachHrs.Text)));
             dbc.insertMOD(new ModuleCL(0, txtModName.Text, int.Parse(txtReqTeachHrs.Text), int.Parse(txtModTeachingHrs.Text)));
-            this.moduleTableAdapter.Fill(this.timetableDBModule.module);
+          
             MessageBox.Show("module information added");
         }
 
@@ -81,10 +83,10 @@ namespace Project
 
             if (dataGridViewModule.SelectedRows.Count > 0)
             {
-                int id = (int)this.dataGridViewModule.SelectedRows[0].Cells[0].Value;
+               int id = (int)this.dataGridViewModule.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteMod(id);
-                this.moduleTableAdapter.Fill(this.timetableDBModule.module);
+                
 
 
 

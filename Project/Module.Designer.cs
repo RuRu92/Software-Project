@@ -64,37 +64,29 @@
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lecturerWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearGroupWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.timetableseDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewModule = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduleBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableDBModule = new Project.TimetableDBModule();
-            this.moduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDS = new Project.timetableseDS();
             this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.timetableseDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.moduleTableAdapter = new Project.TimetableDBModuleTableAdapters.moduleTableAdapter();
-            this.lecturerWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yearGroupWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.roomWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lessonWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.moduleTableAdapter = new Project.timetableseDSTableAdapters.moduleTableAdapter();
+            this.idModuleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moduleTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -384,8 +376,36 @@
             this.roomWindowToolStripMenuItem,
             this.lessonWindowToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // lecturerWindowToolStripMenuItem
+            // 
+            this.lecturerWindowToolStripMenuItem.Name = "lecturerWindowToolStripMenuItem";
+            this.lecturerWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lecturerWindowToolStripMenuItem.Text = "Lecturer Window";
+            this.lecturerWindowToolStripMenuItem.Click += new System.EventHandler(this.lecturerWindowToolStripMenuItem_Click);
+            // 
+            // yearGroupWindowToolStripMenuItem
+            // 
+            this.yearGroupWindowToolStripMenuItem.Name = "yearGroupWindowToolStripMenuItem";
+            this.yearGroupWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yearGroupWindowToolStripMenuItem.Text = "Year Group Window";
+            this.yearGroupWindowToolStripMenuItem.Click += new System.EventHandler(this.yearGroupWindowToolStripMenuItem_Click);
+            // 
+            // roomWindowToolStripMenuItem
+            // 
+            this.roomWindowToolStripMenuItem.Name = "roomWindowToolStripMenuItem";
+            this.roomWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roomWindowToolStripMenuItem.Text = "Room Window";
+            this.roomWindowToolStripMenuItem.Click += new System.EventHandler(this.roomWindowToolStripMenuItem_Click);
+            // 
+            // lessonWindowToolStripMenuItem
+            // 
+            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
+            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
+            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -430,88 +450,62 @@
             // 
             // dataGridViewModule
             // 
+            this.dataGridViewModule.AllowUserToAddRows = false;
             this.dataGridViewModule.AutoGenerateColumns = false;
             this.dataGridViewModule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewModule.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dataGridViewModule.DataSource = this.moduleBindingSource2;
-            this.dataGridViewModule.Location = new System.Drawing.Point(23, 39);
+            this.idModuleDataGridViewTextBoxColumn,
+            this.moduleNameDataGridViewTextBoxColumn,
+            this.moduleRequiredHoursDataGridViewTextBoxColumn,
+            this.moduleTaughtHoursDataGridViewTextBoxColumn});
+            this.dataGridViewModule.DataSource = this.moduleBindingSource;
+            this.dataGridViewModule.Location = new System.Drawing.Point(23, 53);
             this.dataGridViewModule.Name = "dataGridViewModule";
-            this.dataGridViewModule.Size = new System.Drawing.Size(491, 187);
+            this.dataGridViewModule.ReadOnly = true;
+            this.dataGridViewModule.Size = new System.Drawing.Size(491, 150);
             this.dataGridViewModule.TabIndex = 16;
             // 
-            // dataGridViewTextBoxColumn5
+            // timetableseDS
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "idModule";
-            this.dataGridViewTextBoxColumn5.HeaderText = "idModule";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.timetableseDS.DataSetName = "timetableseDS";
+            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataGridViewTextBoxColumn6
+            // moduleBindingSource
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "moduleName";
-            this.dataGridViewTextBoxColumn6.HeaderText = "moduleName";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "moduleRequiredHours";
-            this.dataGridViewTextBoxColumn7.HeaderText = "moduleRequiredHours";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "moduleTaughtHours";
-            this.dataGridViewTextBoxColumn8.HeaderText = "moduleTaughtHours";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // moduleBindingSource2
-            // 
-            this.moduleBindingSource2.DataMember = "module";
-            this.moduleBindingSource2.DataSource = this.timetableDBModule;
-            // 
-            // timetableDBModule
-            // 
-            this.timetableDBModule.DataSetName = "TimetableDBModule";
-            this.timetableDBModule.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // moduleBindingSource1
-            // 
-            this.moduleBindingSource1.DataMember = "module";
+            this.moduleBindingSource.DataMember = "module";
+            this.moduleBindingSource.DataSource = this.timetableseDS;
             // 
             // moduleTableAdapter
             // 
             this.moduleTableAdapter.ClearBeforeFill = true;
             // 
-            // lecturerWindowToolStripMenuItem
+            // idModuleDataGridViewTextBoxColumn
             // 
-            this.lecturerWindowToolStripMenuItem.Name = "lecturerWindowToolStripMenuItem";
-            this.lecturerWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lecturerWindowToolStripMenuItem.Text = "Lecturer Window";
-            this.lecturerWindowToolStripMenuItem.Click += new System.EventHandler(this.lecturerWindowToolStripMenuItem_Click);
+            this.idModuleDataGridViewTextBoxColumn.DataPropertyName = "idModule";
+            this.idModuleDataGridViewTextBoxColumn.HeaderText = "idModule";
+            this.idModuleDataGridViewTextBoxColumn.Name = "idModuleDataGridViewTextBoxColumn";
+            this.idModuleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // yearGroupWindowToolStripMenuItem
+            // moduleNameDataGridViewTextBoxColumn
             // 
-            this.yearGroupWindowToolStripMenuItem.Name = "yearGroupWindowToolStripMenuItem";
-            this.yearGroupWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.yearGroupWindowToolStripMenuItem.Text = "Year Group Window";
-            this.yearGroupWindowToolStripMenuItem.Click += new System.EventHandler(this.yearGroupWindowToolStripMenuItem_Click);
+            this.moduleNameDataGridViewTextBoxColumn.DataPropertyName = "moduleName";
+            this.moduleNameDataGridViewTextBoxColumn.HeaderText = "moduleName";
+            this.moduleNameDataGridViewTextBoxColumn.Name = "moduleNameDataGridViewTextBoxColumn";
+            this.moduleNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // roomWindowToolStripMenuItem
+            // moduleRequiredHoursDataGridViewTextBoxColumn
             // 
-            this.roomWindowToolStripMenuItem.Name = "roomWindowToolStripMenuItem";
-            this.roomWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.roomWindowToolStripMenuItem.Text = "Room Window";
-            this.roomWindowToolStripMenuItem.Click += new System.EventHandler(this.roomWindowToolStripMenuItem_Click);
+            this.moduleRequiredHoursDataGridViewTextBoxColumn.DataPropertyName = "moduleRequiredHours";
+            this.moduleRequiredHoursDataGridViewTextBoxColumn.HeaderText = "moduleRequiredHours";
+            this.moduleRequiredHoursDataGridViewTextBoxColumn.Name = "moduleRequiredHoursDataGridViewTextBoxColumn";
+            this.moduleRequiredHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lessonWindowToolStripMenuItem
+            // moduleTaughtHoursDataGridViewTextBoxColumn
             // 
-            this.lessonWindowToolStripMenuItem.Name = "lessonWindowToolStripMenuItem";
-            this.lessonWindowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lessonWindowToolStripMenuItem.Text = "Lesson Window";
-            this.lessonWindowToolStripMenuItem.Click += new System.EventHandler(this.lessonWindowToolStripMenuItem_Click);
+            this.moduleTaughtHoursDataGridViewTextBoxColumn.DataPropertyName = "moduleTaughtHours";
+            this.moduleTaughtHoursDataGridViewTextBoxColumn.HeaderText = "moduleTaughtHours";
+            this.moduleTaughtHoursDataGridViewTextBoxColumn.Name = "moduleTaughtHoursDataGridViewTextBoxColumn";
+            this.moduleTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Module
             // 
@@ -534,18 +528,13 @@
             this.grpGroup.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableDBModule)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.moduleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDataSet2BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
 
         private System.Windows.Forms.Label lblName;
@@ -588,34 +577,20 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.BindingSource timetableseDataSet1BindingSource;
-        
-        
-        private System.Windows.Forms.DataGridView dataGridViewModule;
-        private System.Windows.Forms.BindingSource timetableseDataSet2BindingSource;
-       
-        private System.Windows.Forms.BindingSource moduleBindingSource;
-       
-        private System.Windows.Forms.DataGridViewTextBoxColumn idModuleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleRequiredHoursDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduleTaughtHoursDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.BindingSource moduleBindingSource1;
-        private TimetableDBModule timetableDBModule;
-        private System.Windows.Forms.BindingSource moduleBindingSource2;
-        private TimetableDBModuleTableAdapters.moduleTableAdapter moduleTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.ToolStripMenuItem lecturerWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yearGroupWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lessonWindowToolStripMenuItem;
+        
+        
+        private System.Windows.Forms.DataGridView dataGridViewModule;
+        private timetableseDS timetableseDS;
+        private System.Windows.Forms.BindingSource moduleBindingSource;
+        private timetableseDSTableAdapters.moduleTableAdapter moduleTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idModuleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moduleNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moduleRequiredHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn moduleTaughtHoursDataGridViewTextBoxColumn;
         
     }
 }

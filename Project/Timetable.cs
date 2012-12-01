@@ -10,9 +10,15 @@ using System.Windows.Forms;
 
 namespace Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Timetable : Form
     {
         private TableLayoutPanel tlp; 
+        /// <summary>
+        /// 
+        /// </summary>
         public Timetable()
         {
             InitializeComponent();
