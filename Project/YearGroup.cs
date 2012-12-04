@@ -31,9 +31,7 @@ namespace Project
         private void YearGroup_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'timetableseDS.yeargroup' table. You can move, or remove it, as needed.
-            this.yeargroupTableAdapter.Fill(this.timetableseDS.yeargroup);
-            // TODO: This line of code loads data into the 'dataSetTimetable.yeargroup' table. You can move, or remove it, as needed.
-            
+            this.yeargroupTableAdapter.Fill(this.timetableseDS.yeargroup);            
                                 
         }
         /// <summary>
@@ -48,41 +46,30 @@ namespace Project
                 int id = (int)this.dataGridViewYG.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteYG(id);
-                
-
+                this.yeargroupTableAdapter.Fill(this.timetableseDS.yeargroup);
             }
             else
                 MessageBox.Show("record not deleted");
         }
 
+        
+
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         /// <summary>
         /// this allows the user to add the yeargroup 
         /// information to the datagridview and the database 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DBconnector dbc = new DBconnector();
             dbc.insertYG(new YearGroupCL(0, txtGroupName.Text, int.Parse(txtGroupSizeTB.Text)));
-            
+            this.yeargroupTableAdapter.Fill(this.timetableseDS.yeargroup);
             MessageBox.Show(" year group information added");
                    
         }

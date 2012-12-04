@@ -71,18 +71,18 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewLect = new System.Windows.Forms.DataGridView();
-            this.timetableseDS = new Project.timetableseDS();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lecturerTableAdapter = new Project.timetableseDSTableAdapters.lecturerTableAdapter();
             this.idLecturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerRequiredHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecturerTaughtHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDS = new Project.timetableseDS();
+            this.lecturerTableAdapter = new Project.timetableseDSTableAdapters.lecturerTableAdapter();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLect)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -434,20 +434,6 @@
             this.dataGridViewLect.Size = new System.Drawing.Size(503, 150);
             this.dataGridViewLect.TabIndex = 23;
             // 
-            // timetableseDS
-            // 
-            this.timetableseDS.DataSetName = "timetableseDS";
-            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerBindingSource
-            // 
-            this.lecturerBindingSource.DataMember = "lecturer";
-            this.lecturerBindingSource.DataSource = this.timetableseDS;
-            // 
-            // lecturerTableAdapter
-            // 
-            this.lecturerTableAdapter.ClearBeforeFill = true;
-            // 
             // idLecturerDataGridViewTextBoxColumn
             // 
             this.idLecturerDataGridViewTextBoxColumn.DataPropertyName = "idLecturer";
@@ -476,6 +462,20 @@
             this.lecturerTaughtHoursDataGridViewTextBoxColumn.Name = "lecturerTaughtHoursDataGridViewTextBoxColumn";
             this.lecturerTaughtHoursDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "lecturer";
+            this.lecturerBindingSource.DataSource = this.timetableseDS;
+            // 
+            // timetableseDS
+            // 
+            this.timetableseDS.DataSetName = "timetableseDS";
+            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
             // Lecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -499,8 +499,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLect)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

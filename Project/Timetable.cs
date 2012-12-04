@@ -15,14 +15,12 @@ namespace Project
     /// </summary>
     public partial class Timetable : Form
     {
-        private TableLayoutPanel tlp; 
         /// <summary>
         /// 
         /// </summary>
         public Timetable()
         {
             InitializeComponent();
-            this.tlp = new TableLayoutPanel();
 
         }
 
@@ -47,11 +45,10 @@ namespace Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'timetableseDataSetLesson.lesson' table. You can move, or remove it, as needed.
-
-            this.tlpGrid.AllowDrop = true;
-            this.tlpGrid.DragOver += new DragEventHandler(tlpGrid_DragOver);
-            this.tlpGrid.DragDrop += new DragEventHandler(tlpGrid_DragDrop); 
+             DBconnector dbc = new DBconnector();
+          //  dgvT.DataSource = dbc.LessonVeiw();
+             dgvTimeTable.DataSource = dbc.LessonVeiw();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -84,29 +81,5 @@ namespace Project
             this.Show();
         }
 
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tlpGrid_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        void tlpGrid_DragOver(object sender, DragEventArgs e)
-        {
-            e.Effect = DragDropEffects.Move;
-        }
-
-        void tlpGrid_DragDrop(object sender, DragEventArgs e)
-        {
-            Control c = e.Data.GetData(e.Data.GetFormats()[0]) as Control;
-            if (c != null)
-            {
-                c.Location = this.tlpGrid.PointToClient(new Point(e.X, e.Y));
-                this.tlpGrid.Controls.Add(c);
-            }
-        }
     }
 }

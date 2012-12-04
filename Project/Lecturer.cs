@@ -59,7 +59,8 @@ namespace Project
             //TODO: Validate Data
             // adds the lectuer information form the text boxes to the  databases and up dates it 
             dbc.InsertLect(new LecturerCL(0, txtLectName.Text, int.Parse(txtTeachingHrs.Text), int.Parse(txtReqHrs.Text)));
-            
+            // TODO: This line of code loads data into the 'timetableseDS.lecturer' table. You can move, or remove it, as needed.
+            this.lecturerTableAdapter.Fill(this.timetableseDS.lecturer);
             MessageBox.Show("lectuer information added");
 
         }
@@ -77,6 +78,8 @@ namespace Project
                 int id = (int)this.dataGridViewLect.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteLect(id);
+                // TODO: This line of code loads data into the 'timetableseDS.lecturer' table. You can move, or remove it, as needed.
+                this.lecturerTableAdapter.Fill(this.timetableseDS.lecturer);
              
             
                 
@@ -111,5 +114,7 @@ namespace Project
             lesWin.ShowDialog();
             this.Close();
         }
+
+      
     }
 }

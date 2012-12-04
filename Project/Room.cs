@@ -18,7 +18,7 @@ namespace Project
     public partial class Room : Form
     {
         /// <summary>
-        /// jjj
+        /// 
         /// </summary>
         public Room()
         {
@@ -34,10 +34,7 @@ namespace Project
         private void Room_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'timetableseDS.room' table. You can move, or remove it, as needed.
-            this.roomTableAdapter.Fill(this.timetableseDS.room);
-            // TODO: This line of code loads data into the 'dataSetTimetable.room' table. You can move, or remove it, as needed.
-            
-          
+            this.roomTableAdapter.Fill(this.timetableseDS.room);    
                    
         }
 
@@ -55,17 +52,10 @@ namespace Project
             // adds the room information form the text boxes to the  databases and up dates it 
 
              dbc.InsertRoom(new RoomCL(0, txtRName.Text, cmbType.SelectedItem.ToString(), int.Parse(txtCap.Text)));
-            
+             this.roomTableAdapter.Fill(this.timetableseDS.room);
              MessageBox.Show("Room information added");
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-        }
-
-        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -74,8 +64,7 @@ namespace Project
                 int id = (int)this.dtgRoom.SelectedRows[0].Cells[0].Value;
                 DBconnector db = new DBconnector();
                 db.DeleteRoom(id);
-               
-                
+                this.roomTableAdapter.Fill(this.timetableseDS.room);            
 
             }
         }

@@ -70,6 +70,7 @@
             this.moduleBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.moduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labEndTime = new System.Windows.Forms.Label();
             this.cmbEndTime = new System.Windows.Forms.ComboBox();
             this.Day = new System.Windows.Forms.Label();
             this.cmbDay = new System.Windows.Forms.ComboBox();
@@ -93,7 +94,6 @@
             this.yeargroupTableAdapter = new Project.timetableseDSTableAdapters.yeargroupTableAdapter();
             this.dgvLesson = new System.Windows.Forms.DataGridView();
             this.bntDelete = new System.Windows.Forms.Button();
-            this.labEndTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
@@ -421,6 +421,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Class Input";
             // 
+            // labEndTime
+            // 
+            this.labEndTime.AutoSize = true;
+            this.labEndTime.Location = new System.Drawing.Point(497, 125);
+            this.labEndTime.Name = "labEndTime";
+            this.labEndTime.Size = new System.Drawing.Size(56, 15);
+            this.labEndTime.TabIndex = 22;
+            this.labEndTime.Text = "End Time";
+            // 
             // cmbEndTime
             // 
             this.cmbEndTime.FormattingEnabled = true;
@@ -622,15 +631,6 @@
             this.bntDelete.Text = "Delete";
             this.bntDelete.UseVisualStyleBackColor = true;
             this.bntDelete.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // labEndTime
-            // 
-            this.labEndTime.AutoSize = true;
-            this.labEndTime.Location = new System.Drawing.Point(497, 125);
-            this.labEndTime.Name = "labEndTime";
-            this.labEndTime.Size = new System.Drawing.Size(56, 15);
-            this.labEndTime.TabIndex = 22;
-            this.labEndTime.Text = "End Time";
             // 
             // Lesson
             // 

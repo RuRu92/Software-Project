@@ -281,7 +281,7 @@ namespace Project
             //create command and assign the query and connection from the constructor
             MySqlCommand cmd = new MySqlCommand(queryMod, connection);
 
-            //Execute command
+            //Execute command Throw Expctopn
             cmd.ExecuteNonQuery();
 
             //close connection
