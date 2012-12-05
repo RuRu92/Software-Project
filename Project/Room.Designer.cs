@@ -156,7 +156,6 @@
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(182, 26);
             this.cmbType.TabIndex = 6;
-            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
             // 
             // txtRName
             // 
@@ -215,7 +214,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(537, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 

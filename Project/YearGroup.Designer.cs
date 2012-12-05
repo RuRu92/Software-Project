@@ -71,17 +71,17 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewYG = new System.Windows.Forms.DataGridView();
-            this.timetableseDS = new Project.timetableseDS();
-            this.yeargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.yeargroupTableAdapter = new Project.timetableseDSTableAdapters.yeargroupTableAdapter();
             this.idYearGroupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yearGroupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noStudentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yeargroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timetableseDS = new Project.timetableseDS();
+            this.yeargroupTableAdapter = new Project.timetableseDSTableAdapters.yeargroupTableAdapter();
             this.grpGroup.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewYG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -426,20 +426,6 @@
             this.dataGridViewYG.Size = new System.Drawing.Size(491, 150);
             this.dataGridViewYG.TabIndex = 23;
             // 
-            // timetableseDS
-            // 
-            this.timetableseDS.DataSetName = "timetableseDS";
-            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // yeargroupBindingSource
-            // 
-            this.yeargroupBindingSource.DataMember = "yeargroup";
-            this.yeargroupBindingSource.DataSource = this.timetableseDS;
-            // 
-            // yeargroupTableAdapter
-            // 
-            this.yeargroupTableAdapter.ClearBeforeFill = true;
-            // 
             // idYearGroupDataGridViewTextBoxColumn
             // 
             this.idYearGroupDataGridViewTextBoxColumn.DataPropertyName = "idYearGroup";
@@ -461,6 +447,20 @@
             this.noStudentsDataGridViewTextBoxColumn.Name = "noStudentsDataGridViewTextBoxColumn";
             this.noStudentsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // yeargroupBindingSource
+            // 
+            this.yeargroupBindingSource.DataMember = "yeargroup";
+            this.yeargroupBindingSource.DataSource = this.timetableseDS;
+            // 
+            // timetableseDS
+            // 
+            this.timetableseDS.DataSetName = "timetableseDS";
+            this.timetableseDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // yeargroupTableAdapter
+            // 
+            this.yeargroupTableAdapter.ClearBeforeFill = true;
+            // 
             // YearGroup
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -475,15 +475,15 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Calibri", 9.75F);
             this.Name = "YearGroup";
-            this.Text = "Year Group";
+            this.Text = "Le";
             this.Load += new System.EventHandler(this.YearGroup_Load);
             this.grpGroup.ResumeLayout(false);
             this.grpGroup.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewYG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yeargroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableseDS)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

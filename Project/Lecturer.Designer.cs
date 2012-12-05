@@ -187,9 +187,9 @@
             this.lblID.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.Location = new System.Drawing.Point(28, 115);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(159, 18);
+            this.lblID.Size = new System.Drawing.Size(164, 18);
             this.lblID.TabIndex = 1;
-            this.lblID.Text = "Requied Teaching Hours ";
+            this.lblID.Text = "Required Teaching Hours ";
             // 
             // menuStrip1
             // 
